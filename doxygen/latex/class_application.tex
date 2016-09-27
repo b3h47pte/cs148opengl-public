@@ -1,0 +1,368 @@
+\hypertarget{class_application}{}\section{Application Class Reference}
+\label{class_application}\index{Application@{Application}}
+
+
+Handles creating configurable objects (i.\+e. scene, camera, renderer), handling S\+DL events passed in by the \hyperlink{class_media_layer}{Media\+Layer}, and handles creating the scene to be display.  
+
+
+
+
+{\ttfamily \#include $<$Application.\+h$>$}
+
+Inheritance diagram for Application\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_application}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_application_a78cdcb03e6f06272f7c528fe407951c5}{Application} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)
+\begin{DoxyCompactList}\small\item\em Create an application with a pre-\/allocated scene and camera. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_application_a748bca84fefb9c12661cfaa2f623748d}{$\sim$\+Application} ()
+\begin{DoxyCompactList}\small\item\em Virtual deconstrcutor to allow inheritance. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialization function to setup the stored camera and scene. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ class \hyperlink{class_renderer}{Renderer} $>$ \hyperlink{class_application_a90c7fd9ecb6c8923948078903d442919}{Create\+Renderer} ()
+\begin{DoxyCompactList}\small\item\em Creates a shared pointer of type \hyperlink{class_renderer}{Renderer}. \end{DoxyCompactList}\item 
+virtual glm\+::vec2 \hyperlink{class_application_ab190ae0e987fe95682714dd4b2495e82}{Get\+Window\+Size} () const
+\begin{DoxyCompactList}\small\item\em Specifies the initial window size. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_application_a454a1d926759c4bfac47e730570a7743}{Is\+Finished} () const
+\begin{DoxyCompactList}\small\item\em Whether or not the application is finished running. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_application_a9cbe96f94653eae2bb6ad5857b00fa10}{Request\+Exit} ()
+\begin{DoxyCompactList}\small\item\em Notifies the \hyperlink{class_application}{Application} that it should finish. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_application_a0800afd5651153d31fa775a8048d14dd}{Tick} (double delta\+Time)
+\begin{DoxyCompactList}\small\item\em Called every frame to advance program logic. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_application_ae6074c3f102de1cb2fe4c81b545679db}{Handle\+Input} (S\+D\+L\+\_\+\+Keysym key, Uint32 state, Uint8 repeat, double timestamp, double delta\+Time)
+\begin{DoxyCompactList}\small\item\em Processes an S\+DL keyboard event which has type \href{https://wiki.libsdl.org/SDL_KeyboardEvent}{\tt S\+D\+L\+\_\+\+Keyboard\+Event}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_application_a74d92db64e051efa56d0357989dcb755}{Handle\+Window\+Event} (S\+D\+L\+\_\+\+Window\+Event\+ID event\+Id, Sint32 data1, Sint32 data2, double timestamp)
+\begin{DoxyCompactList}\small\item\em Processes an S\+DL window event. Details about an S\+DL window event can be found \href{https://wiki.libsdl.org/SDL_WindowEvent}{\tt here} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ \hyperlink{class_application_a727f63f898a68bddf6d88309195ef194}{Create\+Application} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_application_a88c6615107a5094bb93fa5f153f79554}{scene}, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_application_a0e8589fcb13c520ba472473abe5a518d}{camera})
+\begin{DoxyCompactList}\small\item\em Creates a unique pointer to an \hyperlink{class_application}{Application}. This should be used instead of the constructor. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_application_a511e638cf5748e10151f17d6140b9119}{Create\+Scene} ()
+\begin{DoxyCompactList}\small\item\em Creates a shared pointer of type \hyperlink{class_scene}{Scene}. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_application_a53c0a539fd2c4fe2cc48143cc0a3ea24}{Create\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Creates a shared pointer of type \hyperlink{class_camera}{Camera}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_application_abdba284a0f075ee1d4a2108c3a5236a2}{Handle\+Window\+Resize} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a74d92db64e051efa56d0357989dcb755}{Handle\+Window\+Event()} when the window is resized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_application_ae1c1ff7a7663d9baa9b65a7ba8e1dcf8}{is\+Running}
+\begin{DoxyCompactList}\small\item\em Whether or not the application is currently running. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_application_a88c6615107a5094bb93fa5f153f79554}{scene}
+\begin{DoxyCompactList}\small\item\em A shared pointer to the scene. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_application_a0e8589fcb13c520ba472473abe5a518d}{camera}
+\begin{DoxyCompactList}\small\item\em A shared pointer to the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_application_aa8e8017ef8dd86293c96d0645e66d440}{Setup\+Scene} ()
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to populate the scene. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_application_a2eb61ca027f223a5c5ad1bf982481193}{Setup\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to setup the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles creating configurable objects (i.\+e. scene, camera, renderer), handling S\+DL events passed in by the \hyperlink{class_media_layer}{Media\+Layer}, and handles creating the scene to be display. 
+
+An \textquotesingle{}\hyperlink{class_application}{Application}\textquotesingle{} M\+U\+ST be created to run the assignment framework. By default, the application will create a 1280x720 window that is completely black. After the \textquotesingle{}\hyperlink{class_application}{Application}\textquotesingle{} is created, it must be passed to the \textquotesingle{}\hyperlink{class_media_layer}{Media\+Layer}\textquotesingle{} who will call the \textquotesingle{}\hyperlink{class_application}{Application}\textquotesingle{}s tick function every frame. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_application_a78cdcb03e6f06272f7c528fe407951c5}{}\label{class_application_a78cdcb03e6f06272f7c528fe407951c5} 
+\index{Application@{Application}!Application@{Application}}
+\index{Application@{Application}!Application@{Application}}
+\subsubsection{\texorpdfstring{Application()}{Application()}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$}]{input\+Scene,  }\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$}]{input\+Camera }\end{DoxyParamCaption})}
+
+
+
+Create an application with a pre-\/allocated scene and camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Scene} & A pre-\/allocated scene. This should be generated using \hyperlink{class_application_a511e638cf5748e10151f17d6140b9119}{Create\+Scene()} in the appropriate subclass. \\
+\hline
+{\em input\+Camera} & A pre-\/allocated camera. This should be generated using \hyperlink{class_application_a53c0a539fd2c4fe2cc48143cc0a3ea24}{Create\+Camera()} in the appropriate subclass. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Do not use directly. Use Create\+Application instead. 
+\end{DoxyWarning}
+\hypertarget{class_application_a748bca84fefb9c12661cfaa2f623748d}{}\label{class_application_a748bca84fefb9c12661cfaa2f623748d} 
+\index{Application@{Application}!````~Application@{$\sim$\+Application}}
+\index{````~Application@{$\sim$\+Application}!Application@{Application}}
+\subsubsection{\texorpdfstring{$\sim$\+Application()}{~Application()}}
+{\footnotesize\ttfamily Application\+::$\sim$\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual deconstrcutor to allow inheritance. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_application_a727f63f898a68bddf6d88309195ef194}{}\label{class_application_a727f63f898a68bddf6d88309195ef194} 
+\index{Application@{Application}!Create\+Application@{Create\+Application}}
+\index{Create\+Application@{Create\+Application}!Application@{Application}}
+\subsubsection{\texorpdfstring{Create\+Application()}{CreateApplication()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ Application\+::\+Create\+Application (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$}]{scene,  }\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a unique pointer to an \hyperlink{class_application}{Application}. This should be used instead of the constructor. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to an \hyperlink{class_application}{Application}.
+\end{DoxyReturn}
+See \hyperlink{class_application_a78cdcb03e6f06272f7c528fe407951c5}{Application()} for more details. \hypertarget{class_application_a53c0a539fd2c4fe2cc48143cc0a3ea24}{}\label{class_application_a53c0a539fd2c4fe2cc48143cc0a3ea24} 
+\index{Application@{Application}!Create\+Camera@{Create\+Camera}}
+\index{Create\+Camera@{Create\+Camera}!Application@{Application}}
+\subsubsection{\texorpdfstring{Create\+Camera()}{CreateCamera()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_camera}{Camera} $>$ Application\+::\+Create\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a shared pointer of type \hyperlink{class_camera}{Camera}. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to a \hyperlink{class_camera}{Camera}.
+\end{DoxyReturn}
+The subclass should also create a function \hyperlink{class_application_a53c0a539fd2c4fe2cc48143cc0a3ea24}{Create\+Camera()} that returns the proper type of \hyperlink{class_camera}{Camera} to create. \hypertarget{class_application_a90c7fd9ecb6c8923948078903d442919}{}\label{class_application_a90c7fd9ecb6c8923948078903d442919} 
+\index{Application@{Application}!Create\+Renderer@{Create\+Renderer}}
+\index{Create\+Renderer@{Create\+Renderer}!Application@{Application}}
+\subsubsection{\texorpdfstring{Create\+Renderer()}{CreateRenderer()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ class \hyperlink{class_renderer}{Renderer} $>$ Application\+::\+Create\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a shared pointer of type \hyperlink{class_renderer}{Renderer}. 
+
+\begin{DoxyReturn}{Returns}
+A unique pointer to a \hyperlink{class_renderer}{Renderer}.
+\end{DoxyReturn}
+The subclass should override this function \hyperlink{class_application_a90c7fd9ecb6c8923948078903d442919}{Create\+Renderer()} to return the proper type of \hyperlink{class_renderer}{Renderer} to create. \hypertarget{class_application_a511e638cf5748e10151f17d6140b9119}{}\label{class_application_a511e638cf5748e10151f17d6140b9119} 
+\index{Application@{Application}!Create\+Scene@{Create\+Scene}}
+\index{Create\+Scene@{Create\+Scene}!Application@{Application}}
+\subsubsection{\texorpdfstring{Create\+Scene()}{CreateScene()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene}{Scene} $>$ Application\+::\+Create\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a shared pointer of type \hyperlink{class_scene}{Scene}. 
+
+\begin{DoxyReturn}{Returns}
+A shared pointer to a \hyperlink{class_scene}{Scene}.
+\end{DoxyReturn}
+The subclass should also create a function \hyperlink{class_application_a511e638cf5748e10151f17d6140b9119}{Create\+Scene()} that returns the proper type of \hyperlink{class_scene}{Scene} to create. \hypertarget{class_application_ab190ae0e987fe95682714dd4b2495e82}{}\label{class_application_ab190ae0e987fe95682714dd4b2495e82} 
+\index{Application@{Application}!Get\+Window\+Size@{Get\+Window\+Size}}
+\index{Get\+Window\+Size@{Get\+Window\+Size}!Application@{Application}}
+\subsubsection{\texorpdfstring{Get\+Window\+Size()}{GetWindowSize()}}
+{\footnotesize\ttfamily glm\+::vec2 Application\+::\+Get\+Window\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Specifies the initial window size. 
+
+\begin{DoxyReturn}{Returns}
+The desired window size. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_assignment2_a9ea79bd468c12dde5159ca7b8efd8e1e}{Assignment2}, \hyperlink{class_assignment3_aec48ba5500d906963fdac555ee47cb72}{Assignment3}, \hyperlink{class_assignment4_ad197b75e730f9b32458429df8d55458e}{Assignment4}, \hyperlink{class_assignment5_ac199b6149ffa3dbedc7e0d49bb24c628}{Assignment5}, and \hyperlink{class_assignment1_a581b6c897c918eede3f9bbb1cbc50320}{Assignment1}.
+
+\hypertarget{class_application_ae6074c3f102de1cb2fe4c81b545679db}{}\label{class_application_ae6074c3f102de1cb2fe4c81b545679db} 
+\index{Application@{Application}!Handle\+Input@{Handle\+Input}}
+\index{Handle\+Input@{Handle\+Input}!Application@{Application}}
+\subsubsection{\texorpdfstring{Handle\+Input()}{HandleInput()}}
+{\footnotesize\ttfamily void Application\+::\+Handle\+Input (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Keysym}]{key,  }\item[{Uint32}]{state,  }\item[{Uint8}]{repeat,  }\item[{double}]{timestamp,  }\item[{double}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Processes an S\+DL keyboard event which has type \href{https://wiki.libsdl.org/SDL_KeyboardEvent}{\tt S\+D\+L\+\_\+\+Keyboard\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & See the S\+DL documentation for more details about \href{https://wiki.libsdl.org/SDL_Keysym}{\tt S\+D\+L\+\_\+\+Keysym}. \\
+\hline
+{\em state} & This is the type field in the \href{https://wiki.libsdl.org/SDL_Event}{\tt S\+D\+L\+\_\+\+Event}datastructure. \\
+\hline
+{\em repeat} & This value is non-\/zero is the key is being repeated. \\
+\hline
+{\em timestamp} & Timestamp is the number of seconds since the program was first started. \\
+\hline
+{\em delta\+Time} & The amount of time (in seconds) since the last tick.\\
+\hline
+\end{DoxyParams}
+Takes in a keyboard event and process it. This does nothing by default. \textquotesingle{}delta\+Time\textquotesingle{} is included to allow you to move something and have the movement look smooth. For example, if you have an object that you want to move forward whenever \textquotesingle{}W\textquotesingle{} is pressed. You know that the object travels at 10 meters per second when \textquotesingle{}W\textquotesingle{} is pressed and 0 meters per second when it is not. How far should you move the object? You would want to move it forward by $10 \cdot deltaTime $ units. 
+
+Reimplemented in \hyperlink{class_assignment2_a3ee099a8ba45db14103541981e3c4fe8}{Assignment2}, \hyperlink{class_assignment3_a1cc65ca321f39eb7092959b2dada8d31}{Assignment3}, \hyperlink{class_assignment4_a02c51d46e2cbb55e7963b6bfbedaf1c4}{Assignment4}, \hyperlink{class_assignment5_aab8f8440144665db9aafd7ca1cf55cff}{Assignment5}, and \hyperlink{class_assignment1_ab9db4f51e177dd72130cd61d86b97535}{Assignment1}.
+
+\hypertarget{class_application_a74d92db64e051efa56d0357989dcb755}{}\label{class_application_a74d92db64e051efa56d0357989dcb755} 
+\index{Application@{Application}!Handle\+Window\+Event@{Handle\+Window\+Event}}
+\index{Handle\+Window\+Event@{Handle\+Window\+Event}!Application@{Application}}
+\subsubsection{\texorpdfstring{Handle\+Window\+Event()}{HandleWindowEvent()}}
+{\footnotesize\ttfamily void Application\+::\+Handle\+Window\+Event (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Window\+Event\+ID}]{event\+Id,  }\item[{Sint32}]{data1,  }\item[{Sint32}]{data2,  }\item[{double}]{timestamp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Processes an S\+DL window event. Details about an S\+DL window event can be found \href{https://wiki.libsdl.org/SDL_WindowEvent}{\tt here} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Id} & This is an \href{https://wiki.libsdl.org/SDL_WindowEventID}{\tt S\+D\+L\+\_\+\+Window\+Event\+ID}. See the S\+DL documentation for more details. \\
+\hline
+{\em data1} & This changes depending on what event\+Id is. See the docs for S\+D\+L\+\_\+\+Window\+Event\+ID. \\
+\hline
+{\em data2} & This changes depending on what event\+Id is. See the docs for S\+D\+L\+\_\+\+Window\+Event\+ID. \\
+\hline
+{\em timestamp} & Timestamp is the number of seconds since the program was first started.\\
+\hline
+\end{DoxyParams}
+This takes in a window event and process it. By default it handles when the size of the window change and calls \hyperlink{class_application_abdba284a0f075ee1d4a2108c3a5236a2}{Handle\+Window\+Resize()}. You can expand on this functionality in the sub-\/class to handle other events such as the window moving, etc. However, make sure you maintain a call to \hyperlink{class_application_a74d92db64e051efa56d0357989dcb755}{Application\+::\+Handle\+Window\+Event()} to make sure gl\+Viewport is still called! \hypertarget{class_application_abdba284a0f075ee1d4a2108c3a5236a2}{}\label{class_application_abdba284a0f075ee1d4a2108c3a5236a2} 
+\index{Application@{Application}!Handle\+Window\+Resize@{Handle\+Window\+Resize}}
+\index{Handle\+Window\+Resize@{Handle\+Window\+Resize}!Application@{Application}}
+\subsubsection{\texorpdfstring{Handle\+Window\+Resize()}{HandleWindowResize()}}
+{\footnotesize\ttfamily void Application\+::\+Handle\+Window\+Resize (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called by \hyperlink{class_application_a74d92db64e051efa56d0357989dcb755}{Handle\+Window\+Event()} when the window is resized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The width of the window. \\
+\hline
+{\em y} & The height of the window.\\
+\hline
+\end{DoxyParams}
+By default calls, \href{https://www.opengl.org/sdk/docs/man/html/glViewport.xhtml}{\tt gl\+Viewport} to resize the viewport as necessary. If any part of your application depends on the window resize, you will want to take care of it in this function! (Hint for the O\+P\+T\+I\+O\+N\+AL deferred rendering task in assignment 2\+: your \textquotesingle{}G-\/\+Buffers\textquotesingle{} should be resized). 
+
+Reimplemented in \hyperlink{class_assignment2_a1af734567de5e8e73a2fd726fe3914f2}{Assignment2}, \hyperlink{class_assignment3_a851c637c83c8092d8adfb5c9f761daeb}{Assignment3}, \hyperlink{class_assignment4_ac79558272dc476db3ee4a99793f401f2}{Assignment4}, and \hyperlink{class_assignment5_a0e7325af72d41b95f9a19ebe1440e756}{Assignment5}.
+
+\hypertarget{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{}\label{class_application_a17cf1ea4552d26a1c20f7d98d793d41d} 
+\index{Application@{Application}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Application@{Application}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Application\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialization function to setup the stored camera and scene. 
+
+This initialization function exists because the \hyperlink{class_application_aa8e8017ef8dd86293c96d0645e66d440}{Setup\+Scene()} and \hyperlink{class_application_a2eb61ca027f223a5c5ad1bf982481193}{Setup\+Camera()} functions are virtual and thus can not exist within the constructor. This function is called in \hyperlink{class_media_layer_aea3b3bc36411af90517692b110d2829a}{Media\+Layer\+::\+Media\+Layer()}. \hypertarget{class_application_a454a1d926759c4bfac47e730570a7743}{}\label{class_application_a454a1d926759c4bfac47e730570a7743} 
+\index{Application@{Application}!Is\+Finished@{Is\+Finished}}
+\index{Is\+Finished@{Is\+Finished}!Application@{Application}}
+\subsubsection{\texorpdfstring{Is\+Finished()}{IsFinished()}}
+{\footnotesize\ttfamily bool Application\+::\+Is\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Whether or not the application is finished running. 
+
+\begin{DoxyReturn}{Returns}
+Whether the application is finished running.
+\end{DoxyReturn}
+When the \hyperlink{class_media_layer_a570ff8c3fc3e8f3e720d9dcebafba143}{Media\+Layer\+::\+Tick()} function detects that the application is finished, the program will exit. \hypertarget{class_application_a9cbe96f94653eae2bb6ad5857b00fa10}{}\label{class_application_a9cbe96f94653eae2bb6ad5857b00fa10} 
+\index{Application@{Application}!Request\+Exit@{Request\+Exit}}
+\index{Request\+Exit@{Request\+Exit}!Application@{Application}}
+\subsubsection{\texorpdfstring{Request\+Exit()}{RequestExit()}}
+{\footnotesize\ttfamily void Application\+::\+Request\+Exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies the \hyperlink{class_application}{Application} that it should finish. 
+
+An external source (i.\+e. the \hyperlink{class_media_layer}{Media\+Layer}) may request for the \hyperlink{class_application}{Application} to finish. This lets the \hyperlink{class_application}{Application} exit gracefully. The \hyperlink{class_application}{Application} can choose to ignore the request (thought that is not recommended). After this function is called, \hyperlink{class_application_a454a1d926759c4bfac47e730570a7743}{Is\+Finished()} should return true. \hypertarget{class_application_a2eb61ca027f223a5c5ad1bf982481193}{}\label{class_application_a2eb61ca027f223a5c5ad1bf982481193} 
+\index{Application@{Application}!Setup\+Camera@{Setup\+Camera}}
+\index{Setup\+Camera@{Setup\+Camera}!Application@{Application}}
+\subsubsection{\texorpdfstring{Setup\+Camera()}{SetupCamera()}}
+{\footnotesize\ttfamily void Application\+::\+Setup\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to setup the camera. 
+
+Note by the time this function is called, the \hyperlink{class_application}{Application} sub-\/class is fully constructed and \hyperlink{class_camera}{Camera} object is already created. 
+
+Reimplemented in \hyperlink{class_assignment2_ab9ace1ffdac8f7425c64d661f3d13acd}{Assignment2}, \hyperlink{class_assignment3_a1d23eb19973b78e516169f4a03954526}{Assignment3}, \hyperlink{class_assignment4_aa2bc15adb48cf54e477fce0c686cf2f0}{Assignment4}, and \hyperlink{class_assignment5_a0c49123e133adfb36c769c943eae42fa}{Assignment5}.
+
+\hypertarget{class_application_aa8e8017ef8dd86293c96d0645e66d440}{}\label{class_application_aa8e8017ef8dd86293c96d0645e66d440} 
+\index{Application@{Application}!Setup\+Scene@{Setup\+Scene}}
+\index{Setup\+Scene@{Setup\+Scene}!Application@{Application}}
+\subsubsection{\texorpdfstring{Setup\+Scene()}{SetupScene()}}
+{\footnotesize\ttfamily void Application\+::\+Setup\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to populate the scene. 
+
+Note by the time this function is called, the \hyperlink{class_application}{Application} sub-\/class is fully constructed and \hyperlink{class_scene}{Scene} object is already created. 
+
+Reimplemented in \hyperlink{class_assignment2_aa4f8ccd09a7accbdf093394c6ee4f63f}{Assignment2}, \hyperlink{class_assignment3_a2dc29d9016a9d822ede84b9ef41429a5}{Assignment3}, \hyperlink{class_assignment4_a38c50647bb65ff03aaf293fcc21dc5fd}{Assignment4}, \hyperlink{class_assignment5_a43328e09e6241ae6c62a9b7be7659b3b}{Assignment5}, and \hyperlink{class_assignment1_a8d12cf21f1463caa5a8da45110b50103}{Assignment1}.
+
+\hypertarget{class_application_a0800afd5651153d31fa775a8048d14dd}{}\label{class_application_a0800afd5651153d31fa775a8048d14dd} 
+\index{Application@{Application}!Tick@{Tick}}
+\index{Tick@{Tick}!Application@{Application}}
+\subsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Application\+::\+Tick (\begin{DoxyParamCaption}\item[{double}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called every frame to advance program logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The amount of time (in seconds) since the last tick.\\
+\hline
+\end{DoxyParams}
+If you need something in the \hyperlink{class_scene}{Scene} to change over time, this is where you should implement that logic. It is recommended that you make use of the delta\+Time variable to make things change smoothly! 
+
+Reimplemented in \hyperlink{class_assignment2_a41544ad361dd798d5fae1ec3197fc66e}{Assignment2}, \hyperlink{class_assignment3_a11256b6e7b38ab24baa92729cfb8ffe2}{Assignment3}, \hyperlink{class_assignment4_a3ef3fef7a6ae13603bc453b29e079c5d}{Assignment4}, and \hyperlink{class_assignment5_a34cdf7bc962c3a0e3959c77a24c54d79}{Assignment5}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_application_a0e8589fcb13c520ba472473abe5a518d}{}\label{class_application_a0e8589fcb13c520ba472473abe5a518d} 
+\index{Application@{Application}!camera@{camera}}
+\index{camera@{camera}!Application@{Application}}
+\subsubsection{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$class \hyperlink{class_camera}{Camera}$>$ Application\+::camera\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A shared pointer to the camera. 
+
+Currently, only one camera is supported at a time. This one camera will be shared across the framework to properly generate the view and projection matrices. Additionally, shaders utilize some camera properties to calculate the fragment color. \hypertarget{class_application_ae1c1ff7a7663d9baa9b65a7ba8e1dcf8}{}\label{class_application_ae1c1ff7a7663d9baa9b65a7ba8e1dcf8} 
+\index{Application@{Application}!is\+Running@{is\+Running}}
+\index{is\+Running@{is\+Running}!Application@{Application}}
+\subsubsection{\texorpdfstring{is\+Running}{isRunning}}
+{\footnotesize\ttfamily bool Application\+::is\+Running\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Whether or not the application is currently running. 
+
+This variable is negated and returned by \hyperlink{class_application_a454a1d926759c4bfac47e730570a7743}{Is\+Finished()}. \hypertarget{class_application_a88c6615107a5094bb93fa5f153f79554}{}\label{class_application_a88c6615107a5094bb93fa5f153f79554} 
+\index{Application@{Application}!scene@{scene}}
+\index{scene@{scene}!Application@{Application}}
+\subsubsection{\texorpdfstring{scene}{scene}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$class \hyperlink{class_scene}{Scene}$>$ Application\+::scene\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A shared pointer to the scene. 
+
+Currently, there can only ever be one scene at a time. You will add lights and other objects to the scene to generate your image. This scene is used across the framework to perform rendering. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\hyperlink{_application_8h}{Application.\+h}\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\hyperlink{_application_8cpp}{Application.\+cpp}\end{DoxyCompactItemize}

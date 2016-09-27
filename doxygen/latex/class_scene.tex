@@ -1,0 +1,188 @@
+\hypertarget{class_scene}{}\section{Scene Class Reference}
+\label{class_scene}\index{Scene@{Scene}}
+
+
+Contains all the objects that need to be rendered as well as the lights.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
+Inheritance diagram for Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_scene}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \hyperlink{class_scene_a66108b1261560387be08e2b8226c2237}{Get\+Total\+Objects} () const
+\begin{DoxyCompactList}\small\item\em Returns the total number of objects in the scene. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{class_scene_aca8ac690e36148926c6403d53f5f8527}{Get\+Total\+Lights} () const
+\begin{DoxyCompactList}\small\item\em Returns the total number of lights in the scene. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ T $>$\+::value $>$\+::type $\ast$  = nullptr$>$ }\\const \hyperlink{class_scene_object}{Scene\+Object} \& \hyperlink{class_scene_a643b4969fd3c46d60f1ee8babf8cb5b1}{Get\+Scene\+Object} (T index) const
+\begin{DoxyCompactList}\small\item\em Retrive the specified object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ T $>$\+::value $>$\+::type $\ast$  = nullptr$>$ }\\const \hyperlink{class_light}{Light} $\ast$ \hyperlink{class_scene_a2dc01d77edcfce9d06fad44a946decf2}{Get\+Light\+Object} (T index) const
+\begin{DoxyCompactList}\small\item\em Retrive the specified light. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_a6e51f14c74c252d231b73d7109b8117e}{Add\+Scene\+Object} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene_object}{Scene\+Object} $>$ object)
+\begin{DoxyCompactList}\small\item\em Adds a new object to the scene. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_ab9b1a906b16bf867600fc3f5b734c1d4}{Add\+Light} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_light}{Light} $>$ light)
+\begin{DoxyCompactList}\small\item\em Adds a new light to the scene. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_ac3b0f6126be07f78a61abfac3487e4df}{Clear\+Scene} ()
+\begin{DoxyCompactList}\small\item\em Removes all objects and lights from the scene. This prevents them from being rendered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene_object}{Scene\+Object} $>$ $>$ \hyperlink{class_scene_a871382922b2a04d7883cf6d34529b5df}{scene\+Objects}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_light}{Light} $>$ $>$ \hyperlink{class_scene_a847f4f9c485a56b084a1340811f0e726}{scene\+Lights}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_scene_a70538530bc36e033e360880ef311df61}{Renderer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains all the objects that need to be rendered as well as the lights. 
+
+A \hyperlink{class_scene}{Scene} object functions more or less as a giant container. It stores all the objects and lights that will be used for rendering. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_scene_ab9b1a906b16bf867600fc3f5b734c1d4}{}\label{class_scene_ab9b1a906b16bf867600fc3f5b734c1d4} 
+\index{Scene@{Scene}!Add\+Light@{Add\+Light}}
+\index{Add\+Light@{Add\+Light}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Add\+Light()}{AddLight()}}
+{\footnotesize\ttfamily void Scene\+::\+Add\+Light (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_light}{Light} $>$}]{light }\end{DoxyParamCaption})}
+
+
+
+Adds a new light to the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em light} & The light to add. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_a6e51f14c74c252d231b73d7109b8117e}{}\label{class_scene_a6e51f14c74c252d231b73d7109b8117e} 
+\index{Scene@{Scene}!Add\+Scene\+Object@{Add\+Scene\+Object}}
+\index{Add\+Scene\+Object@{Add\+Scene\+Object}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Add\+Scene\+Object()}{AddSceneObject()}}
+{\footnotesize\ttfamily void Scene\+::\+Add\+Scene\+Object (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_scene_object}{Scene\+Object} $>$}]{object }\end{DoxyParamCaption})}
+
+
+
+Adds a new object to the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & The object to add. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_scene_ac3b0f6126be07f78a61abfac3487e4df}{}\label{class_scene_ac3b0f6126be07f78a61abfac3487e4df} 
+\index{Scene@{Scene}!Clear\+Scene@{Clear\+Scene}}
+\index{Clear\+Scene@{Clear\+Scene}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Clear\+Scene()}{ClearScene()}}
+{\footnotesize\ttfamily void Scene\+::\+Clear\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes all objects and lights from the scene. This prevents them from being rendered. 
+
+\hypertarget{class_scene_a2dc01d77edcfce9d06fad44a946decf2}{}\label{class_scene_a2dc01d77edcfce9d06fad44a946decf2} 
+\index{Scene@{Scene}!Get\+Light\+Object@{Get\+Light\+Object}}
+\index{Get\+Light\+Object@{Get\+Light\+Object}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Get\+Light\+Object()}{GetLightObject()}}
+{\footnotesize\ttfamily template$<$typename T , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ T $>$\+::value $>$\+::type $\ast$  = nullptr$>$ \\
+const \hyperlink{class_light}{Light}$\ast$ Scene\+::\+Get\+Light\+Object (\begin{DoxyParamCaption}\item[{T}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrive the specified light. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index to use to access the \hyperlink{class_scene_a847f4f9c485a56b084a1340811f0e726}{Scene\+::scene\+Lights} vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the light in the light vector at the specified index.
+\end{DoxyReturn}
+Read the \hyperlink{class_scene_a643b4969fd3c46d60f1ee8babf8cb5b1}{Scene\+::\+Get\+Scene\+Object()} docs for more information about std\+::enable\+\_\+if. Note the difference between this function and \hyperlink{class_scene_a643b4969fd3c46d60f1ee8babf8cb5b1}{Scene\+::\+Get\+Scene\+Object()}. Here, if we access the vector out of bounds we return a null pointer, but in \hyperlink{class_scene_a643b4969fd3c46d60f1ee8babf8cb5b1}{Scene\+::\+Get\+Scene\+Object()}, that would be an error. \hypertarget{class_scene_a643b4969fd3c46d60f1ee8babf8cb5b1}{}\label{class_scene_a643b4969fd3c46d60f1ee8babf8cb5b1} 
+\index{Scene@{Scene}!Get\+Scene\+Object@{Get\+Scene\+Object}}
+\index{Get\+Scene\+Object@{Get\+Scene\+Object}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Get\+Scene\+Object()}{GetSceneObject()}}
+{\footnotesize\ttfamily template$<$typename T , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+integral$<$ T $>$\+::value $>$\+::type $\ast$  = nullptr$>$ \\
+const \hyperlink{class_scene_object}{Scene\+Object}\& Scene\+::\+Get\+Scene\+Object (\begin{DoxyParamCaption}\item[{T}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrive the specified object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index to use to access the \hyperlink{class_scene_a871382922b2a04d7883cf6d34529b5df}{Scene\+::scene\+Objects} vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the object in the object vector at the specified index.
+\end{DoxyReturn}
+Confused about the whole std\+::enable\+\_\+if shenanigans? You can look at the \href{http://en.cppreference.com/w/cpp/types/enable_if}{\tt std\+::enable\+\_\+if} docs. This is part of C++\textquotesingle{}s \href{http://en.cppreference.com/w/cpp/language/sfinae}{\tt S\+F\+I\+N\+AE} rule. Don\textquotesingle{}t worry about it if you don\textquotesingle{}t get most of it. The std\+::enable\+\_\+if is just to make sure that index is an integral (since we want to support int, uint, size\+\_\+t, long, etc.) without casting. \hypertarget{class_scene_aca8ac690e36148926c6403d53f5f8527}{}\label{class_scene_aca8ac690e36148926c6403d53f5f8527} 
+\index{Scene@{Scene}!Get\+Total\+Lights@{Get\+Total\+Lights}}
+\index{Get\+Total\+Lights@{Get\+Total\+Lights}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Get\+Total\+Lights()}{GetTotalLights()}}
+{\footnotesize\ttfamily size\+\_\+t Scene\+::\+Get\+Total\+Lights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the total number of lights in the scene. 
+
+\begin{DoxyReturn}{Returns}
+Total number of lights in the scene. 
+\end{DoxyReturn}
+\hypertarget{class_scene_a66108b1261560387be08e2b8226c2237}{}\label{class_scene_a66108b1261560387be08e2b8226c2237} 
+\index{Scene@{Scene}!Get\+Total\+Objects@{Get\+Total\+Objects}}
+\index{Get\+Total\+Objects@{Get\+Total\+Objects}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Get\+Total\+Objects()}{GetTotalObjects()}}
+{\footnotesize\ttfamily size\+\_\+t Scene\+::\+Get\+Total\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the total number of objects in the scene. 
+
+\begin{DoxyReturn}{Returns}
+Total number of objects in the scene. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_scene_a70538530bc36e033e360880ef311df61}{}\label{class_scene_a70538530bc36e033e360880ef311df61} 
+\index{Scene@{Scene}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{Renderer}{Renderer}}
+{\footnotesize\ttfamily friend class \hyperlink{class_renderer}{Renderer}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_scene_a847f4f9c485a56b084a1340811f0e726}{}\label{class_scene_a847f4f9c485a56b084a1340811f0e726} 
+\index{Scene@{Scene}!scene\+Lights@{scene\+Lights}}
+\index{scene\+Lights@{scene\+Lights}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{scene\+Lights}{sceneLights}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\hyperlink{class_light}{Light}$>$ $>$ Scene\+::scene\+Lights\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_scene_a871382922b2a04d7883cf6d34529b5df}{}\label{class_scene_a871382922b2a04d7883cf6d34529b5df} 
+\index{Scene@{Scene}!scene\+Objects@{scene\+Objects}}
+\index{scene\+Objects@{scene\+Objects}!Scene@{Scene}}
+\subsubsection{\texorpdfstring{scene\+Objects}{sceneObjects}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\hyperlink{class_scene_object}{Scene\+Object}$>$ $>$ Scene\+::scene\+Objects\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Scene/\hyperlink{_scene_8h}{Scene.\+h}\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Scene/\hyperlink{_scene_8cpp}{Scene.\+cpp}\end{DoxyCompactItemize}

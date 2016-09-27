@@ -1,0 +1,12 @@
+\form#0:$10 \cdot deltaTime $
+\form#1:$N$
+\form#2:$ N + 2 $
+\form#3:$d$
+\form#4:$c$
+\form#5:$l$
+\form#6:$q$
+\form#7:$\frac{1}{c + d l + d^2 l}$
+\form#8:$(x, x, x)$
+\form#9:$y$
+\form#10:$(xy, xy, xy)$
+\form#11:$(x + y, x + y, x + y)$

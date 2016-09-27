@@ -1,0 +1,758 @@
+\hypertarget{class_rendering_object}{}\section{Rendering\+Object Class Reference}
+\label{class_rendering_object}\index{Rendering\+Object@{Rendering\+Object}}
+
+
+Stores the vertex data for a mesh.  
+
+
+
+
+{\ttfamily \#include $<$Rendering\+Object.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}{Vertex\+Attribute\+Positions} \{ \newline
+\hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eea52f5e0bc3859bc5f5e25130b6c7e8881}{Vertex\+Attribute\+Positions\+::\+Position} = 0, 
+\hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eea4ab971a51f0335cbf8d9c2c65d379e99}{Vertex\+Attribute\+Positions\+::\+Normals}, 
+\hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eeadeaa2adbeb26802ae61609c3f3642d82}{Vertex\+Attribute\+Positions\+::\+UV}, 
+\hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eea5d50889672f6f860d14f502de3de1957}{Vertex\+Attribute\+Positions\+::\+Colors}, 
+\newline
+\hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eea541671cb1be09d76a84ba1a873ec3fc8}{Vertex\+Attribute\+Positions\+::\+Tangent}, 
+\hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eeae3e73a4b6e7cfd12008a35f6a051b319}{Vertex\+Attribute\+Positions\+::\+Bitangent}
+ \}\begin{DoxyCompactList}\small\item\em This enum has its values corresponding to the layout location qualifer on the vertex attribute array. \end{DoxyCompactList}
+\item 
+using \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} = std\+::vector$<$ glm\+::vec4 $>$
+\item 
+using \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} = std\+::vector$<$ unsigned int $>$
+\item 
+using \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} = std\+::vector$<$ glm\+::vec3 $>$
+\item 
+using \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} = std\+::vector$<$ glm\+::vec2 $>$
+\item 
+using \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} = std\+::vector$<$ glm\+::vec4 $>$
+\item 
+using \hyperlink{class_rendering_object_a45b53e911c2f0131aa10e89869d38944}{Tangent\+Array} = std\+::vector$<$ glm\+::vec3 $>$
+\item 
+using \hyperlink{class_rendering_object_a6c6bf305a5f0f9ce1006f374c753c856}{Bitangent\+Array} = std\+::vector$<$ glm\+::vec3 $>$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_rendering_object_ab5e3376ea0eb6290cdc55750a420b9d1}{Rendering\+Object} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} $>$ input\+Positions, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} $>$ input\+Indices=nullptr, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} $>$ input\+Normals=nullptr, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} $>$ input\+UV=nullptr, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} $>$ input\+Colors=nullptr, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a45b53e911c2f0131aa10e89869d38944}{Tangent\+Array} $>$ input\+Tangents=nullptr, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a6c6bf305a5f0f9ce1006f374c753c856}{Bitangent\+Array} $>$ input\+Bitangents=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{class_rendering_object}{Rendering\+Object} from a shader and all the possible vertex attributes. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_rendering_object_ae4e8e14104ee3a587d10c9f90ec82048}{$\sim$\+Rendering\+Object} ()
+\begin{DoxyCompactList}\small\item\em Just another deconstructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a22311d08bb7559f6b913afe314a5031e}{Set\+Shader} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader)
+\begin{DoxyCompactList}\small\item\em Sets the shader to be used to render this object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a878582ad56859856506a6d4c4be393e9}{Begin\+Render} () const
+\begin{DoxyCompactList}\small\item\em Prepares to the mesh object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_aee6affd69495adc61bae0e71433d353a}{Render} () const
+\begin{DoxyCompactList}\small\item\em Calls the appropriate draw function depending on whether or not an element buffer object is used. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_abc5f87208a9c918f3d281dd673cb5a24}{End\+Render} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the V\+AO and the E\+BO to cleanup the state. \end{DoxyCompactList}\item 
+void \hyperlink{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e}{Set\+Draw\+Mode} (G\+Lenum input\+Mode)
+\begin{DoxyCompactList}\small\item\em Sets what kind of primitives Open\+GL should interpret the data as. \end{DoxyCompactList}\item 
+G\+Lint \hyperlink{class_rendering_object_abe3637190e30c5483e9505743c75bcdb}{Get\+Shader\+Program} () const
+\begin{DoxyCompactList}\small\item\em Returns the Open\+GL identifier for the underlying shader program. \end{DoxyCompactList}\item 
+const class \hyperlink{class_shader_program}{Shader\+Program} $\ast$ \hyperlink{class_rendering_object_ab32a982b996ebaca66f4f8b9f4e548b2}{Get\+Shader\+Program\+Raw} () const
+\begin{DoxyCompactList}\small\item\em Returns a raw pointer to the underlying shader program. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{class_rendering_object_af83dd72431c620145b06d2e1bf7a9f3e}{Get\+Total\+Vertices} () const
+\begin{DoxyCompactList}\small\item\em Returns the total number of vertices. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061}{Set\+Vertex\+Positions} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} $>$ positions)
+\begin{DoxyCompactList}\small\item\em Sets the vertex positions array. Also updates the data stored in the vertex buffer object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a61ea597df0c456834eac8eb4087fb573}{Set\+Vertex\+Indices} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} $>$ indices)
+\begin{DoxyCompactList}\small\item\em Sets the vertex indices array. Also updates the data stored in the element buffer object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3}{Set\+Vertex\+Normals} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} $>$ normals)
+\begin{DoxyCompactList}\small\item\em Sets the vertex normal array. Also updates the data stored in the vertex buffer object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b}{Set\+Vertex\+UV} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} $>$ uv)
+\begin{DoxyCompactList}\small\item\em Sets the vertex UV array. Also updates the data stored in the vertex buffer object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201}{Set\+Vertex\+Colors} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} $>$ colors)
+\begin{DoxyCompactList}\small\item\em Sets the vertex color array. Also updates the data stored in the vertex buffer object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a041c99c6f0d570bb7c36b9d2168f0b0d}{Set\+Vertex\+Tangents} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a45b53e911c2f0131aa10e89869d38944}{Tangent\+Array} $>$ input)
+\item 
+virtual void \hyperlink{class_rendering_object_a095317dd60a7558c22409e2fabcb252e}{Set\+Vertex\+Bitangents} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a6c6bf305a5f0f9ce1006f374c753c856}{Bitangent\+Array} $>$ input)
+\item 
+virtual void \hyperlink{class_rendering_object_adec25796def807fd09a5fc4f1fbd0c41}{Compute\+Tangent\+Space} ()
+\item 
+virtual void \hyperlink{class_rendering_object_a761ad8574fc4424e12487512bb30067c}{Reverse\+Normals} ()
+\item 
+virtual void \hyperlink{class_rendering_object_a2f175770ceadac2fea979f191974665b}{Reverse\+Vertex\+Order} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805}{Initialize\+Open\+GL} ()
+\begin{DoxyCompactList}\small\item\em Prepares the rendering object for use by Open\+GL. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771}{Update\+Vertex\+Positions} ()
+\item 
+virtual void \hyperlink{class_rendering_object_afb49054121b1b552bce58625db91b851}{Update\+Vertex\+Indices} ()
+\item 
+virtual void \hyperlink{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190}{Update\+Vertex\+Normals} ()
+\item 
+virtual void \hyperlink{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6}{Update\+Vertex\+UV} ()
+\item 
+virtual void \hyperlink{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9}{Update\+Vertex\+Colors} ()
+\item 
+virtual void \hyperlink{class_rendering_object_a5b480a9b97cadfa07669902764139272}{Update\+Vertex\+Tangents} ()
+\item 
+virtual void \hyperlink{class_rendering_object_a594a50e9475057aaf21a0b05b33a5b16}{Update\+Vertex\+Bitangents} ()
+\item 
+virtual void \hyperlink{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85}{Cleanup\+Vertex\+Positions} ()
+\item 
+virtual void \hyperlink{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e}{Cleanup\+Vertex\+Indices} ()
+\item 
+virtual void \hyperlink{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1}{Cleanup\+Vertex\+Normals} ()
+\item 
+virtual void \hyperlink{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c}{Cleanup\+Vertex\+UV} ()
+\item 
+virtual void \hyperlink{class_rendering_object_adce4a6d6406eb589b088bedd19127f32}{Cleanup\+Vertex\+Colors} ()
+\item 
+virtual void \hyperlink{class_rendering_object_a0e6c8c9480f1c04202aa6d38a841f06f}{Cleanup\+Vertex\+Tangents} ()
+\item 
+virtual void \hyperlink{class_rendering_object_ae60c4f13ea817ffcb722d34250664c41}{Cleanup\+Vertex\+Bitangents} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ \hyperlink{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}{shader}
+\begin{DoxyCompactList}\small\item\em The shader program used to render the object. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_rendering_object_a473f623b39157288bef992e76ddc45a9}{vertex\+Position\+Buffer}
+\begin{DoxyCompactList}\small\item\em The buffer ID for the vertex position V\+BO as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} $>$ \hyperlink{class_rendering_object_a14721712672d0421ed72a394e3131da0}{vertex\+Positions}
+\begin{DoxyCompactList}\small\item\em The position of every vertex. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3}{vertex\+Index\+Buffer}
+\begin{DoxyCompactList}\small\item\em The buffer ID for the vertex index E\+BO as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} $>$ \hyperlink{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802}{vertex\+Indices}
+\begin{DoxyCompactList}\small\item\em The indices into the vertex array. This allows us to reuse vertices for multiple faces. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_rendering_object_a91649e3a653f2266cd00c718f10849f9}{vertex\+Normal\+Buffer}
+\begin{DoxyCompactList}\small\item\em The buffer ID for the vertex normal V\+BO as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} $>$ \hyperlink{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}{vertex\+Normals}
+\begin{DoxyCompactList}\small\item\em The normal of every vertex. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_rendering_object_a0eac563be6e35a3cc4409d43a2abaa04}{vertex\+Tangent\+Buffer}
+\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a45b53e911c2f0131aa10e89869d38944}{Tangent\+Array} $>$ \hyperlink{class_rendering_object_a7bca44786929dd3aca3d6ca1acc7597f}{vertex\+Tangents}
+\item 
+G\+Luint \hyperlink{class_rendering_object_a0c2f16211e989dd4d9d2ebbf7c027fb6}{vertex\+Bitangent\+Buffer}
+\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a6c6bf305a5f0f9ce1006f374c753c856}{Bitangent\+Array} $>$ \hyperlink{class_rendering_object_a3d0ab70c5a87e4cd7fff87f3ee927678}{vertex\+Bitangents}
+\item 
+G\+Luint \hyperlink{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25}{vertex\+U\+V\+Buffer}
+\begin{DoxyCompactList}\small\item\em The buffer ID for the vertex UV V\+BO as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} $>$ \hyperlink{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}{vertex\+UV}
+\begin{DoxyCompactList}\small\item\em The UV coordinate of every vertex. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad}{vertex\+Color\+Buffer}
+\begin{DoxyCompactList}\small\item\em The buffer ID for the vertex color V\+BO as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} $>$ \hyperlink{class_rendering_object_a65fc52e665791ce55e43106b603e917a}{vertex\+Colors}
+\begin{DoxyCompactList}\small\item\em The color of every vertex. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_rendering_object_a96dd05670a977a949514a2c490c1c867}{vao}
+\item 
+G\+Lenum \hyperlink{class_rendering_object_aa67856a72705b54a5667e91e270d00b3}{draw\+Mode}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static glm\+::vec3 \hyperlink{class_rendering_object_af270a476ba12c23fefbb034e21930add}{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+AL}
+\begin{DoxyCompactList}\small\item\em The default value sent to the shader if \hyperlink{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}{Rendering\+Object\+::vertex\+Normals} is not set. \end{DoxyCompactList}\item 
+static glm\+::vec2 \hyperlink{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588}{D\+E\+F\+A\+U\+L\+T\+\_\+\+UV}
+\begin{DoxyCompactList}\small\item\em The default value sent to the shader if \hyperlink{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}{Rendering\+Object\+::vertex\+UV} is not set. \end{DoxyCompactList}\item 
+static glm\+::vec4 \hyperlink{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+OR}
+\begin{DoxyCompactList}\small\item\em The default value sent to the shader if \hyperlink{class_rendering_object_a65fc52e665791ce55e43106b603e917a}{Rendering\+Object\+::vertex\+Colors} is not set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_rendering_object_a053e68759fe406779c6b6cfa080602bf}{Compute\+Tangent\+Space\+Helper} (glm\+::ivec3 triangle\+Vertex\+Indices, bool use\+Stored\+Normals, std\+::vector$<$ int $>$ \&averager)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the vertex data for a mesh. 
+
+This class allows us to easily reuse the same mesh data for multiple objects in the scene. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_rendering_object_a6c6bf305a5f0f9ce1006f374c753c856}{}\label{class_rendering_object_a6c6bf305a5f0f9ce1006f374c753c856} 
+\index{Rendering\+Object@{Rendering\+Object}!Bitangent\+Array@{Bitangent\+Array}}
+\index{Bitangent\+Array@{Bitangent\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Bitangent\+Array}{BitangentArray}}
+{\footnotesize\ttfamily using \hyperlink{class_rendering_object_a6c6bf305a5f0f9ce1006f374c753c856}{Rendering\+Object\+::\+Bitangent\+Array} =  std\+::vector$<$glm\+::vec3$>$}
+
+\hypertarget{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{}\label{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022} 
+\index{Rendering\+Object@{Rendering\+Object}!Color\+Array@{Color\+Array}}
+\index{Color\+Array@{Color\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Color\+Array}{ColorArray}}
+{\footnotesize\ttfamily using \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Rendering\+Object\+::\+Color\+Array} =  std\+::vector$<$glm\+::vec4$>$}
+
+\hypertarget{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{}\label{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1} 
+\index{Rendering\+Object@{Rendering\+Object}!Index\+Array@{Index\+Array}}
+\index{Index\+Array@{Index\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Index\+Array}{IndexArray}}
+{\footnotesize\ttfamily using \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Rendering\+Object\+::\+Index\+Array} =  std\+::vector$<$unsigned int$>$}
+
+\hypertarget{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{}\label{class_rendering_object_a327c4d892de8d6138fb59afa6d078257} 
+\index{Rendering\+Object@{Rendering\+Object}!Normal\+Array@{Normal\+Array}}
+\index{Normal\+Array@{Normal\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Normal\+Array}{NormalArray}}
+{\footnotesize\ttfamily using \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Rendering\+Object\+::\+Normal\+Array} =  std\+::vector$<$glm\+::vec3$>$}
+
+\hypertarget{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{}\label{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e} 
+\index{Rendering\+Object@{Rendering\+Object}!Position\+Array@{Position\+Array}}
+\index{Position\+Array@{Position\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Position\+Array}{PositionArray}}
+{\footnotesize\ttfamily using \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Rendering\+Object\+::\+Position\+Array} =  std\+::vector$<$glm\+::vec4$>$}
+
+\hypertarget{class_rendering_object_a45b53e911c2f0131aa10e89869d38944}{}\label{class_rendering_object_a45b53e911c2f0131aa10e89869d38944} 
+\index{Rendering\+Object@{Rendering\+Object}!Tangent\+Array@{Tangent\+Array}}
+\index{Tangent\+Array@{Tangent\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Tangent\+Array}{TangentArray}}
+{\footnotesize\ttfamily using \hyperlink{class_rendering_object_a45b53e911c2f0131aa10e89869d38944}{Rendering\+Object\+::\+Tangent\+Array} =  std\+::vector$<$glm\+::vec3$>$}
+
+\hypertarget{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{}\label{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a} 
+\index{Rendering\+Object@{Rendering\+Object}!U\+V\+Array@{U\+V\+Array}}
+\index{U\+V\+Array@{U\+V\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{U\+V\+Array}{UVArray}}
+{\footnotesize\ttfamily using \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{Rendering\+Object\+::\+U\+V\+Array} =  std\+::vector$<$glm\+::vec2$>$}
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}{}\label{class_rendering_object_ab772f569ef63a1db07db29a744b519ee} 
+\index{Rendering\+Object@{Rendering\+Object}!Vertex\+Attribute\+Positions@{Vertex\+Attribute\+Positions}}
+\index{Vertex\+Attribute\+Positions@{Vertex\+Attribute\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Vertex\+Attribute\+Positions}{VertexAttributePositions}}
+{\footnotesize\ttfamily enum \hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}{Rendering\+Object\+::\+Vertex\+Attribute\+Positions}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+This enum has its values corresponding to the layout location qualifer on the vertex attribute array. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Position@{Position}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!Position@{Position}}}\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eea52f5e0bc3859bc5f5e25130b6c7e8881}{}\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eea52f5e0bc3859bc5f5e25130b6c7e8881} 
+Position&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Normals@{Normals}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!Normals@{Normals}}}\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eea4ab971a51f0335cbf8d9c2c65d379e99}{}\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eea4ab971a51f0335cbf8d9c2c65d379e99} 
+Normals&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV@{UV}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!UV@{UV}}}\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eeadeaa2adbeb26802ae61609c3f3642d82}{}\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eeadeaa2adbeb26802ae61609c3f3642d82} 
+UV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Colors@{Colors}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!Colors@{Colors}}}\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eea5d50889672f6f860d14f502de3de1957}{}\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eea5d50889672f6f860d14f502de3de1957} 
+Colors&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Tangent@{Tangent}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!Tangent@{Tangent}}}\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eea541671cb1be09d76a84ba1a873ec3fc8}{}\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eea541671cb1be09d76a84ba1a873ec3fc8} 
+Tangent&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bitangent@{Bitangent}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!Bitangent@{Bitangent}}}\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eeae3e73a4b6e7cfd12008a35f6a051b319}{}\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eeae3e73a4b6e7cfd12008a35f6a051b319} 
+Bitangent&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_rendering_object_ab5e3376ea0eb6290cdc55750a420b9d1}{}\label{class_rendering_object_ab5e3376ea0eb6290cdc55750a420b9d1} 
+\index{Rendering\+Object@{Rendering\+Object}!Rendering\+Object@{Rendering\+Object}}
+\index{Rendering\+Object@{Rendering\+Object}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Rendering\+Object()}{RenderingObject()}}
+{\footnotesize\ttfamily Rendering\+Object\+::\+Rendering\+Object (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$}]{input\+Shader,  }\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} $>$}]{input\+Positions,  }\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} $>$}]{input\+Indices = {\ttfamily nullptr},  }\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} $>$}]{input\+Normals = {\ttfamily nullptr},  }\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} $>$}]{input\+UV = {\ttfamily nullptr},  }\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} $>$}]{input\+Colors = {\ttfamily nullptr},  }\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a45b53e911c2f0131aa10e89869d38944}{Tangent\+Array} $>$}]{input\+Tangents = {\ttfamily nullptr},  }\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a6c6bf305a5f0f9ce1006f374c753c856}{Bitangent\+Array} $>$}]{input\+Bitangents = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \hyperlink{class_rendering_object}{Rendering\+Object} from a shader and all the possible vertex attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Shader} & The shader that is to be used to render this object. Can be a nullptr and set later. \\
+\hline
+{\em input\+Positions} & The vertex positions. Should not be a null pointer (you can probably get away with it and set it later...). \\
+\hline
+{\em input\+Normals} & The vertex normals. Can be set later. \\
+\hline
+{\em input\+UV} & The vertex UV coordinates. Can be set later. \\
+\hline
+{\em input\+Colors} & The vertex colors. Can be set later.\\
+\hline
+\end{DoxyParams}
+Constructs a new object that holds the data necessary to render an object. Note that the ordering of the vertex attributes is the same regardless of whether or not the vertex attribute array is actually used by the shader. In other words, vertex UV\textquotesingle{}s will always be at location 2 regardless of whether the vertex normals are set and/or used. Once the \hyperlink{class_rendering_object}{Rendering\+Object} is created, the Open\+GL V\+BO\textquotesingle{}s and V\+AO\textquotesingle{}s will be constructed and all available data will be copied into the Open\+GL buffer. \hypertarget{class_rendering_object_ae4e8e14104ee3a587d10c9f90ec82048}{}\label{class_rendering_object_ae4e8e14104ee3a587d10c9f90ec82048} 
+\index{Rendering\+Object@{Rendering\+Object}!````~Rendering\+Object@{$\sim$\+Rendering\+Object}}
+\index{````~Rendering\+Object@{$\sim$\+Rendering\+Object}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{$\sim$\+Rendering\+Object()}{~RenderingObject()}}
+{\footnotesize\ttfamily Rendering\+Object\+::$\sim$\+Rendering\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Just another deconstructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_rendering_object_a878582ad56859856506a6d4c4be393e9}{}\label{class_rendering_object_a878582ad56859856506a6d4c4be393e9} 
+\index{Rendering\+Object@{Rendering\+Object}!Begin\+Render@{Begin\+Render}}
+\index{Begin\+Render@{Begin\+Render}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Begin\+Render()}{BeginRender()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Begin\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Prepares to the mesh object. 
+
+We bind the vertex array object using \href{https://www.opengl.org/sdk/docs/man/html/glBindVertexArray.xhtml}{\tt gl\+Bind\+Vertex\+Array} and the element buffer object so that Open\+GL knows what to render. \hypertarget{class_rendering_object_ae60c4f13ea817ffcb722d34250664c41}{}\label{class_rendering_object_ae60c4f13ea817ffcb722d34250664c41} 
+\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Bitangents@{Cleanup\+Vertex\+Bitangents}}
+\index{Cleanup\+Vertex\+Bitangents@{Cleanup\+Vertex\+Bitangents}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Cleanup\+Vertex\+Bitangents()}{CleanupVertexBitangents()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Cleanup\+Vertex\+Bitangents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_adce4a6d6406eb589b088bedd19127f32}{}\label{class_rendering_object_adce4a6d6406eb589b088bedd19127f32} 
+\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Colors@{Cleanup\+Vertex\+Colors}}
+\index{Cleanup\+Vertex\+Colors@{Cleanup\+Vertex\+Colors}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Cleanup\+Vertex\+Colors()}{CleanupVertexColors()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Cleanup\+Vertex\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e}{}\label{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e} 
+\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Indices@{Cleanup\+Vertex\+Indices}}
+\index{Cleanup\+Vertex\+Indices@{Cleanup\+Vertex\+Indices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Cleanup\+Vertex\+Indices()}{CleanupVertexIndices()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Cleanup\+Vertex\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1}{}\label{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1} 
+\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Normals@{Cleanup\+Vertex\+Normals}}
+\index{Cleanup\+Vertex\+Normals@{Cleanup\+Vertex\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Cleanup\+Vertex\+Normals()}{CleanupVertexNormals()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Cleanup\+Vertex\+Normals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85}{}\label{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85} 
+\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Positions@{Cleanup\+Vertex\+Positions}}
+\index{Cleanup\+Vertex\+Positions@{Cleanup\+Vertex\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Cleanup\+Vertex\+Positions()}{CleanupVertexPositions()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Cleanup\+Vertex\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_a0e6c8c9480f1c04202aa6d38a841f06f}{}\label{class_rendering_object_a0e6c8c9480f1c04202aa6d38a841f06f} 
+\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Tangents@{Cleanup\+Vertex\+Tangents}}
+\index{Cleanup\+Vertex\+Tangents@{Cleanup\+Vertex\+Tangents}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Cleanup\+Vertex\+Tangents()}{CleanupVertexTangents()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Cleanup\+Vertex\+Tangents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c}{}\label{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c} 
+\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+UV@{Cleanup\+Vertex\+UV}}
+\index{Cleanup\+Vertex\+UV@{Cleanup\+Vertex\+UV}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Cleanup\+Vertex\+U\+V()}{CleanupVertexUV()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Cleanup\+Vertex\+UV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_adec25796def807fd09a5fc4f1fbd0c41}{}\label{class_rendering_object_adec25796def807fd09a5fc4f1fbd0c41} 
+\index{Rendering\+Object@{Rendering\+Object}!Compute\+Tangent\+Space@{Compute\+Tangent\+Space}}
+\index{Compute\+Tangent\+Space@{Compute\+Tangent\+Space}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Compute\+Tangent\+Space()}{ComputeTangentSpace()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Compute\+Tangent\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_a053e68759fe406779c6b6cfa080602bf}{}\label{class_rendering_object_a053e68759fe406779c6b6cfa080602bf} 
+\index{Rendering\+Object@{Rendering\+Object}!Compute\+Tangent\+Space\+Helper@{Compute\+Tangent\+Space\+Helper}}
+\index{Compute\+Tangent\+Space\+Helper@{Compute\+Tangent\+Space\+Helper}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Compute\+Tangent\+Space\+Helper()}{ComputeTangentSpaceHelper()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Compute\+Tangent\+Space\+Helper (\begin{DoxyParamCaption}\item[{glm\+::ivec3}]{triangle\+Vertex\+Indices,  }\item[{bool}]{use\+Stored\+Normals,  }\item[{std\+::vector$<$ int $>$ \&}]{averager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_abc5f87208a9c918f3d281dd673cb5a24}{}\label{class_rendering_object_abc5f87208a9c918f3d281dd673cb5a24} 
+\index{Rendering\+Object@{Rendering\+Object}!End\+Render@{End\+Render}}
+\index{End\+Render@{End\+Render}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{End\+Render()}{EndRender()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+End\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Unbinds the V\+AO and the E\+BO to cleanup the state. 
+
+\hypertarget{class_rendering_object_abe3637190e30c5483e9505743c75bcdb}{}\label{class_rendering_object_abe3637190e30c5483e9505743c75bcdb} 
+\index{Rendering\+Object@{Rendering\+Object}!Get\+Shader\+Program@{Get\+Shader\+Program}}
+\index{Get\+Shader\+Program@{Get\+Shader\+Program}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Get\+Shader\+Program()}{GetShaderProgram()}}
+{\footnotesize\ttfamily G\+Lint Rendering\+Object\+::\+Get\+Shader\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the Open\+GL identifier for the underlying shader program. 
+
+\begin{DoxyReturn}{Returns}
+Returns the value that was generated by \href{https://www.opengl.org/sdk/docs/man/html/glCreateProgram.xhtml}{\tt gl\+Create\+Program} for the underlying shader program. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+If \hyperlink{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}{Rendering\+Object\+::shader} is not set to a non-\/null pointer, this function\textquotesingle{}s action is undefined. 
+\end{DoxyWarning}
+\hypertarget{class_rendering_object_ab32a982b996ebaca66f4f8b9f4e548b2}{}\label{class_rendering_object_ab32a982b996ebaca66f4f8b9f4e548b2} 
+\index{Rendering\+Object@{Rendering\+Object}!Get\+Shader\+Program\+Raw@{Get\+Shader\+Program\+Raw}}
+\index{Get\+Shader\+Program\+Raw@{Get\+Shader\+Program\+Raw}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Get\+Shader\+Program\+Raw()}{GetShaderProgramRaw()}}
+{\footnotesize\ttfamily const \hyperlink{class_shader_program}{Shader\+Program} $\ast$ Rendering\+Object\+::\+Get\+Shader\+Program\+Raw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a raw pointer to the underlying shader program. 
+
+\begin{DoxyReturn}{Returns}
+Returns a raw pointer to the underlying shader program. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+If \hyperlink{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}{Rendering\+Object\+::shader} is not set to a non-\/null pointer, this function\textquotesingle{}s action is undefined. 
+
+Do not store the \hyperlink{class_shader_program}{Shader\+Program} pointer anywhere. You may be left with a dangling pointer at some point. 
+\end{DoxyWarning}
+\hypertarget{class_rendering_object_af83dd72431c620145b06d2e1bf7a9f3e}{}\label{class_rendering_object_af83dd72431c620145b06d2e1bf7a9f3e} 
+\index{Rendering\+Object@{Rendering\+Object}!Get\+Total\+Vertices@{Get\+Total\+Vertices}}
+\index{Get\+Total\+Vertices@{Get\+Total\+Vertices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Get\+Total\+Vertices()}{GetTotalVertices()}}
+{\footnotesize\ttfamily size\+\_\+t Rendering\+Object\+::\+Get\+Total\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the total number of vertices. 
+
+\begin{DoxyReturn}{Returns}
+Returns the total number of vertices. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The vertex position array must be set before this is called. 
+\end{DoxyWarning}
+\hypertarget{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805}{}\label{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805} 
+\index{Rendering\+Object@{Rendering\+Object}!Initialize\+Open\+GL@{Initialize\+Open\+GL}}
+\index{Initialize\+Open\+GL@{Initialize\+Open\+GL}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Initialize\+Open\+G\+L()}{InitializeOpenGL()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Initialize\+Open\+GL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Prepares the rendering object for use by Open\+GL. 
+
+This function calls all of the Update\+Vertex functions. Additionally, it generates the vertex array object. Note that this function should only be called once. \hypertarget{class_rendering_object_aee6affd69495adc61bae0e71433d353a}{}\label{class_rendering_object_aee6affd69495adc61bae0e71433d353a} 
+\index{Rendering\+Object@{Rendering\+Object}!Render@{Render}}
+\index{Render@{Render}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calls the appropriate draw function depending on whether or not an element buffer object is used. 
+
+Should an element buffer object exist, the right function to call is \href{https://www.opengl.org/sdk/docs/man/html/glDrawElements.xhtml}{\tt gl\+Draw\+Elements} which will utilize the index data. Otherwise, we will call \href{https://www.opengl.org/sdk/docs/man/html/glDrawArrays.xhtml}{\tt gl\+Draw\+Arrays}. This function will step through N vertices at a time and use those N vertices (in order) as the primitive to render. For example, if we are drawing triangles, then it will go through three vertices at a time to render a triangle. \hypertarget{class_rendering_object_a761ad8574fc4424e12487512bb30067c}{}\label{class_rendering_object_a761ad8574fc4424e12487512bb30067c} 
+\index{Rendering\+Object@{Rendering\+Object}!Reverse\+Normals@{Reverse\+Normals}}
+\index{Reverse\+Normals@{Reverse\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Reverse\+Normals()}{ReverseNormals()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Reverse\+Normals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_a2f175770ceadac2fea979f191974665b}{}\label{class_rendering_object_a2f175770ceadac2fea979f191974665b} 
+\index{Rendering\+Object@{Rendering\+Object}!Reverse\+Vertex\+Order@{Reverse\+Vertex\+Order}}
+\index{Reverse\+Vertex\+Order@{Reverse\+Vertex\+Order}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Reverse\+Vertex\+Order()}{ReverseVertexOrder()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Reverse\+Vertex\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e}{}\label{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e} 
+\index{Rendering\+Object@{Rendering\+Object}!Set\+Draw\+Mode@{Set\+Draw\+Mode}}
+\index{Set\+Draw\+Mode@{Set\+Draw\+Mode}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Set\+Draw\+Mode()}{SetDrawMode()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Set\+Draw\+Mode (\begin{DoxyParamCaption}\item[{G\+Lenum}]{input\+Mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets what kind of primitives Open\+GL should interpret the data as. 
+
+See the \href{https://www.opengl.org/sdk/docs/man/html/glDrawArrays.xhtml}{\tt gl\+Draw\+Arrays} documentation for its \textquotesingle{}mode\textquotesingle{} parameter to see what values are valid. \hypertarget{class_rendering_object_a22311d08bb7559f6b913afe314a5031e}{}\label{class_rendering_object_a22311d08bb7559f6b913afe314a5031e} 
+\index{Rendering\+Object@{Rendering\+Object}!Set\+Shader@{Set\+Shader}}
+\index{Set\+Shader@{Set\+Shader}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Set\+Shader()}{SetShader()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Set\+Shader (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$}]{input\+Shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the shader to be used to render this object. 
+
+Note that changing the shader for the rendering object will change the shader for A\+LL scene objects that use this rendering object. This function only modifies the \textquotesingle{}shader\textquotesingle{} member variable. \hypertarget{class_rendering_object_a095317dd60a7558c22409e2fabcb252e}{}\label{class_rendering_object_a095317dd60a7558c22409e2fabcb252e} 
+\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Bitangents@{Set\+Vertex\+Bitangents}}
+\index{Set\+Vertex\+Bitangents@{Set\+Vertex\+Bitangents}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Set\+Vertex\+Bitangents()}{SetVertexBitangents()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Set\+Vertex\+Bitangents (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a6c6bf305a5f0f9ce1006f374c753c856}{Bitangent\+Array} $>$}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201}{}\label{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201} 
+\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Colors@{Set\+Vertex\+Colors}}
+\index{Set\+Vertex\+Colors@{Set\+Vertex\+Colors}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Set\+Vertex\+Colors()}{SetVertexColors()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Set\+Vertex\+Colors (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} $>$}]{colors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the vertex color array. Also updates the data stored in the vertex buffer object. 
+
+\hypertarget{class_rendering_object_a61ea597df0c456834eac8eb4087fb573}{}\label{class_rendering_object_a61ea597df0c456834eac8eb4087fb573} 
+\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Indices@{Set\+Vertex\+Indices}}
+\index{Set\+Vertex\+Indices@{Set\+Vertex\+Indices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Set\+Vertex\+Indices()}{SetVertexIndices()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Set\+Vertex\+Indices (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} $>$}]{indices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the vertex indices array. Also updates the data stored in the element buffer object. 
+
+\hypertarget{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3}{}\label{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3} 
+\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Normals@{Set\+Vertex\+Normals}}
+\index{Set\+Vertex\+Normals@{Set\+Vertex\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Set\+Vertex\+Normals()}{SetVertexNormals()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Set\+Vertex\+Normals (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} $>$}]{normals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the vertex normal array. Also updates the data stored in the vertex buffer object. 
+
+\hypertarget{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061}{}\label{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061} 
+\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Positions@{Set\+Vertex\+Positions}}
+\index{Set\+Vertex\+Positions@{Set\+Vertex\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Set\+Vertex\+Positions()}{SetVertexPositions()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Set\+Vertex\+Positions (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} $>$}]{positions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the vertex positions array. Also updates the data stored in the vertex buffer object. 
+
+\hypertarget{class_rendering_object_a041c99c6f0d570bb7c36b9d2168f0b0d}{}\label{class_rendering_object_a041c99c6f0d570bb7c36b9d2168f0b0d} 
+\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Tangents@{Set\+Vertex\+Tangents}}
+\index{Set\+Vertex\+Tangents@{Set\+Vertex\+Tangents}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Set\+Vertex\+Tangents()}{SetVertexTangents()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Set\+Vertex\+Tangents (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a45b53e911c2f0131aa10e89869d38944}{Tangent\+Array} $>$}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b}{}\label{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b} 
+\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+UV@{Set\+Vertex\+UV}}
+\index{Set\+Vertex\+UV@{Set\+Vertex\+UV}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Set\+Vertex\+U\+V()}{SetVertexUV()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Set\+Vertex\+UV (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} $>$}]{uv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the vertex UV array. Also updates the data stored in the vertex buffer object. 
+
+\hypertarget{class_rendering_object_a594a50e9475057aaf21a0b05b33a5b16}{}\label{class_rendering_object_a594a50e9475057aaf21a0b05b33a5b16} 
+\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Bitangents@{Update\+Vertex\+Bitangents}}
+\index{Update\+Vertex\+Bitangents@{Update\+Vertex\+Bitangents}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Update\+Vertex\+Bitangents()}{UpdateVertexBitangents()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Update\+Vertex\+Bitangents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9}{}\label{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9} 
+\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Colors@{Update\+Vertex\+Colors}}
+\index{Update\+Vertex\+Colors@{Update\+Vertex\+Colors}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Update\+Vertex\+Colors()}{UpdateVertexColors()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Update\+Vertex\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_afb49054121b1b552bce58625db91b851}{}\label{class_rendering_object_afb49054121b1b552bce58625db91b851} 
+\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Indices@{Update\+Vertex\+Indices}}
+\index{Update\+Vertex\+Indices@{Update\+Vertex\+Indices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Update\+Vertex\+Indices()}{UpdateVertexIndices()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Update\+Vertex\+Indices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190}{}\label{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190} 
+\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Normals@{Update\+Vertex\+Normals}}
+\index{Update\+Vertex\+Normals@{Update\+Vertex\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Update\+Vertex\+Normals()}{UpdateVertexNormals()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Update\+Vertex\+Normals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771}{}\label{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771} 
+\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Positions@{Update\+Vertex\+Positions}}
+\index{Update\+Vertex\+Positions@{Update\+Vertex\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Update\+Vertex\+Positions()}{UpdateVertexPositions()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Update\+Vertex\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_a5b480a9b97cadfa07669902764139272}{}\label{class_rendering_object_a5b480a9b97cadfa07669902764139272} 
+\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Tangents@{Update\+Vertex\+Tangents}}
+\index{Update\+Vertex\+Tangents@{Update\+Vertex\+Tangents}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Update\+Vertex\+Tangents()}{UpdateVertexTangents()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Update\+Vertex\+Tangents (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6}{}\label{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6} 
+\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+UV@{Update\+Vertex\+UV}}
+\index{Update\+Vertex\+UV@{Update\+Vertex\+UV}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{Update\+Vertex\+U\+V()}{UpdateVertexUV()}}
+{\footnotesize\ttfamily void Rendering\+Object\+::\+Update\+Vertex\+UV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9}{}\label{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9} 
+\index{Rendering\+Object@{Rendering\+Object}!D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+OR@{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+OR}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+OR@{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+OR}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+OR}{DEFAULT\_COLOR}}
+{\footnotesize\ttfamily glm\+::vec4 Rendering\+Object\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+OR\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The default value sent to the shader if \hyperlink{class_rendering_object_a65fc52e665791ce55e43106b603e917a}{Rendering\+Object\+::vertex\+Colors} is not set. 
+
+The \href{https://www.opengl.org/sdk/docs/man/html/glVertexAttrib.xhtml}{\tt gl\+Vertex\+Attrib} function is used to set the default value. \hypertarget{class_rendering_object_af270a476ba12c23fefbb034e21930add}{}\label{class_rendering_object_af270a476ba12c23fefbb034e21930add} 
+\index{Rendering\+Object@{Rendering\+Object}!D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+AL@{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+AL}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+AL@{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+AL}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+AL}{DEFAULT\_NORMAL}}
+{\footnotesize\ttfamily glm\+::vec3 Rendering\+Object\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+AL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The default value sent to the shader if \hyperlink{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}{Rendering\+Object\+::vertex\+Normals} is not set. 
+
+The \href{https://www.opengl.org/sdk/docs/man/html/glVertexAttrib.xhtml}{\tt gl\+Vertex\+Attrib} function is used to set the default value. \hypertarget{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588}{}\label{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588} 
+\index{Rendering\+Object@{Rendering\+Object}!D\+E\+F\+A\+U\+L\+T\+\_\+\+UV@{D\+E\+F\+A\+U\+L\+T\+\_\+\+UV}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+UV@{D\+E\+F\+A\+U\+L\+T\+\_\+\+UV}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+UV}{DEFAULT\_UV}}
+{\footnotesize\ttfamily glm\+::vec2 Rendering\+Object\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+UV\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The default value sent to the shader if \hyperlink{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}{Rendering\+Object\+::vertex\+UV} is not set. 
+
+The \href{https://www.opengl.org/sdk/docs/man/html/glVertexAttrib.xhtml}{\tt gl\+Vertex\+Attrib} function is used to set the default value. \hypertarget{class_rendering_object_aa67856a72705b54a5667e91e270d00b3}{}\label{class_rendering_object_aa67856a72705b54a5667e91e270d00b3} 
+\index{Rendering\+Object@{Rendering\+Object}!draw\+Mode@{draw\+Mode}}
+\index{draw\+Mode@{draw\+Mode}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{draw\+Mode}{drawMode}}
+{\footnotesize\ttfamily G\+Lenum Rendering\+Object\+::draw\+Mode\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}{}\label{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e} 
+\index{Rendering\+Object@{Rendering\+Object}!shader@{shader}}
+\index{shader@{shader}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{shader}{shader}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$class \hyperlink{class_shader_program}{Shader\+Program}$>$ Rendering\+Object\+::shader\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The shader program used to render the object. 
+
+This should be set on construction or set later. However, this should be set before the \hyperlink{class_rendering_object}{Rendering\+Object} is rendered. \hypertarget{class_rendering_object_a96dd05670a977a949514a2c490c1c867}{}\label{class_rendering_object_a96dd05670a977a949514a2c490c1c867} 
+\index{Rendering\+Object@{Rendering\+Object}!vao@{vao}}
+\index{vao@{vao}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vao}{vao}}
+{\footnotesize\ttfamily G\+Luint Rendering\+Object\+::vao\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_rendering_object_a0c2f16211e989dd4d9d2ebbf7c027fb6}{}\label{class_rendering_object_a0c2f16211e989dd4d9d2ebbf7c027fb6} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+Bitangent\+Buffer@{vertex\+Bitangent\+Buffer}}
+\index{vertex\+Bitangent\+Buffer@{vertex\+Bitangent\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+Bitangent\+Buffer}{vertexBitangentBuffer}}
+{\footnotesize\ttfamily G\+Luint Rendering\+Object\+::vertex\+Bitangent\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_rendering_object_a3d0ab70c5a87e4cd7fff87f3ee927678}{}\label{class_rendering_object_a3d0ab70c5a87e4cd7fff87f3ee927678} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+Bitangents@{vertex\+Bitangents}}
+\index{vertex\+Bitangents@{vertex\+Bitangents}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+Bitangents}{vertexBitangents}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\hyperlink{class_rendering_object_a6c6bf305a5f0f9ce1006f374c753c856}{Bitangent\+Array}$>$ Rendering\+Object\+::vertex\+Bitangents\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad}{}\label{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+Color\+Buffer@{vertex\+Color\+Buffer}}
+\index{vertex\+Color\+Buffer@{vertex\+Color\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+Color\+Buffer}{vertexColorBuffer}}
+{\footnotesize\ttfamily G\+Luint Rendering\+Object\+::vertex\+Color\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The buffer ID for the vertex color V\+BO as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. 
+
+\hypertarget{class_rendering_object_a65fc52e665791ce55e43106b603e917a}{}\label{class_rendering_object_a65fc52e665791ce55e43106b603e917a} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+Colors@{vertex\+Colors}}
+\index{vertex\+Colors@{vertex\+Colors}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+Colors}{vertexColors}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array}$>$ Rendering\+Object\+::vertex\+Colors\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The color of every vertex. 
+
+\hypertarget{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3}{}\label{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+Index\+Buffer@{vertex\+Index\+Buffer}}
+\index{vertex\+Index\+Buffer@{vertex\+Index\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+Index\+Buffer}{vertexIndexBuffer}}
+{\footnotesize\ttfamily G\+Luint Rendering\+Object\+::vertex\+Index\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The buffer ID for the vertex index E\+BO as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. 
+
+\hypertarget{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802}{}\label{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+Indices@{vertex\+Indices}}
+\index{vertex\+Indices@{vertex\+Indices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+Indices}{vertexIndices}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array}$>$ Rendering\+Object\+::vertex\+Indices\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The indices into the vertex array. This allows us to reuse vertices for multiple faces. 
+
+\hypertarget{class_rendering_object_a91649e3a653f2266cd00c718f10849f9}{}\label{class_rendering_object_a91649e3a653f2266cd00c718f10849f9} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+Normal\+Buffer@{vertex\+Normal\+Buffer}}
+\index{vertex\+Normal\+Buffer@{vertex\+Normal\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+Normal\+Buffer}{vertexNormalBuffer}}
+{\footnotesize\ttfamily G\+Luint Rendering\+Object\+::vertex\+Normal\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The buffer ID for the vertex normal V\+BO as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. 
+
+\hypertarget{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}{}\label{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+Normals@{vertex\+Normals}}
+\index{vertex\+Normals@{vertex\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+Normals}{vertexNormals}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array}$>$ Rendering\+Object\+::vertex\+Normals\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The normal of every vertex. 
+
+\hypertarget{class_rendering_object_a473f623b39157288bef992e76ddc45a9}{}\label{class_rendering_object_a473f623b39157288bef992e76ddc45a9} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+Position\+Buffer@{vertex\+Position\+Buffer}}
+\index{vertex\+Position\+Buffer@{vertex\+Position\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+Position\+Buffer}{vertexPositionBuffer}}
+{\footnotesize\ttfamily G\+Luint Rendering\+Object\+::vertex\+Position\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The buffer ID for the vertex position V\+BO as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. 
+
+\hypertarget{class_rendering_object_a14721712672d0421ed72a394e3131da0}{}\label{class_rendering_object_a14721712672d0421ed72a394e3131da0} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+Positions@{vertex\+Positions}}
+\index{vertex\+Positions@{vertex\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+Positions}{vertexPositions}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array}$>$ Rendering\+Object\+::vertex\+Positions\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The position of every vertex. 
+
+\hypertarget{class_rendering_object_a0eac563be6e35a3cc4409d43a2abaa04}{}\label{class_rendering_object_a0eac563be6e35a3cc4409d43a2abaa04} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+Tangent\+Buffer@{vertex\+Tangent\+Buffer}}
+\index{vertex\+Tangent\+Buffer@{vertex\+Tangent\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+Tangent\+Buffer}{vertexTangentBuffer}}
+{\footnotesize\ttfamily G\+Luint Rendering\+Object\+::vertex\+Tangent\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_rendering_object_a7bca44786929dd3aca3d6ca1acc7597f}{}\label{class_rendering_object_a7bca44786929dd3aca3d6ca1acc7597f} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+Tangents@{vertex\+Tangents}}
+\index{vertex\+Tangents@{vertex\+Tangents}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+Tangents}{vertexTangents}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\hyperlink{class_rendering_object_a45b53e911c2f0131aa10e89869d38944}{Tangent\+Array}$>$ Rendering\+Object\+::vertex\+Tangents\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}{}\label{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+UV@{vertex\+UV}}
+\index{vertex\+UV@{vertex\+UV}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+UV}{vertexUV}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array}$>$ Rendering\+Object\+::vertex\+UV\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The UV coordinate of every vertex. 
+
+\hypertarget{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25}{}\label{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25} 
+\index{Rendering\+Object@{Rendering\+Object}!vertex\+U\+V\+Buffer@{vertex\+U\+V\+Buffer}}
+\index{vertex\+U\+V\+Buffer@{vertex\+U\+V\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection{\texorpdfstring{vertex\+U\+V\+Buffer}{vertexUVBuffer}}
+{\footnotesize\ttfamily G\+Luint Rendering\+Object\+::vertex\+U\+V\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The buffer ID for the vertex UV V\+BO as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\hyperlink{_rendering_object_8h}{Rendering\+Object.\+h}\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\hyperlink{_rendering_object_8cpp}{Rendering\+Object.\+cpp}\end{DoxyCompactItemize}

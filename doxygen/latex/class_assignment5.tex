@@ -1,0 +1,201 @@
+\hypertarget{class_assignment5}{}\section{Assignment5 Class Reference}
+\label{class_assignment5}\index{Assignment5@{Assignment5}}
+
+
+{\ttfamily \#include $<$Assignment5.\+h$>$}
+
+Inheritance diagram for Assignment5\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_assignment5}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_assignment5_aee966f6188c377fd831e6edb97d1ee08}{Assignment5} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)
+\item 
+virtual glm\+::vec2 \hyperlink{class_assignment5_ac199b6149ffa3dbedc7e0d49bb24c628}{Get\+Window\+Size} () const
+\begin{DoxyCompactList}\small\item\em Specifies the initial window size. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_assignment5_aab8f8440144665db9aafd7ca1cf55cff}{Handle\+Input} (S\+D\+L\+\_\+\+Keysym key, Uint32 state, Uint8 repeat, double timestamp, double delta\+Time)
+\begin{DoxyCompactList}\small\item\em Processes an S\+DL keyboard event which has type \href{https://wiki.libsdl.org/SDL_KeyboardEvent}{\tt S\+D\+L\+\_\+\+Keyboard\+Event}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_assignment5_a34cdf7bc962c3a0e3959c77a24c54d79}{Tick} (double delta\+Time)
+\begin{DoxyCompactList}\small\item\em Called every frame to advance program logic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ \hyperlink{class_assignment5_a1b720b74cc23d4f64ced6d2867f2ac63}{Create\+Application} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_application_a88c6615107a5094bb93fa5f153f79554}{scene}, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_application_a0e8589fcb13c520ba472473abe5a518d}{camera})
+\item 
+static std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_assignment5_af80167ddbf48815460a463fc704eb2ce}{Create\+Camera} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_assignment5_a0e7325af72d41b95f9a19ebe1440e756}{Handle\+Window\+Resize} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a74d92db64e051efa56d0357989dcb755}{Handle\+Window\+Event()} when the window is resized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_assignment5_a43328e09e6241ae6c62a9b7be7659b3b}{Setup\+Scene} ()
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to populate the scene. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_assignment5_ad2a3f3271ee7aa69dec95ccf7a95f224}{Setup\+Example1} ()
+\item 
+virtual void \hyperlink{class_assignment5_ad8bde7598ac25e86667a2b0cb45ef399}{Setup\+Example2} ()
+\item 
+virtual void \hyperlink{class_assignment5_a0c49123e133adfb36c769c943eae42fa}{Setup\+Camera} ()
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to setup the camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_assignment5_aee966f6188c377fd831e6edb97d1ee08}{}\label{class_assignment5_aee966f6188c377fd831e6edb97d1ee08} 
+\index{Assignment5@{Assignment5}!Assignment5@{Assignment5}}
+\index{Assignment5@{Assignment5}!Assignment5@{Assignment5}}
+\subsubsection{\texorpdfstring{Assignment5()}{Assignment5()}}
+{\footnotesize\ttfamily Assignment5\+::\+Assignment5 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$}]{input\+Scene,  }\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$}]{input\+Camera }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_assignment5_a1b720b74cc23d4f64ced6d2867f2ac63}{}\label{class_assignment5_a1b720b74cc23d4f64ced6d2867f2ac63} 
+\index{Assignment5@{Assignment5}!Create\+Application@{Create\+Application}}
+\index{Create\+Application@{Create\+Application}!Assignment5@{Assignment5}}
+\subsubsection{\texorpdfstring{Create\+Application()}{CreateApplication()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ Assignment5\+::\+Create\+Application (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$}]{scene,  }\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\hypertarget{class_assignment5_af80167ddbf48815460a463fc704eb2ce}{}\label{class_assignment5_af80167ddbf48815460a463fc704eb2ce} 
+\index{Assignment5@{Assignment5}!Create\+Camera@{Create\+Camera}}
+\index{Create\+Camera@{Create\+Camera}!Assignment5@{Assignment5}}
+\subsubsection{\texorpdfstring{Create\+Camera()}{CreateCamera()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ Assignment5\+::\+Create\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\hypertarget{class_assignment5_ac199b6149ffa3dbedc7e0d49bb24c628}{}\label{class_assignment5_ac199b6149ffa3dbedc7e0d49bb24c628} 
+\index{Assignment5@{Assignment5}!Get\+Window\+Size@{Get\+Window\+Size}}
+\index{Get\+Window\+Size@{Get\+Window\+Size}!Assignment5@{Assignment5}}
+\subsubsection{\texorpdfstring{Get\+Window\+Size()}{GetWindowSize()}}
+{\footnotesize\ttfamily glm\+::vec2 Assignment5\+::\+Get\+Window\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Specifies the initial window size. 
+
+\begin{DoxyReturn}{Returns}
+The desired window size. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_application_ab190ae0e987fe95682714dd4b2495e82}{Application}.
+
+\hypertarget{class_assignment5_aab8f8440144665db9aafd7ca1cf55cff}{}\label{class_assignment5_aab8f8440144665db9aafd7ca1cf55cff} 
+\index{Assignment5@{Assignment5}!Handle\+Input@{Handle\+Input}}
+\index{Handle\+Input@{Handle\+Input}!Assignment5@{Assignment5}}
+\subsubsection{\texorpdfstring{Handle\+Input()}{HandleInput()}}
+{\footnotesize\ttfamily void Assignment5\+::\+Handle\+Input (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Keysym}]{key,  }\item[{Uint32}]{state,  }\item[{Uint8}]{repeat,  }\item[{double}]{timestamp,  }\item[{double}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Processes an S\+DL keyboard event which has type \href{https://wiki.libsdl.org/SDL_KeyboardEvent}{\tt S\+D\+L\+\_\+\+Keyboard\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & See the S\+DL documentation for more details about \href{https://wiki.libsdl.org/SDL_Keysym}{\tt S\+D\+L\+\_\+\+Keysym}. \\
+\hline
+{\em state} & This is the type field in the \href{https://wiki.libsdl.org/SDL_Event}{\tt S\+D\+L\+\_\+\+Event}datastructure. \\
+\hline
+{\em repeat} & This value is non-\/zero is the key is being repeated. \\
+\hline
+{\em timestamp} & Timestamp is the number of seconds since the program was first started. \\
+\hline
+{\em delta\+Time} & The amount of time (in seconds) since the last tick.\\
+\hline
+\end{DoxyParams}
+Takes in a keyboard event and process it. This does nothing by default. \textquotesingle{}delta\+Time\textquotesingle{} is included to allow you to move something and have the movement look smooth. For example, if you have an object that you want to move forward whenever \textquotesingle{}W\textquotesingle{} is pressed. You know that the object travels at 10 meters per second when \textquotesingle{}W\textquotesingle{} is pressed and 0 meters per second when it is not. How far should you move the object? You would want to move it forward by $10 \cdot deltaTime $ units. 
+
+Reimplemented from \hyperlink{class_application_ae6074c3f102de1cb2fe4c81b545679db}{Application}.
+
+\hypertarget{class_assignment5_a0e7325af72d41b95f9a19ebe1440e756}{}\label{class_assignment5_a0e7325af72d41b95f9a19ebe1440e756} 
+\index{Assignment5@{Assignment5}!Handle\+Window\+Resize@{Handle\+Window\+Resize}}
+\index{Handle\+Window\+Resize@{Handle\+Window\+Resize}!Assignment5@{Assignment5}}
+\subsubsection{\texorpdfstring{Handle\+Window\+Resize()}{HandleWindowResize()}}
+{\footnotesize\ttfamily void Assignment5\+::\+Handle\+Window\+Resize (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called by \hyperlink{class_application_a74d92db64e051efa56d0357989dcb755}{Handle\+Window\+Event()} when the window is resized. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The width of the window. \\
+\hline
+{\em y} & The height of the window.\\
+\hline
+\end{DoxyParams}
+By default calls, \href{https://www.opengl.org/sdk/docs/man/html/glViewport.xhtml}{\tt gl\+Viewport} to resize the viewport as necessary. If any part of your application depends on the window resize, you will want to take care of it in this function! (Hint for the O\+P\+T\+I\+O\+N\+AL deferred rendering task in assignment 2\+: your \textquotesingle{}G-\/\+Buffers\textquotesingle{} should be resized). 
+
+Reimplemented from \hyperlink{class_application_abdba284a0f075ee1d4a2108c3a5236a2}{Application}.
+
+\hypertarget{class_assignment5_a0c49123e133adfb36c769c943eae42fa}{}\label{class_assignment5_a0c49123e133adfb36c769c943eae42fa} 
+\index{Assignment5@{Assignment5}!Setup\+Camera@{Setup\+Camera}}
+\index{Setup\+Camera@{Setup\+Camera}!Assignment5@{Assignment5}}
+\subsubsection{\texorpdfstring{Setup\+Camera()}{SetupCamera()}}
+{\footnotesize\ttfamily void Assignment5\+::\+Setup\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to setup the camera. 
+
+Note by the time this function is called, the \hyperlink{class_application}{Application} sub-\/class is fully constructed and \hyperlink{class_camera}{Camera} object is already created. 
+
+Reimplemented from \hyperlink{class_application_a2eb61ca027f223a5c5ad1bf982481193}{Application}.
+
+\hypertarget{class_assignment5_ad2a3f3271ee7aa69dec95ccf7a95f224}{}\label{class_assignment5_ad2a3f3271ee7aa69dec95ccf7a95f224} 
+\index{Assignment5@{Assignment5}!Setup\+Example1@{Setup\+Example1}}
+\index{Setup\+Example1@{Setup\+Example1}!Assignment5@{Assignment5}}
+\subsubsection{\texorpdfstring{Setup\+Example1()}{SetupExample1()}}
+{\footnotesize\ttfamily void Assignment5\+::\+Setup\+Example1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_assignment5_ad8bde7598ac25e86667a2b0cb45ef399}{}\label{class_assignment5_ad8bde7598ac25e86667a2b0cb45ef399} 
+\index{Assignment5@{Assignment5}!Setup\+Example2@{Setup\+Example2}}
+\index{Setup\+Example2@{Setup\+Example2}!Assignment5@{Assignment5}}
+\subsubsection{\texorpdfstring{Setup\+Example2()}{SetupExample2()}}
+{\footnotesize\ttfamily void Assignment5\+::\+Setup\+Example2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_assignment5_a43328e09e6241ae6c62a9b7be7659b3b}{}\label{class_assignment5_a43328e09e6241ae6c62a9b7be7659b3b} 
+\index{Assignment5@{Assignment5}!Setup\+Scene@{Setup\+Scene}}
+\index{Setup\+Scene@{Setup\+Scene}!Assignment5@{Assignment5}}
+\subsubsection{\texorpdfstring{Setup\+Scene()}{SetupScene()}}
+{\footnotesize\ttfamily void Assignment5\+::\+Setup\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to populate the scene. 
+
+Note by the time this function is called, the \hyperlink{class_application}{Application} sub-\/class is fully constructed and \hyperlink{class_scene}{Scene} object is already created. 
+
+Reimplemented from \hyperlink{class_application_aa8e8017ef8dd86293c96d0645e66d440}{Application}.
+
+\hypertarget{class_assignment5_a34cdf7bc962c3a0e3959c77a24c54d79}{}\label{class_assignment5_a34cdf7bc962c3a0e3959c77a24c54d79} 
+\index{Assignment5@{Assignment5}!Tick@{Tick}}
+\index{Tick@{Tick}!Assignment5@{Assignment5}}
+\subsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Assignment5\+::\+Tick (\begin{DoxyParamCaption}\item[{double}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called every frame to advance program logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The amount of time (in seconds) since the last tick.\\
+\hline
+\end{DoxyParams}
+If you need something in the \hyperlink{class_scene}{Scene} to change over time, this is where you should implement that logic. It is recommended that you make use of the delta\+Time variable to make things change smoothly! 
+
+Reimplemented from \hyperlink{class_application_a0800afd5651153d31fa775a8048d14dd}{Application}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/data/cs148/cs148opengl-\/instructor/source/assignment5/\hyperlink{_assignment5_8h}{Assignment5.\+h}\item 
+/data/cs148/cs148opengl-\/instructor/source/assignment5/\hyperlink{_assignment5_8cpp}{Assignment5.\+cpp}\end{DoxyCompactItemize}

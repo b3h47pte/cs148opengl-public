@@ -1,0 +1,103 @@
+\hypertarget{class_forward_renderer}{}\section{Forward\+Renderer Class Reference}
+\label{class_forward_renderer}\index{Forward\+Renderer@{Forward\+Renderer}}
+
+
+A multi-\/pass forward renderer with lights.  
+
+
+
+
+{\ttfamily \#include $<$Forward\+Renderer.\+h$>$}
+
+Inheritance diagram for Forward\+Renderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_forward_renderer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_forward_renderer_af8ed84e45085c4dc60d565fcc3c198d1}{Forward\+Renderer} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)
+\begin{DoxyCompactList}\small\item\em Stores the input scene and the input camera for use for rendering. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_forward_renderer_ab27ea6139730631d79488cec3c564597}{$\sim$\+Forward\+Renderer} ()
+\begin{DoxyCompactList}\small\item\em Just a day in the life of a destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_forward_renderer_a5cbca647822780d6cfbd39552d73ee06}{Initialize} () override
+\begin{DoxyCompactList}\small\item\em Loads the data that the forward renderer needs. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_forward_renderer_a1a5deafa5deaf1e0abaab0e2074928c1}{Render} () override
+\begin{DoxyCompactList}\small\item\em Renders a frame using a multi-\/pass forward renderer with all the lights in the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A multi-\/pass forward renderer with lights. 
+
+More details about what a multi-\/pass forward renderer is can be found in the documentation for the \hyperlink{class_forward_renderer_a1a5deafa5deaf1e0abaab0e2074928c1}{Render()} function. Do note that this class will not support transparent objects out of the box! You will have to find a way to handle them if you want to display transparent objects properly. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_forward_renderer_af8ed84e45085c4dc60d565fcc3c198d1}{}\label{class_forward_renderer_af8ed84e45085c4dc60d565fcc3c198d1} 
+\index{Forward\+Renderer@{Forward\+Renderer}!Forward\+Renderer@{Forward\+Renderer}}
+\index{Forward\+Renderer@{Forward\+Renderer}!Forward\+Renderer@{Forward\+Renderer}}
+\subsubsection{\texorpdfstring{Forward\+Renderer()}{ForwardRenderer()}}
+{\footnotesize\ttfamily Forward\+Renderer\+::\+Forward\+Renderer (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$}]{input\+Scene,  }\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$}]{input\+Camera }\end{DoxyParamCaption})}
+
+
+
+Stores the input scene and the input camera for use for rendering. 
+
+Calls the base class constructor, \hyperlink{class_renderer_adc8ce31cd649bdf220ca8355809b1d06}{Renderer\+::\+Renderer()}. \hypertarget{class_forward_renderer_ab27ea6139730631d79488cec3c564597}{}\label{class_forward_renderer_ab27ea6139730631d79488cec3c564597} 
+\index{Forward\+Renderer@{Forward\+Renderer}!````~Forward\+Renderer@{$\sim$\+Forward\+Renderer}}
+\index{````~Forward\+Renderer@{$\sim$\+Forward\+Renderer}!Forward\+Renderer@{Forward\+Renderer}}
+\subsubsection{\texorpdfstring{$\sim$\+Forward\+Renderer()}{~ForwardRenderer()}}
+{\footnotesize\ttfamily Forward\+Renderer\+::$\sim$\+Forward\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Just a day in the life of a destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_forward_renderer_a5cbca647822780d6cfbd39552d73ee06}{}\label{class_forward_renderer_a5cbca647822780d6cfbd39552d73ee06} 
+\index{Forward\+Renderer@{Forward\+Renderer}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Forward\+Renderer@{Forward\+Renderer}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Forward\+Renderer\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Loads the data that the forward renderer needs. 
+
+Loads the depth prepass shader. See the documentation of \hyperlink{class_forward_renderer_a1a5deafa5deaf1e0abaab0e2074928c1}{Render()} for why it is necessary. 
+
+Implements \hyperlink{class_renderer_a7cb221f355f181d84d66e8c09f50f04a}{Renderer}.
+
+\hypertarget{class_forward_renderer_a1a5deafa5deaf1e0abaab0e2074928c1}{}\label{class_forward_renderer_a1a5deafa5deaf1e0abaab0e2074928c1} 
+\index{Forward\+Renderer@{Forward\+Renderer}!Render@{Render}}
+\index{Render@{Render}!Forward\+Renderer@{Forward\+Renderer}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Forward\+Renderer\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders a frame using a multi-\/pass forward renderer with all the lights in the scene. 
+
+Note that in the multi-\/pass forward renderer, there is no limit to how many lights you may use; however, once the number of lights becomes too high, you will start to see a significant drop in frames per second. In our implementation of the multi-\/pass forward renderer, assuming that there are $N$ lights, the renderer will perform $ N + 2 $ passes through every object in the scene. For every draw call, the multi-\/pass forward renderer will perform additive blending of both the R\+GB and alpha channels to compute the new color in the color buffer. The render pass stages are as follows\+:
+
+
+\begin{DoxyEnumerate}
+\item The depth preprocess stage. Without this stage, some objects will transparent even if they are not actually. Let\textquotesingle{}s say a relative large and complex object has parts that are facing towards the camera but are occluded. Then let\textquotesingle{}s say that the light vertex/fragment shader processes that part first and then processes the occluder parts later. With additive blending turned on, the colors will be mixed! Turning additive blending is not an option for a multi-\/pass forward renderer. Instead what we want to do is to perform an initial \char`\"{}depth preprocess\char`\"{} pass through every object in the scene. By doing this, we write the final depth of an object to the depth buffer. In the subsequent render passes, we will only write to the color buffer is the depth value is less than or equal to the value already stored in the depth buffer. Since we ran the depth preprocess pass on E\+V\+E\+RY object in the scene, we are guaranteed that the value stored in the depth buffer is the smallest possible value for that pixel. So if a render pass passes the depth buffer check, it can know for sure that it is safe to write to the color buffer and that there won\textquotesingle{}t be another object occluding it. It is important to note that depth is stored as a floating point value and with floating point values comes numerical imprecision which can result in \href{https://en.wikipedia.org/wiki/Z-fighting}{\tt z-\/fighting}. As a result, we use \href{https://www.opengl.org/sdk/docs/man/html/glPolygonOffset.xhtml}{\tt gl\+Polygon\+Offset} to offset the depth values ever so slightly to prevent z-\/fighting from occurring. The amount that we offset $\sim$should$\sim$ not be enough to cause problems with fragments passing the depth buffer test that otherwise should not.
+\item The \char`\"{}global lighting\char`\"{} phase. This phase takes care of the ambient color of the material (Note\+: it might make more sense for the ambient color be a property of the light and not the material). Regardless, this phase will take care of the color that should only be added to the object once regardless of how many lights shine upon it. Good examples of things that would go in this stage are the ambient and emissive colors.
+\item Finally, the rest of the lighting passes are dedicated to performing a normal render pass with a light in the scene. The rendering object in question is queried for the correct shader to use, the shader is then setup by the rendering object and the scene object, and finally the object is rendered and the resulting fragment colors are correctly blended into the color buffer.
+\end{DoxyEnumerate}
+
+Still confused? Ask on Piazza! 
+
+Implements \hyperlink{class_renderer_a38623da22aa718cfa41e2514ebd269f5}{Renderer}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\hyperlink{_forward_renderer_8h}{Forward\+Renderer.\+h}\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\hyperlink{_forward_renderer_8cpp}{Forward\+Renderer.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,92 @@
+\hypertarget{class_camera}{}\section{Camera Class Reference}
+\label{class_camera}\index{Camera@{Camera}}
+
+
+The camera interface that also serves as a \char`\"{}null\char`\"{} camera.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+h$>$}
+
+Inheritance diagram for Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_camera}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_camera_a01f94c3543f56ede7af49dc778f19331}{Camera} ()
+\begin{DoxyCompactList}\small\item\em Creates the default camera. \end{DoxyCompactList}\item 
+virtual glm\+::mat4 \hyperlink{class_camera_af6f4415189deaff158ba86f0b3527a30}{Get\+Projection\+Matrix} () const
+\begin{DoxyCompactList}\small\item\em Creates the projection matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_camera_aea640c892a3807671d8ca49616d96eda}{Update\+Transformation\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em Override the \hyperlink{class_scene_object_a20e31da3f9d2765de50cdb2d637ae6c9}{Scene\+Object\+::\+Update\+Transformation\+Matrix()} to do nothing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The camera interface that also serves as a \char`\"{}null\char`\"{} camera. 
+
+If you use the \hyperlink{class_camera}{Camera} class directly, it will apply no transformations (aka the projection and view matrices will be the identity matrix) so you will be working with in normalized device coordinates. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_camera_a01f94c3543f56ede7af49dc778f19331}{}\label{class_camera_a01f94c3543f56ede7af49dc778f19331} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates the default camera. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_camera_af6f4415189deaff158ba86f0b3527a30}{}\label{class_camera_af6f4415189deaff158ba86f0b3527a30} 
+\index{Camera@{Camera}!Get\+Projection\+Matrix@{Get\+Projection\+Matrix}}
+\index{Get\+Projection\+Matrix@{Get\+Projection\+Matrix}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{Get\+Projection\+Matrix()}{GetProjectionMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 Camera\+::\+Get\+Projection\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates the projection matrix. 
+
+\begin{DoxyReturn}{Returns}
+The identity matrix.
+\end{DoxyReturn}
+This matrix will be the \char`\"{}\+P\char`\"{} in the M\+VP matrices. 
+
+Reimplemented in \hyperlink{class_perspective_camera_ab467388c7d3e4c2ef9b498c16f291545}{Perspective\+Camera}.
+
+\hypertarget{class_camera_aea640c892a3807671d8ca49616d96eda}{}\label{class_camera_aea640c892a3807671d8ca49616d96eda} 
+\index{Camera@{Camera}!Update\+Transformation\+Matrix@{Update\+Transformation\+Matrix}}
+\index{Update\+Transformation\+Matrix@{Update\+Transformation\+Matrix}!Camera@{Camera}}
+\subsubsection{\texorpdfstring{Update\+Transformation\+Matrix()}{UpdateTransformationMatrix()}}
+{\footnotesize\ttfamily void Camera\+::\+Update\+Transformation\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Override the \hyperlink{class_scene_object_a20e31da3f9d2765de50cdb2d637ae6c9}{Scene\+Object\+::\+Update\+Transformation\+Matrix()} to do nothing. 
+
+This will guarantee that the transformation matrix will always be an identity matrix regardless of whether you move/rotate/scale the camera. 
+
+Reimplemented from \hyperlink{class_scene_object_a20e31da3f9d2765de50cdb2d637ae6c9}{Scene\+Object}.
+
+
+
+Reimplemented in \hyperlink{class_perspective_camera_a2f17fb07425e2146d5692805753fa368}{Perspective\+Camera}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Scene/\+Camera/\hyperlink{_camera_8h}{Camera.\+h}\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Scene/\+Camera/\hyperlink{_camera_8cpp}{Camera.\+cpp}\end{DoxyCompactItemize}

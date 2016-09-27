@@ -1,0 +1,394 @@
+\hypertarget{class_blinn_phong_shader}{}\section{Blinn\+Phong\+Shader Class Reference}
+\label{class_blinn_phong_shader}\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+
+
+The C\+PU Interface to the Blinn\+Phong shader (either or\+: vert or frag version or the textured version).  
+
+
+
+
+{\ttfamily \#include $<$Blinn\+Phong\+Shader.\+h$>$}
+
+Inheritance diagram for Blinn\+Phong\+Shader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_blinn_phong_shader}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_blinn_phong_shader_1_1_texture_slots}{Texture\+Slots}
+\begin{DoxyCompactList}\small\item\em Corresponds to the texture unit that we want to bind the texture to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_blinn_phong_shader_a2a13c983ffcc8d95ffe1a431bb2b1fb6}{Blinn\+Phong\+Shader} (const std\+::unordered\+\_\+map$<$ G\+Lenum, std\+::string $>$ \&input\+Shaders, G\+Lenum lighting\+Stage)
+\begin{DoxyCompactList}\small\item\em Construcs the Blinn-\/\+Phong shader object. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_blinn_phong_shader_a5d7a46de957e0676ed4ceb00f7399a39}{$\sim$\+Blinn\+Phong\+Shader} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_blinn_phong_shader_a812ffd751068ae3bfc131ddb27712941}{Setup\+Shader\+Lighting} (const class \hyperlink{class_light}{Light} $\ast$light) const
+\begin{DoxyCompactList}\small\item\em This function will pass to the G\+L\+SL shader the variables needed by the shader to accurately shade the model using the given light.; \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_blinn_phong_shader_a444db9ffe3d55dbbb55ced8cf4abb705}{Setup\+Shader\+Materials} () const
+\begin{DoxyCompactList}\small\item\em Sets up the shader material (what this material is depends on the shader). \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_blinn_phong_shader_ab4d435ed4f4815a71590b514550dc2b7}{Setup\+Shader\+Camera} (const class \hyperlink{class_camera}{Camera} $\ast$camera) const
+\begin{DoxyCompactList}\small\item\em Passes camera parameters to the shader if necessary. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_blinn_phong_shader_a610957f435f1ef817e7d2c4350e55181}{Set\+Diffuse} (glm\+::vec4 in\+Diffuse)
+\begin{DoxyCompactList}\small\item\em Sets the diffuse color of the material. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_blinn_phong_shader_a6567423da36050cc1567919707e8be72}{Set\+Specular} (glm\+::vec4 in\+Specular, float in\+Shininess)
+\begin{DoxyCompactList}\small\item\em Sets the specular color of the material. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_blinn_phong_shader_a0f8c1c478525dd662922597ea7d9c4ac}{Set\+Ambient} (glm\+::vec4 in\+Ambient)
+\begin{DoxyCompactList}\small\item\em Sets the ambient color of the material. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_blinn_phong_shader_aa9c8908b300ce1451887945fb961d3b2}{Set\+Texture} (\hyperlink{struct_blinn_phong_shader_1_1_texture_slots_a98940b49ba855ee47d61a6243c05c34d}{Texture\+Slots\+::\+Type} slot, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_texture}{Texture} $>$ input\+Texture)
+\begin{DoxyCompactList}\small\item\em Stores the texture internally. Does not copy to Open\+GL. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_blinn_phong_shader_acbef23fe1f5ea72a10dc6ded656dacf0}{Set\+Max\+Displacement} (float input)
+\item 
+virtual void \hyperlink{class_blinn_phong_shader_a5a2a720a403f3d005b07a96fee35b95b}{Load\+Material\+From\+Assimp} (std\+::shared\+\_\+ptr$<$ struct ai\+Material $>$ assimp\+Material)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_blinn_phong_shader_aa247270120b46431b436220ea6e777be}{Update\+Material\+Block} () const
+\item 
+virtual void \hyperlink{class_blinn_phong_shader_a389b3b5fea85eb6deedfc028c4140632}{Update\+Attenuation\+Uniforms} (const class \hyperlink{class_light}{Light} $\ast$light) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::vec4 \hyperlink{class_blinn_phong_shader_ae74d0446ec1a871ca57caf002f52e20c}{diffuse}
+\item 
+glm\+::vec4 \hyperlink{class_blinn_phong_shader_a7adce7364e850b9f232e058956f809b8}{specular}
+\item 
+float \hyperlink{class_blinn_phong_shader_ad499c2389d7007ecb4c03d5270314933}{shininess}
+\item 
+glm\+::vec4 \hyperlink{class_blinn_phong_shader_af612b03df22b2bc9e37dcd85124ee9d2}{ambient}
+\item 
+G\+Luint \hyperlink{class_blinn_phong_shader_a4dcd123c2284945734df697501dca5ea}{material\+Block\+Location}
+\item 
+G\+Lint \hyperlink{class_blinn_phong_shader_af38b3d042773f6568f0f6c227de85990}{material\+Block\+Size}
+\item 
+std\+::array$<$ G\+Luint, 4 $>$ \hyperlink{class_blinn_phong_shader_a2b14622a5d0f8ca32c05cc387700692a}{material\+Indices}
+\item 
+std\+::array$<$ G\+Lint, 4 $>$ \hyperlink{class_blinn_phong_shader_a145f22608d6e32a4ec5df39388ad0530}{material\+Offsets}
+\item 
+G\+Luint \hyperlink{class_blinn_phong_shader_a85dbf4a8376a98570a06d9df17938cf4}{material\+Buffer}
+\item 
+std\+::vector$<$ G\+Lubyte $>$ \hyperlink{class_blinn_phong_shader_a7c9644732d35c788d1c94f44b7783d83}{material\+Storage}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::array$<$ const char $\ast$, 4 $>$ \hyperlink{class_blinn_phong_shader_a6bb55aa4f7aa8b54b127b93386e36dc2}{M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+N\+A\+M\+ES}
+\item 
+static const int \hyperlink{class_blinn_phong_shader_a44b4e326871466fe9f2346eb1ac40253}{M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+P\+O\+I\+NT} = 0
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_texture}{Texture} $>$ \hyperlink{class_blinn_phong_shader_a2335cf5c2d95098a94f9f2e888b329f3}{default\+Texture}
+\item 
+std\+::unordered\+\_\+map$<$ \hyperlink{struct_blinn_phong_shader_1_1_texture_slots_a98940b49ba855ee47d61a6243c05c34d}{Texture\+Slots\+::\+Type}, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_texture}{Texture} $>$, std\+::hash$<$ int $>$ $>$ \hyperlink{class_blinn_phong_shader_a7467b1de2650fd04ea63ed5f8aeedc59}{texture\+Slot\+Mapping}
+\item 
+G\+Lenum \hyperlink{class_blinn_phong_shader_a942775771a09fd5553409bdb44ec32ac}{lighting\+Shader\+Stage}
+\item 
+float \hyperlink{class_blinn_phong_shader_a9e5e58c4901d48b315e94d15fd504a8c}{max\+Displacement}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The C\+PU Interface to the Blinn\+Phong shader (either or\+: vert or frag version or the textured version). 
+
+Note that this shader class can also probably be used for any minor variations on the Blinn-\/\+Phong shader. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_blinn_phong_shader_a2a13c983ffcc8d95ffe1a431bb2b1fb6}{}\label{class_blinn_phong_shader_a2a13c983ffcc8d95ffe1a431bb2b1fb6} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{Blinn\+Phong\+Shader()}{BlinnPhongShader()}}
+{\footnotesize\ttfamily Blinn\+Phong\+Shader\+::\+Blinn\+Phong\+Shader (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ G\+Lenum, std\+::string $>$ \&}]{input\+Shaders,  }\item[{G\+Lenum}]{lighting\+Stage }\end{DoxyParamCaption})}
+
+
+
+Construcs the Blinn-\/\+Phong shader object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Shaders} & Look at \hyperlink{class_shader_program_aba2db5734b2f70cc34078126ad279588}{Shader\+Program\+::\+Shader\+Program()} for details. \\
+\hline
+{\em lighting\+Stage} & If subroutines are not disabled, this is the shader object (vertex or fragment) that contains the subroutine uniform variable. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_blinn_phong_shader_a5d7a46de957e0676ed4ceb00f7399a39}{}\label{class_blinn_phong_shader_a5d7a46de957e0676ed4ceb00f7399a39} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!````~Blinn\+Phong\+Shader@{$\sim$\+Blinn\+Phong\+Shader}}
+\index{````~Blinn\+Phong\+Shader@{$\sim$\+Blinn\+Phong\+Shader}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{$\sim$\+Blinn\+Phong\+Shader()}{~BlinnPhongShader()}}
+{\footnotesize\ttfamily Blinn\+Phong\+Shader\+::$\sim$\+Blinn\+Phong\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Deconstructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_blinn_phong_shader_a5a2a720a403f3d005b07a96fee35b95b}{}\label{class_blinn_phong_shader_a5a2a720a403f3d005b07a96fee35b95b} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Load\+Material\+From\+Assimp@{Load\+Material\+From\+Assimp}}
+\index{Load\+Material\+From\+Assimp@{Load\+Material\+From\+Assimp}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{Load\+Material\+From\+Assimp()}{LoadMaterialFromAssimp()}}
+{\footnotesize\ttfamily void Blinn\+Phong\+Shader\+::\+Load\+Material\+From\+Assimp (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ struct ai\+Material $>$}]{assimp\+Material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_shader_program_a51ac6fbf3a3d88643eef303a4c3a1fa8}{Shader\+Program}.
+
+\hypertarget{class_blinn_phong_shader_a0f8c1c478525dd662922597ea7d9c4ac}{}\label{class_blinn_phong_shader_a0f8c1c478525dd662922597ea7d9c4ac} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Set\+Ambient@{Set\+Ambient}}
+\index{Set\+Ambient@{Set\+Ambient}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{Set\+Ambient()}{SetAmbient()}}
+{\footnotesize\ttfamily void Blinn\+Phong\+Shader\+::\+Set\+Ambient (\begin{DoxyParamCaption}\item[{glm\+::vec4}]{in\+Ambient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the ambient color of the material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Ambient} & The desired ambient color.\\
+\hline
+\end{DoxyParams}
+Immediately calls \hyperlink{class_blinn_phong_shader_aa247270120b46431b436220ea6e777be}{Update\+Material\+Block()} to store the new data into the Open\+GL buffer. \hypertarget{class_blinn_phong_shader_a610957f435f1ef817e7d2c4350e55181}{}\label{class_blinn_phong_shader_a610957f435f1ef817e7d2c4350e55181} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Set\+Diffuse@{Set\+Diffuse}}
+\index{Set\+Diffuse@{Set\+Diffuse}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{Set\+Diffuse()}{SetDiffuse()}}
+{\footnotesize\ttfamily void Blinn\+Phong\+Shader\+::\+Set\+Diffuse (\begin{DoxyParamCaption}\item[{glm\+::vec4}]{in\+Diffuse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the diffuse color of the material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Diffuse} & The desired diffuse color.\\
+\hline
+\end{DoxyParams}
+Immediately calls \hyperlink{class_blinn_phong_shader_aa247270120b46431b436220ea6e777be}{Update\+Material\+Block()} to store the new data into the Open\+GL buffer. \hypertarget{class_blinn_phong_shader_acbef23fe1f5ea72a10dc6ded656dacf0}{}\label{class_blinn_phong_shader_acbef23fe1f5ea72a10dc6ded656dacf0} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Set\+Max\+Displacement@{Set\+Max\+Displacement}}
+\index{Set\+Max\+Displacement@{Set\+Max\+Displacement}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{Set\+Max\+Displacement()}{SetMaxDisplacement()}}
+{\footnotesize\ttfamily void Blinn\+Phong\+Shader\+::\+Set\+Max\+Displacement (\begin{DoxyParamCaption}\item[{float}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\hypertarget{class_blinn_phong_shader_a6567423da36050cc1567919707e8be72}{}\label{class_blinn_phong_shader_a6567423da36050cc1567919707e8be72} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Set\+Specular@{Set\+Specular}}
+\index{Set\+Specular@{Set\+Specular}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{Set\+Specular()}{SetSpecular()}}
+{\footnotesize\ttfamily void Blinn\+Phong\+Shader\+::\+Set\+Specular (\begin{DoxyParamCaption}\item[{glm\+::vec4}]{in\+Specular,  }\item[{float}]{in\+Shininess }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the specular color of the material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Specular} & The desired specular color. \\
+\hline
+{\em in\+Shininess} & The desired shininess.\\
+\hline
+\end{DoxyParams}
+Immediately calls \hyperlink{class_blinn_phong_shader_aa247270120b46431b436220ea6e777be}{Update\+Material\+Block()} to store the new data into the Open\+GL buffer. For more information about the shininess parameters, refer to the Wikipedia page on the \href{https://en.wikipedia.org/wiki/Phong_reflection_model}{\tt Phong reflection model}. \hypertarget{class_blinn_phong_shader_aa9c8908b300ce1451887945fb961d3b2}{}\label{class_blinn_phong_shader_aa9c8908b300ce1451887945fb961d3b2} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Set\+Texture@{Set\+Texture}}
+\index{Set\+Texture@{Set\+Texture}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{Set\+Texture()}{SetTexture()}}
+{\footnotesize\ttfamily void Blinn\+Phong\+Shader\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{\hyperlink{struct_blinn_phong_shader_1_1_texture_slots_a98940b49ba855ee47d61a6243c05c34d}{Texture\+Slots\+::\+Type}}]{slot,  }\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_texture}{Texture} $>$}]{input\+Texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stores the texture internally. Does not copy to Open\+GL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em slot} & The texture unit that we will be binding the texture to. \\
+\hline
+{\em input\+Texture} & A pointer to the assignment framework\textquotesingle{}s representation of a texture. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_blinn_phong_shader_ab4d435ed4f4815a71590b514550dc2b7}{}\label{class_blinn_phong_shader_ab4d435ed4f4815a71590b514550dc2b7} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Setup\+Shader\+Camera@{Setup\+Shader\+Camera}}
+\index{Setup\+Shader\+Camera@{Setup\+Shader\+Camera}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{Setup\+Shader\+Camera()}{SetupShaderCamera()}}
+{\footnotesize\ttfamily void Blinn\+Phong\+Shader\+::\+Setup\+Shader\+Camera (\begin{DoxyParamCaption}\item[{const class \hyperlink{class_camera}{Camera} $\ast$}]{camera }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Passes camera parameters to the shader if necessary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & The camera we want to use for shading. This should not be a null pointer.\\
+\hline
+\end{DoxyParams}
+Copies the camera position to the shader. 
+
+Reimplemented from \hyperlink{class_shader_program_abefd4e66aae75993f05bd607b6b0ed22}{Shader\+Program}.
+
+\hypertarget{class_blinn_phong_shader_a812ffd751068ae3bfc131ddb27712941}{}\label{class_blinn_phong_shader_a812ffd751068ae3bfc131ddb27712941} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Setup\+Shader\+Lighting@{Setup\+Shader\+Lighting}}
+\index{Setup\+Shader\+Lighting@{Setup\+Shader\+Lighting}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{Setup\+Shader\+Lighting()}{SetupShaderLighting()}}
+{\footnotesize\ttfamily void Blinn\+Phong\+Shader\+::\+Setup\+Shader\+Lighting (\begin{DoxyParamCaption}\item[{const class \hyperlink{class_light}{Light} $\ast$}]{light }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This function will pass to the G\+L\+SL shader the variables needed by the shader to accurately shade the model using the given light.; 
+
+
+\begin{DoxyParams}{Parameters}
+{\em light} & The light we want to use for shading. This should not be a null pointer.;\\
+\hline
+\end{DoxyParams}
+Makes sure the proper lighting function is called (i.\+e. for point light, directional, etc.). Additionally, passes in the light properties to the shader as well as any light attenuation properties. 
+
+Reimplemented from \hyperlink{class_shader_program_a02cf3df43c59808160fce158ad655a40}{Shader\+Program}.
+
+\hypertarget{class_blinn_phong_shader_a444db9ffe3d55dbbb55ced8cf4abb705}{}\label{class_blinn_phong_shader_a444db9ffe3d55dbbb55ced8cf4abb705} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Setup\+Shader\+Materials@{Setup\+Shader\+Materials}}
+\index{Setup\+Shader\+Materials@{Setup\+Shader\+Materials}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{Setup\+Shader\+Materials()}{SetupShaderMaterials()}}
+{\footnotesize\ttfamily void Blinn\+Phong\+Shader\+::\+Setup\+Shader\+Materials (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets up the shader material (what this material is depends on the shader). 
+
+This functions is meant to be a general setup function for the shader. This function has no access to the scene or anything else stored in the application so its primary purpose is to work with objects stored within the shader program object (i.\+e. textures).
+
+Makes sure that the uniform block object is bound and handles binding the diffuse and specular textures if they exist. 
+
+Reimplemented from \hyperlink{class_shader_program_a20ea5669f122fa6143e7fa8ee9d92578}{Shader\+Program}.
+
+\hypertarget{class_blinn_phong_shader_a389b3b5fea85eb6deedfc028c4140632}{}\label{class_blinn_phong_shader_a389b3b5fea85eb6deedfc028c4140632} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Update\+Attenuation\+Uniforms@{Update\+Attenuation\+Uniforms}}
+\index{Update\+Attenuation\+Uniforms@{Update\+Attenuation\+Uniforms}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{Update\+Attenuation\+Uniforms()}{UpdateAttenuationUniforms()}}
+{\footnotesize\ttfamily void Blinn\+Phong\+Shader\+::\+Update\+Attenuation\+Uniforms (\begin{DoxyParamCaption}\item[{const class \hyperlink{class_light}{Light} $\ast$}]{light }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_blinn_phong_shader_aa247270120b46431b436220ea6e777be}{}\label{class_blinn_phong_shader_aa247270120b46431b436220ea6e777be} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!Update\+Material\+Block@{Update\+Material\+Block}}
+\index{Update\+Material\+Block@{Update\+Material\+Block}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{Update\+Material\+Block()}{UpdateMaterialBlock()}}
+{\footnotesize\ttfamily void Blinn\+Phong\+Shader\+::\+Update\+Material\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_blinn_phong_shader_af612b03df22b2bc9e37dcd85124ee9d2}{}\label{class_blinn_phong_shader_af612b03df22b2bc9e37dcd85124ee9d2} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!ambient@{ambient}}
+\index{ambient@{ambient}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{ambient}{ambient}}
+{\footnotesize\ttfamily glm\+::vec4 Blinn\+Phong\+Shader\+::ambient\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_blinn_phong_shader_a2335cf5c2d95098a94f9f2e888b329f3}{}\label{class_blinn_phong_shader_a2335cf5c2d95098a94f9f2e888b329f3} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!default\+Texture@{default\+Texture}}
+\index{default\+Texture@{default\+Texture}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{default\+Texture}{defaultTexture}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$class \hyperlink{class_texture}{Texture}$>$ Blinn\+Phong\+Shader\+::default\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_blinn_phong_shader_ae74d0446ec1a871ca57caf002f52e20c}{}\label{class_blinn_phong_shader_ae74d0446ec1a871ca57caf002f52e20c} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!diffuse@{diffuse}}
+\index{diffuse@{diffuse}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{diffuse}{diffuse}}
+{\footnotesize\ttfamily glm\+::vec4 Blinn\+Phong\+Shader\+::diffuse\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_blinn_phong_shader_a942775771a09fd5553409bdb44ec32ac}{}\label{class_blinn_phong_shader_a942775771a09fd5553409bdb44ec32ac} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!lighting\+Shader\+Stage@{lighting\+Shader\+Stage}}
+\index{lighting\+Shader\+Stage@{lighting\+Shader\+Stage}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{lighting\+Shader\+Stage}{lightingShaderStage}}
+{\footnotesize\ttfamily G\+Lenum Blinn\+Phong\+Shader\+::lighting\+Shader\+Stage\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_blinn_phong_shader_a44b4e326871466fe9f2346eb1ac40253}{}\label{class_blinn_phong_shader_a44b4e326871466fe9f2346eb1ac40253} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+P\+O\+I\+NT@{M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+P\+O\+I\+NT}}
+\index{M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+P\+O\+I\+NT@{M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+P\+O\+I\+NT}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+P\+O\+I\+NT}{MATERIAL\_BINDING\_POINT}}
+{\footnotesize\ttfamily const int Blinn\+Phong\+Shader\+::\+M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+B\+I\+N\+D\+I\+N\+G\+\_\+\+P\+O\+I\+NT = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\hypertarget{class_blinn_phong_shader_a6bb55aa4f7aa8b54b127b93386e36dc2}{}\label{class_blinn_phong_shader_a6bb55aa4f7aa8b54b127b93386e36dc2} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+N\+A\+M\+ES@{M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+N\+A\+M\+ES}}
+\index{M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+N\+A\+M\+ES@{M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+N\+A\+M\+ES}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+N\+A\+M\+ES}{MATERIAL\_PROPERTY\_NAMES}}
+{\footnotesize\ttfamily std\+::array$<$ const char $\ast$, 4 $>$ Blinn\+Phong\+Shader\+::\+M\+A\+T\+E\+R\+I\+A\+L\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+N\+A\+M\+ES\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    \textcolor{stringliteral}{"InputMaterial.matDiffuse"}, 
+    \textcolor{stringliteral}{"InputMaterial.matSpecular"}, 
+    \textcolor{stringliteral}{"InputMaterial.matShininess"}, 
+    \textcolor{stringliteral}{"InputMaterial.matAmbient"}
+\}
+\end{DoxyCode}
+\hypertarget{class_blinn_phong_shader_a4dcd123c2284945734df697501dca5ea}{}\label{class_blinn_phong_shader_a4dcd123c2284945734df697501dca5ea} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!material\+Block\+Location@{material\+Block\+Location}}
+\index{material\+Block\+Location@{material\+Block\+Location}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{material\+Block\+Location}{materialBlockLocation}}
+{\footnotesize\ttfamily G\+Luint Blinn\+Phong\+Shader\+::material\+Block\+Location\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_blinn_phong_shader_af38b3d042773f6568f0f6c227de85990}{}\label{class_blinn_phong_shader_af38b3d042773f6568f0f6c227de85990} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!material\+Block\+Size@{material\+Block\+Size}}
+\index{material\+Block\+Size@{material\+Block\+Size}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{material\+Block\+Size}{materialBlockSize}}
+{\footnotesize\ttfamily G\+Lint Blinn\+Phong\+Shader\+::material\+Block\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_blinn_phong_shader_a85dbf4a8376a98570a06d9df17938cf4}{}\label{class_blinn_phong_shader_a85dbf4a8376a98570a06d9df17938cf4} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!material\+Buffer@{material\+Buffer}}
+\index{material\+Buffer@{material\+Buffer}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{material\+Buffer}{materialBuffer}}
+{\footnotesize\ttfamily G\+Luint Blinn\+Phong\+Shader\+::material\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_blinn_phong_shader_a2b14622a5d0f8ca32c05cc387700692a}{}\label{class_blinn_phong_shader_a2b14622a5d0f8ca32c05cc387700692a} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!material\+Indices@{material\+Indices}}
+\index{material\+Indices@{material\+Indices}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{material\+Indices}{materialIndices}}
+{\footnotesize\ttfamily std\+::array$<$G\+Luint, 4$>$ Blinn\+Phong\+Shader\+::material\+Indices\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_blinn_phong_shader_a145f22608d6e32a4ec5df39388ad0530}{}\label{class_blinn_phong_shader_a145f22608d6e32a4ec5df39388ad0530} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!material\+Offsets@{material\+Offsets}}
+\index{material\+Offsets@{material\+Offsets}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{material\+Offsets}{materialOffsets}}
+{\footnotesize\ttfamily std\+::array$<$G\+Lint, 4$>$ Blinn\+Phong\+Shader\+::material\+Offsets\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_blinn_phong_shader_a7c9644732d35c788d1c94f44b7783d83}{}\label{class_blinn_phong_shader_a7c9644732d35c788d1c94f44b7783d83} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!material\+Storage@{material\+Storage}}
+\index{material\+Storage@{material\+Storage}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{material\+Storage}{materialStorage}}
+{\footnotesize\ttfamily std\+::vector$<$G\+Lubyte$>$ Blinn\+Phong\+Shader\+::material\+Storage\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_blinn_phong_shader_a9e5e58c4901d48b315e94d15fd504a8c}{}\label{class_blinn_phong_shader_a9e5e58c4901d48b315e94d15fd504a8c} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!max\+Displacement@{max\+Displacement}}
+\index{max\+Displacement@{max\+Displacement}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{max\+Displacement}{maxDisplacement}}
+{\footnotesize\ttfamily float Blinn\+Phong\+Shader\+::max\+Displacement\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_blinn_phong_shader_ad499c2389d7007ecb4c03d5270314933}{}\label{class_blinn_phong_shader_ad499c2389d7007ecb4c03d5270314933} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!shininess@{shininess}}
+\index{shininess@{shininess}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{shininess}{shininess}}
+{\footnotesize\ttfamily float Blinn\+Phong\+Shader\+::shininess\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_blinn_phong_shader_a7adce7364e850b9f232e058956f809b8}{}\label{class_blinn_phong_shader_a7adce7364e850b9f232e058956f809b8} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!specular@{specular}}
+\index{specular@{specular}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{specular}{specular}}
+{\footnotesize\ttfamily glm\+::vec4 Blinn\+Phong\+Shader\+::specular\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_blinn_phong_shader_a7467b1de2650fd04ea63ed5f8aeedc59}{}\label{class_blinn_phong_shader_a7467b1de2650fd04ea63ed5f8aeedc59} 
+\index{Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}!texture\+Slot\+Mapping@{texture\+Slot\+Mapping}}
+\index{texture\+Slot\+Mapping@{texture\+Slot\+Mapping}!Blinn\+Phong\+Shader@{Blinn\+Phong\+Shader}}
+\subsubsection{\texorpdfstring{texture\+Slot\+Mapping}{textureSlotMapping}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$\hyperlink{struct_blinn_phong_shader_1_1_texture_slots_a98940b49ba855ee47d61a6243c05c34d}{Texture\+Slots\+::\+Type}, std\+::shared\+\_\+ptr$<$class \hyperlink{class_texture}{Texture}$>$, std\+::hash$<$int$>$ $>$ Blinn\+Phong\+Shader\+::texture\+Slot\+Mapping\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\+Shaders/\hyperlink{_blinn_phong_shader_8h}{Blinn\+Phong\+Shader.\+h}\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\+Shaders/\hyperlink{_blinn_phong_shader_8cpp}{Blinn\+Phong\+Shader.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,130 @@
+\hypertarget{class_renderer}{}\section{Renderer Class Reference}
+\label{class_renderer}\index{Renderer@{Renderer}}
+
+
+A generic rendering interface.  
+
+
+
+
+{\ttfamily \#include $<$Renderer.\+h$>$}
+
+Inheritance diagram for Renderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_renderer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_renderer_adc8ce31cd649bdf220ca8355809b1d06}{Renderer} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_renderer}{Renderer} constructor takes in a scene to be rendered and the camera from which to render the scene. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_renderer_afeee408862d5bd6255a6882d47e6d5cd}{$\sim$\+Renderer} ()
+\begin{DoxyCompactList}\small\item\em A virtual destructor to allow for safe inheritance. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_renderer_a7cb221f355f181d84d66e8c09f50f04a}{Initialize} ()=0
+\begin{DoxyCompactList}\small\item\em Prepares the renderer for usage. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_renderer_a38623da22aa718cfa41e2514ebd269f5}{Render} ()=0
+\begin{DoxyCompactList}\small\item\em This function should be used to render everything onto the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_renderer_a65178695d48824d3afd6fe40fd4915b6}{scene}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the scene. Should not be a null pointer when you go to render. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_renderer_a7a08c6489c1ffe8e346b9f205b4014ca}{camera}
+\begin{DoxyCompactList}\small\item\em Shared pointer to the camera. Should not be a null pointer when you go to render. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A generic rendering interface. 
+
+The renderer will be used by the \hyperlink{class_media_layer}{Media\+Layer} and will be told to \hyperlink{class_renderer_a38623da22aa718cfa41e2514ebd269f5}{Render()} every frame. It is the renderer\textquotesingle{}s responsibility to make sure everything in the scene gets rendered properly with the right shader using all the lights. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_renderer_adc8ce31cd649bdf220ca8355809b1d06}{}\label{class_renderer_adc8ce31cd649bdf220ca8355809b1d06} 
+\index{Renderer@{Renderer}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{Renderer()}{Renderer()}}
+{\footnotesize\ttfamily Renderer\+::\+Renderer (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$}]{input\+Scene,  }\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$}]{input\+Camera }\end{DoxyParamCaption})}
+
+
+
+The \hyperlink{class_renderer}{Renderer} constructor takes in a scene to be rendered and the camera from which to render the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Scene} & A shared pointer to the scene. This can be a null pointer but you would need to introduce functions to set it later. \\
+\hline
+{\em input\+Camera} & A shared pointer to the camera. This can be a null pointer but you would need to introduce functions to set it later. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_renderer_afeee408862d5bd6255a6882d47e6d5cd}{}\label{class_renderer_afeee408862d5bd6255a6882d47e6d5cd} 
+\index{Renderer@{Renderer}!````~Renderer@{$\sim$\+Renderer}}
+\index{````~Renderer@{$\sim$\+Renderer}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{$\sim$\+Renderer()}{~Renderer()}}
+{\footnotesize\ttfamily Renderer\+::$\sim$\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A virtual destructor to allow for safe inheritance. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_renderer_a7cb221f355f181d84d66e8c09f50f04a}{}\label{class_renderer_a7cb221f355f181d84d66e8c09f50f04a} 
+\index{Renderer@{Renderer}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily virtual void Renderer\+::\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Prepares the renderer for usage. 
+
+Called in the \hyperlink{class_media_layer}{Media\+Layer} constructor. 
+
+Implemented in \hyperlink{class_forward_renderer_a5cbca647822780d6cfbd39552d73ee06}{Forward\+Renderer}.
+
+\hypertarget{class_renderer_a38623da22aa718cfa41e2514ebd269f5}{}\label{class_renderer_a38623da22aa718cfa41e2514ebd269f5} 
+\index{Renderer@{Renderer}!Render@{Render}}
+\index{Render@{Render}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily virtual void Renderer\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This function should be used to render everything onto the screen. 
+
+
+
+Implemented in \hyperlink{class_forward_renderer_a1a5deafa5deaf1e0abaab0e2074928c1}{Forward\+Renderer}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_renderer_a7a08c6489c1ffe8e346b9f205b4014ca}{}\label{class_renderer_a7a08c6489c1ffe8e346b9f205b4014ca} 
+\index{Renderer@{Renderer}!camera@{camera}}
+\index{camera@{camera}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$class \hyperlink{class_camera}{Camera}$>$ Renderer\+::camera\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Shared pointer to the camera. Should not be a null pointer when you go to render. 
+
+\hypertarget{class_renderer_a65178695d48824d3afd6fe40fd4915b6}{}\label{class_renderer_a65178695d48824d3afd6fe40fd4915b6} 
+\index{Renderer@{Renderer}!scene@{scene}}
+\index{scene@{scene}!Renderer@{Renderer}}
+\subsubsection{\texorpdfstring{scene}{scene}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$class \hyperlink{class_scene}{Scene}$>$ Renderer\+::scene\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Shared pointer to the scene. Should not be a null pointer when you go to render. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\hyperlink{_renderer_8h}{Renderer.\+h}\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\hyperlink{_renderer_8cpp}{Renderer.\+cpp}\end{DoxyCompactItemize}

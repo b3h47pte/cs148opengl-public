@@ -1,0 +1,108 @@
+\hypertarget{class_texture}{}\section{Texture Class Reference}
+\label{class_texture}\index{Texture@{Texture}}
+
+
+Stores the assignment framework\textquotesingle{}s representation of a texture and allows reuse of the underlying Open\+GL texture.  
+
+
+
+
+{\ttfamily \#include $<$Texture.\+h$>$}
+
+Inheritance diagram for Texture\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_texture}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_texture_aa9661e01f3c034c259c15b619e2cea55}{Texture} (G\+Lenum input\+Target)
+\item 
+virtual \hyperlink{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}{$\sim$\+Texture} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_texture_a6c9fda62e4203d0545ec0d3d0551760d}{Begin\+Render} (int unit) const
+\begin{DoxyCompactList}\small\item\em Binds the texture to a texture unit and sets the target as G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2D. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_texture_ab3fc771da58d58e1f3701b1fae12880b}{End\+Render} () const
+\begin{DoxyCompactList}\small\item\em Unbinds the texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+Lenum \hyperlink{class_texture_a743402dc306a143404ee2d246d864fb7}{texture\+Target}
+\item 
+G\+Luint \hyperlink{class_texture_adbf320788255a426a0a60e35cd969bcd}{gl\+Texture}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the assignment framework\textquotesingle{}s representation of a texture and allows reuse of the underlying Open\+GL texture. 
+
+Note that this class does not handle loading the texture. To see how a texture is loaded, look at \hyperlink{namespace_texture_loader_aed2af32d44d07368f1f426c4274418c0}{Texture\+Loader\+::\+Load\+Texture()}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_texture_aa9661e01f3c034c259c15b619e2cea55}{}\label{class_texture_aa9661e01f3c034c259c15b619e2cea55} 
+\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{Texture()}{Texture()}}
+{\footnotesize\ttfamily Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{G\+Lenum}]{input\+Target }\end{DoxyParamCaption})}
+
+\hypertarget{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}{}\label{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a} 
+\index{Texture@{Texture}!````~Texture@{$\sim$\+Texture}}
+\index{````~Texture@{$\sim$\+Texture}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{$\sim$\+Texture()}{~Texture()}}
+{\footnotesize\ttfamily Texture\+::$\sim$\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_texture_a6c9fda62e4203d0545ec0d3d0551760d}{}\label{class_texture_a6c9fda62e4203d0545ec0d3d0551760d} 
+\index{Texture@{Texture}!Begin\+Render@{Begin\+Render}}
+\index{Begin\+Render@{Begin\+Render}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{Begin\+Render()}{BeginRender()}}
+{\footnotesize\ttfamily void Texture\+::\+Begin\+Render (\begin{DoxyParamCaption}\item[{int}]{unit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Binds the texture to a texture unit and sets the target as G\+L\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+2D. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & The texture unit to bind to. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_texture_ab3fc771da58d58e1f3701b1fae12880b}{}\label{class_texture_ab3fc771da58d58e1f3701b1fae12880b} 
+\index{Texture@{Texture}!End\+Render@{End\+Render}}
+\index{End\+Render@{End\+Render}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{End\+Render()}{EndRender()}}
+{\footnotesize\ttfamily void Texture\+::\+End\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Unbinds the texture. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_texture_adbf320788255a426a0a60e35cd969bcd}{}\label{class_texture_adbf320788255a426a0a60e35cd969bcd} 
+\index{Texture@{Texture}!gl\+Texture@{gl\+Texture}}
+\index{gl\+Texture@{gl\+Texture}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{gl\+Texture}{glTexture}}
+{\footnotesize\ttfamily G\+Luint Texture\+::gl\+Texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+\hypertarget{class_texture_a743402dc306a143404ee2d246d864fb7}{}\label{class_texture_a743402dc306a143404ee2d246d864fb7} 
+\index{Texture@{Texture}!texture\+Target@{texture\+Target}}
+\index{texture\+Target@{texture\+Target}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{texture\+Target}{textureTarget}}
+{\footnotesize\ttfamily G\+Lenum Texture\+::texture\+Target\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\+Textures/\hyperlink{_texture_8h}{Texture.\+h}\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\+Textures/\hyperlink{_texture_8cpp}{Texture.\+cpp}\end{DoxyCompactItemize}

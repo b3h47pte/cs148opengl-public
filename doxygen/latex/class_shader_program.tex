@@ -1,0 +1,381 @@
+\hypertarget{class_shader_program}{}\section{Shader\+Program Class Reference}
+\label{class_shader_program}\index{Shader\+Program@{Shader\+Program}}
+
+
+Interfaces with the underlying G\+L\+SL shader program.  
+
+
+
+
+{\ttfamily \#include $<$Shader\+Program.\+h$>$}
+
+Inheritance diagram for Shader\+Program\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_shader_program}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_shader_program_aba2db5734b2f70cc34078126ad279588}{Shader\+Program} (const std\+::unordered\+\_\+map$<$ G\+Lenum, std\+::string $>$ \&input\+Shaders)
+\begin{DoxyCompactList}\small\item\em Creates a shader program. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shader_program_a51ac6fbf3a3d88643eef303a4c3a1fa8}{Load\+Material\+From\+Assimp} (std\+::shared\+\_\+ptr$<$ struct ai\+Material $>$ assimp\+Material)
+\item 
+virtual \hyperlink{class_shader_program_a2d2eadcfc48cc2e2ddb82aba70553a9f}{$\sim$\+Shader\+Program} ()
+\begin{DoxyCompactList}\small\item\em A destructor to clean up the shader program. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shader_program_aab1241c0f0962d43687d92866d7b7d6a}{Start\+Use\+Shader} () const
+\begin{DoxyCompactList}\small\item\em Notifies the Open\+GL state that we will be using the underlying G\+L\+SL program. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shader_program_a2f2ae9ab4849f855becccfaa445d00d5}{Stop\+Use\+Shader} () const
+\begin{DoxyCompactList}\small\item\em Tells the Open\+GL state to no longer us the underlying shader. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_shader_program_a7313b3596bcd6d982d9624a46cc2acc6}{Get\+Program} () const
+\begin{DoxyCompactList}\small\item\em Gets the underlying shader program identifier created by \href{https://www.opengl.org/sdk/docs/man/html/glCreateProgram.xhtml}{\tt gl\+Create\+Program}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shader_program_a02cf3df43c59808160fce158ad655a40}{Setup\+Shader\+Lighting} (const class \hyperlink{class_light}{Light} $\ast$light) const
+\begin{DoxyCompactList}\small\item\em This function will pass to the G\+L\+SL shader the variables needed by the shader to accurately shade the model using the given light. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shader_program_a20ea5669f122fa6143e7fa8ee9d92578}{Setup\+Shader\+Materials} () const
+\begin{DoxyCompactList}\small\item\em Sets up the shader material (what this material is depends on the shader). \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_shader_program_abefd4e66aae75993f05bd607b6b0ed22}{Setup\+Shader\+Camera} (const class \hyperlink{class_camera}{Camera} $\ast$camera) const
+\begin{DoxyCompactList}\small\item\em Passes camera parameters to the shader if necessary. \end{DoxyCompactList}\item 
+void \hyperlink{class_shader_program_a84ff179a393c8dcd55c38eef19925fef}{Set\+Shader\+Uniform} (const std\+::string \&location, const glm\+::mat4 \&value) const
+\begin{DoxyCompactList}\small\item\em Sets a shader uniform with a mat4x4 value. \end{DoxyCompactList}\item 
+void \hyperlink{class_shader_program_a7ffbc023f4bb3ae2c8b458eb7182dff0}{Set\+Shader\+Uniform} (const std\+::string \&location, float value) const
+\begin{DoxyCompactList}\small\item\em Sets a shader uniform with a float value. \end{DoxyCompactList}\item 
+void \hyperlink{class_shader_program_a16164eb7e3f1e2ca9bf60c492e43b4df}{Set\+Shader\+Uniform} (const std\+::string \&location, int value) const
+\begin{DoxyCompactList}\small\item\em Sets a shader uniform with a int value. \end{DoxyCompactList}\item 
+void \hyperlink{class_shader_program_a5138c3a38a576bbb90d37ab8be6395bf}{Set\+Shader\+Uniform} (const std\+::string \&location, const glm\+::vec4 \&value) const
+\begin{DoxyCompactList}\small\item\em Sets a shader uniform with a vec4 value. \end{DoxyCompactList}\item 
+void \hyperlink{class_shader_program_a00815a3efc74c4ff9a12f2a0c9b46d6e}{Set\+Shader\+Subroutine} (const std\+::string \&location, const std\+::string \&subroutine, G\+Lenum substage) const
+\begin{DoxyCompactList}\small\item\em Sets a shader subroutine variable to point to the desired subroutine. \end{DoxyCompactList}\item 
+{\footnotesize template$<$int N$>$ }\\void \hyperlink{class_shader_program_aac2a462281a872df0ed8d197ec0b4104}{Setup\+Uniform\+Block} (const std\+::string \&block\+Name, std\+::array$<$ const char $\ast$, N $>$ \&names, std\+::array$<$ G\+Luint, N $>$ \&indices, std\+::array$<$ G\+Lint, N $>$ \&offsets, std\+::vector$<$ G\+Lubyte $>$ \&data, G\+Luint \&block\+Location, G\+Lint \&block\+Size, G\+Luint \&buffer\+Location)
+\begin{DoxyCompactList}\small\item\em Sets up a shader uniform block with N variables. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_shader_program_a20b5ed7b5f81154025eb7b6f1be70f84}{Is\+Affected\+By\+Light} (const class \hyperlink{class_light}{Light} $\ast$light) const
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static G\+Luint \hyperlink{class_shader_program_ab5c50c33203cf65b7f6ffe00d2243d5a}{Load\+Shader\+Object} (G\+Lenum type, const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Reads in a shader object and returns the Open\+GL shader object name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \hyperlink{class_shader_program_a7d8f2b643a81ac4097606e43ade92f81}{shader\+Program}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ G\+Lenum, G\+Luint $>$ \hyperlink{class_shader_program_a8eabcc4ff693bc9430daef8cfc6008de}{shader\+Objects}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{class_shader_program_a8839da24bcba7d96ce590146523a8d47}{S\+H\+A\+D\+E\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+\_\+\+S\+I\+ZE} = 500
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interfaces with the underlying G\+L\+SL shader program. 
+
+This class wil manage the G\+L\+SL shader program from loading and compiling to setting runtime variables. The shader interfaces closely with the underlying shader especially in \hyperlink{class_shader_program_a02cf3df43c59808160fce158ad655a40}{Shader\+Program\+::\+Setup\+Shader\+Lighting()}, \hyperlink{class_shader_program_a20ea5669f122fa6143e7fa8ee9d92578}{Shader\+Program\+::\+Setup\+Shader\+Materials()}, and \hyperlink{class_shader_program_abefd4e66aae75993f05bd607b6b0ed22}{Shader\+Program\+::\+Setup\+Shader\+Camera()}. This class (and its subclasses) will directly correspond to a shader program (vertex shader plus a fragment shader). So if you ever decide to create a new type of shader (not the provided Blinn-\/\+Phong one), you will have to create a new sub-\/class of \hyperlink{class_shader_program}{Shader\+Program} to make sure that its uniforms are setup properly. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_shader_program_aba2db5734b2f70cc34078126ad279588}{}\label{class_shader_program_aba2db5734b2f70cc34078126ad279588} 
+\index{Shader\+Program@{Shader\+Program}!Shader\+Program@{Shader\+Program}}
+\index{Shader\+Program@{Shader\+Program}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Shader\+Program()}{ShaderProgram()}}
+{\footnotesize\ttfamily Shader\+Program\+::\+Shader\+Program (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+map$<$ G\+Lenum, std\+::string $>$ \&}]{input\+Shaders }\end{DoxyParamCaption})}
+
+
+
+Creates a shader program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Shaders} & A map of the shader type to the shader file location.\\
+\hline
+\end{DoxyParams}
+At the minimum a vertex shader is required to create a G\+L\+SL shader program; however, using a fragment shader is highly recommended unless you know what you are doing. \hypertarget{class_shader_program_a2d2eadcfc48cc2e2ddb82aba70553a9f}{}\label{class_shader_program_a2d2eadcfc48cc2e2ddb82aba70553a9f} 
+\index{Shader\+Program@{Shader\+Program}!````~Shader\+Program@{$\sim$\+Shader\+Program}}
+\index{````~Shader\+Program@{$\sim$\+Shader\+Program}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{$\sim$\+Shader\+Program()}{~ShaderProgram()}}
+{\footnotesize\ttfamily Shader\+Program\+::$\sim$\+Shader\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A destructor to clean up the shader program. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_shader_program_a7313b3596bcd6d982d9624a46cc2acc6}{}\label{class_shader_program_a7313b3596bcd6d982d9624a46cc2acc6} 
+\index{Shader\+Program@{Shader\+Program}!Get\+Program@{Get\+Program}}
+\index{Get\+Program@{Get\+Program}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Get\+Program()}{GetProgram()}}
+{\footnotesize\ttfamily G\+Luint Shader\+Program\+::\+Get\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the underlying shader program identifier created by \href{https://www.opengl.org/sdk/docs/man/html/glCreateProgram.xhtml}{\tt gl\+Create\+Program}. 
+
+\begin{DoxyReturn}{Returns}
+The shader program identifier created by \href{https://www.opengl.org/sdk/docs/man/html/glCreateProgram.xhtml}{\tt gl\+Create\+Program}. 
+\end{DoxyReturn}
+\hypertarget{class_shader_program_a20b5ed7b5f81154025eb7b6f1be70f84}{}\label{class_shader_program_a20b5ed7b5f81154025eb7b6f1be70f84} 
+\index{Shader\+Program@{Shader\+Program}!Is\+Affected\+By\+Light@{Is\+Affected\+By\+Light}}
+\index{Is\+Affected\+By\+Light@{Is\+Affected\+By\+Light}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Is\+Affected\+By\+Light()}{IsAffectedByLight()}}
+{\footnotesize\ttfamily virtual bool Shader\+Program\+::\+Is\+Affected\+By\+Light (\begin{DoxyParamCaption}\item[{const class \hyperlink{class_light}{Light} $\ast$}]{light }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \hyperlink{class_cube_map_shader_aa0c9e535cb18663acd9857165abc788f}{Cube\+Map\+Shader}.
+
+\hypertarget{class_shader_program_a51ac6fbf3a3d88643eef303a4c3a1fa8}{}\label{class_shader_program_a51ac6fbf3a3d88643eef303a4c3a1fa8} 
+\index{Shader\+Program@{Shader\+Program}!Load\+Material\+From\+Assimp@{Load\+Material\+From\+Assimp}}
+\index{Load\+Material\+From\+Assimp@{Load\+Material\+From\+Assimp}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Load\+Material\+From\+Assimp()}{LoadMaterialFromAssimp()}}
+{\footnotesize\ttfamily virtual void Shader\+Program\+::\+Load\+Material\+From\+Assimp (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ struct ai\+Material $>$}]{assimp\+Material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \hyperlink{class_blinn_phong_shader_a5a2a720a403f3d005b07a96fee35b95b}{Blinn\+Phong\+Shader}.
+
+\hypertarget{class_shader_program_ab5c50c33203cf65b7f6ffe00d2243d5a}{}\label{class_shader_program_ab5c50c33203cf65b7f6ffe00d2243d5a} 
+\index{Shader\+Program@{Shader\+Program}!Load\+Shader\+Object@{Load\+Shader\+Object}}
+\index{Load\+Shader\+Object@{Load\+Shader\+Object}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Load\+Shader\+Object()}{LoadShaderObject()}}
+{\footnotesize\ttfamily G\+Luint Shader\+Program\+::\+Load\+Shader\+Object (\begin{DoxyParamCaption}\item[{G\+Lenum}]{type,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Reads in a shader object and returns the Open\+GL shader object name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Is the same as the shader\+Type paramter in \href{https://www.opengl.org/sdk/docs/man/html/glCreateShader.xhtml}{\tt gl\+Create\+Shader}. \\
+\hline
+{\em filename} & The filename to load the shader from. Note that the base directory of shaders is defined in S\+H\+A\+D\+E\+R\+\_\+\+P\+A\+TH which is set in the configuration step with C\+Make. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Open\+GL shader object name. 
+\end{DoxyReturn}
+\hypertarget{class_shader_program_a00815a3efc74c4ff9a12f2a0c9b46d6e}{}\label{class_shader_program_a00815a3efc74c4ff9a12f2a0c9b46d6e} 
+\index{Shader\+Program@{Shader\+Program}!Set\+Shader\+Subroutine@{Set\+Shader\+Subroutine}}
+\index{Set\+Shader\+Subroutine@{Set\+Shader\+Subroutine}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Set\+Shader\+Subroutine()}{SetShaderSubroutine()}}
+{\footnotesize\ttfamily void Shader\+Program\+::\+Set\+Shader\+Subroutine (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{location,  }\item[{const std\+::string \&}]{subroutine,  }\item[{G\+Lenum}]{substage }\end{DoxyParamCaption}) const}
+
+
+
+Sets a shader subroutine variable to point to the desired subroutine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & The name of the uniform variable in the shader. \\
+\hline
+{\em subroutine} & The name of the subroutine function in the shader. \\
+\hline
+{\em substage} & The stage of the shader program that the subroutine is in (i.\+e. G\+L\+\_\+\+V\+E\+R\+T\+E\+X\+\_\+\+S\+H\+A\+D\+ER or G\+L\+\_\+\+F\+R\+A\+G\+M\+E\+N\+T\+\_\+\+S\+H\+A\+D\+ER). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Subroutines are broken on Mac O\+SX with a N\+V\+I\+D\+IA graphics card.
+\end{DoxyWarning}
+You can read more about shader subroutines \href{https://www.opengl.org/wiki/Shader_Subroutine}{\tt here} or in Chapter 2 of the Open\+GL Programming Guide. \hypertarget{class_shader_program_a84ff179a393c8dcd55c38eef19925fef}{}\label{class_shader_program_a84ff179a393c8dcd55c38eef19925fef} 
+\index{Shader\+Program@{Shader\+Program}!Set\+Shader\+Uniform@{Set\+Shader\+Uniform}}
+\index{Set\+Shader\+Uniform@{Set\+Shader\+Uniform}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Set\+Shader\+Uniform()}{SetShaderUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Shader\+Program\+::\+Set\+Shader\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{location,  }\item[{const glm\+::mat4 \&}]{value }\end{DoxyParamCaption}) const}
+
+
+
+Sets a shader uniform with a mat4x4 value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & The name of the uniform variable in the shader. \\
+\hline
+{\em value} & The value to pass to the shader. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_shader_program_a7ffbc023f4bb3ae2c8b458eb7182dff0}{}\label{class_shader_program_a7ffbc023f4bb3ae2c8b458eb7182dff0} 
+\index{Shader\+Program@{Shader\+Program}!Set\+Shader\+Uniform@{Set\+Shader\+Uniform}}
+\index{Set\+Shader\+Uniform@{Set\+Shader\+Uniform}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Set\+Shader\+Uniform()}{SetShaderUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Shader\+Program\+::\+Set\+Shader\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{location,  }\item[{float}]{value }\end{DoxyParamCaption}) const}
+
+
+
+Sets a shader uniform with a float value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & The name of the uniform variable in the shader. \\
+\hline
+{\em value} & The value to pass to the shader. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+A value of type double will be implicity cast to a float. If you ever need to pass a double to the shader, make sure to add a function overload for double! 
+\end{DoxyWarning}
+\hypertarget{class_shader_program_a16164eb7e3f1e2ca9bf60c492e43b4df}{}\label{class_shader_program_a16164eb7e3f1e2ca9bf60c492e43b4df} 
+\index{Shader\+Program@{Shader\+Program}!Set\+Shader\+Uniform@{Set\+Shader\+Uniform}}
+\index{Set\+Shader\+Uniform@{Set\+Shader\+Uniform}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Set\+Shader\+Uniform()}{SetShaderUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Shader\+Program\+::\+Set\+Shader\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{location,  }\item[{int}]{value }\end{DoxyParamCaption}) const}
+
+
+
+Sets a shader uniform with a int value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & The name of the uniform variable in the shader. \\
+\hline
+{\em value} & The value to pass to the shader. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_shader_program_a5138c3a38a576bbb90d37ab8be6395bf}{}\label{class_shader_program_a5138c3a38a576bbb90d37ab8be6395bf} 
+\index{Shader\+Program@{Shader\+Program}!Set\+Shader\+Uniform@{Set\+Shader\+Uniform}}
+\index{Set\+Shader\+Uniform@{Set\+Shader\+Uniform}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Set\+Shader\+Uniform()}{SetShaderUniform()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Shader\+Program\+::\+Set\+Shader\+Uniform (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{location,  }\item[{const glm\+::vec4 \&}]{value }\end{DoxyParamCaption}) const}
+
+
+
+Sets a shader uniform with a vec4 value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & The name of the uniform variable in the shader. \\
+\hline
+{\em value} & The value to pass to the shader. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_shader_program_abefd4e66aae75993f05bd607b6b0ed22}{}\label{class_shader_program_abefd4e66aae75993f05bd607b6b0ed22} 
+\index{Shader\+Program@{Shader\+Program}!Setup\+Shader\+Camera@{Setup\+Shader\+Camera}}
+\index{Setup\+Shader\+Camera@{Setup\+Shader\+Camera}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Setup\+Shader\+Camera()}{SetupShaderCamera()}}
+{\footnotesize\ttfamily void Shader\+Program\+::\+Setup\+Shader\+Camera (\begin{DoxyParamCaption}\item[{const class \hyperlink{class_camera}{Camera} $\ast$}]{camera }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Passes camera parameters to the shader if necessary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & The camera we want to use for shading. This should not be a null pointer. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_blinn_phong_shader_ab4d435ed4f4815a71590b514550dc2b7}{Blinn\+Phong\+Shader}.
+
+\hypertarget{class_shader_program_a02cf3df43c59808160fce158ad655a40}{}\label{class_shader_program_a02cf3df43c59808160fce158ad655a40} 
+\index{Shader\+Program@{Shader\+Program}!Setup\+Shader\+Lighting@{Setup\+Shader\+Lighting}}
+\index{Setup\+Shader\+Lighting@{Setup\+Shader\+Lighting}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Setup\+Shader\+Lighting()}{SetupShaderLighting()}}
+{\footnotesize\ttfamily void Shader\+Program\+::\+Setup\+Shader\+Lighting (\begin{DoxyParamCaption}\item[{const class \hyperlink{class_light}{Light} $\ast$}]{light }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This function will pass to the G\+L\+SL shader the variables needed by the shader to accurately shade the model using the given light. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em light} & The light we want to use for shading. This should not be a null pointer. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_blinn_phong_shader_a812ffd751068ae3bfc131ddb27712941}{Blinn\+Phong\+Shader}.
+
+\hypertarget{class_shader_program_a20ea5669f122fa6143e7fa8ee9d92578}{}\label{class_shader_program_a20ea5669f122fa6143e7fa8ee9d92578} 
+\index{Shader\+Program@{Shader\+Program}!Setup\+Shader\+Materials@{Setup\+Shader\+Materials}}
+\index{Setup\+Shader\+Materials@{Setup\+Shader\+Materials}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Setup\+Shader\+Materials()}{SetupShaderMaterials()}}
+{\footnotesize\ttfamily void Shader\+Program\+::\+Setup\+Shader\+Materials (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets up the shader material (what this material is depends on the shader). 
+
+This functions is meant to be a general setup function for the shader. This function has no access to the scene or anything else stored in the application so its primary purpose is to work with objects stored within the shader program object (i.\+e. textures). 
+
+Reimplemented in \hyperlink{class_blinn_phong_shader_a444db9ffe3d55dbbb55ced8cf4abb705}{Blinn\+Phong\+Shader}, and \hyperlink{class_cube_map_shader_a9deaf42646258af9237751f331fb215a}{Cube\+Map\+Shader}.
+
+\hypertarget{class_shader_program_aac2a462281a872df0ed8d197ec0b4104}{}\label{class_shader_program_aac2a462281a872df0ed8d197ec0b4104} 
+\index{Shader\+Program@{Shader\+Program}!Setup\+Uniform\+Block@{Setup\+Uniform\+Block}}
+\index{Setup\+Uniform\+Block@{Setup\+Uniform\+Block}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Setup\+Uniform\+Block()}{SetupUniformBlock()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+void Shader\+Program\+::\+Setup\+Uniform\+Block (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{block\+Name,  }\item[{std\+::array$<$ const char $\ast$, N $>$ \&}]{names,  }\item[{std\+::array$<$ G\+Luint, N $>$ \&}]{indices,  }\item[{std\+::array$<$ G\+Lint, N $>$ \&}]{offsets,  }\item[{std\+::vector$<$ G\+Lubyte $>$ \&}]{data,  }\item[{G\+Luint \&}]{block\+Location,  }\item[{G\+Lint \&}]{block\+Size,  }\item[{G\+Luint \&}]{buffer\+Location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets up a shader uniform block with N variables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block\+Name} & The name of the uniform block in the shader. \\
+\hline
+{\em names} & The names of the variables within the uniform block. \\
+\hline
+{\em indices} & The indices of the variable within the uniform block. \\
+\hline
+{\em offsets} & The offset (number of bytes) into memory for the data that we pass to the buffer that is linked to the uniform block for each variable. \\
+\hline
+{\em block\+Location} & The uniform location of the uniform block. \\
+\hline
+{\em block\+Size} & The number of bytes allocated for the uniform block. \\
+\hline
+{\em buffer\+Location} & The buffer object name generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}.\\
+\hline
+\end{DoxyParams}
+You can read more about uniform blocks (uniform buffer objects) \href{https://www.packtpub.com/books/content/opengl-40-using-uniform-blocks-and-uniform-buffer-objects}{\tt here}. \hypertarget{class_shader_program_aab1241c0f0962d43687d92866d7b7d6a}{}\label{class_shader_program_aab1241c0f0962d43687d92866d7b7d6a} 
+\index{Shader\+Program@{Shader\+Program}!Start\+Use\+Shader@{Start\+Use\+Shader}}
+\index{Start\+Use\+Shader@{Start\+Use\+Shader}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Start\+Use\+Shader()}{StartUseShader()}}
+{\footnotesize\ttfamily void Shader\+Program\+::\+Start\+Use\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies the Open\+GL state that we will be using the underlying G\+L\+SL program. 
+
+If the shader program failed to compile or link (and you still manage to get to this function call), \hyperlink{class_shader_program_aab1241c0f0962d43687d92866d7b7d6a}{Start\+Use\+Shader()} will do nothing. \hypertarget{class_shader_program_a2f2ae9ab4849f855becccfaa445d00d5}{}\label{class_shader_program_a2f2ae9ab4849f855becccfaa445d00d5} 
+\index{Shader\+Program@{Shader\+Program}!Stop\+Use\+Shader@{Stop\+Use\+Shader}}
+\index{Stop\+Use\+Shader@{Stop\+Use\+Shader}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{Stop\+Use\+Shader()}{StopUseShader()}}
+{\footnotesize\ttfamily void Shader\+Program\+::\+Stop\+Use\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Tells the Open\+GL state to no longer us the underlying shader. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_shader_program_a8839da24bcba7d96ce590146523a8d47}{}\label{class_shader_program_a8839da24bcba7d96ce590146523a8d47} 
+\index{Shader\+Program@{Shader\+Program}!S\+H\+A\+D\+E\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+\_\+\+S\+I\+ZE@{S\+H\+A\+D\+E\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+\_\+\+S\+I\+ZE}}
+\index{S\+H\+A\+D\+E\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+\_\+\+S\+I\+ZE@{S\+H\+A\+D\+E\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+\_\+\+S\+I\+ZE}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{S\+H\+A\+D\+E\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+\_\+\+S\+I\+ZE}{SHADER\_ERROR\_LOG\_SIZE}}
+{\footnotesize\ttfamily const int Shader\+Program\+::\+S\+H\+A\+D\+E\+R\+\_\+\+E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+\_\+\+S\+I\+ZE = 500\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\hypertarget{class_shader_program_a8eabcc4ff693bc9430daef8cfc6008de}{}\label{class_shader_program_a8eabcc4ff693bc9430daef8cfc6008de} 
+\index{Shader\+Program@{Shader\+Program}!shader\+Objects@{shader\+Objects}}
+\index{shader\+Objects@{shader\+Objects}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{shader\+Objects}{shaderObjects}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$G\+Lenum, G\+Luint$>$ Shader\+Program\+::shader\+Objects\hspace{0.3cm}{\ttfamily [private]}}
+
+\hypertarget{class_shader_program_a7d8f2b643a81ac4097606e43ade92f81}{}\label{class_shader_program_a7d8f2b643a81ac4097606e43ade92f81} 
+\index{Shader\+Program@{Shader\+Program}!shader\+Program@{shader\+Program}}
+\index{shader\+Program@{shader\+Program}!Shader\+Program@{Shader\+Program}}
+\subsubsection{\texorpdfstring{shader\+Program}{shaderProgram}}
+{\footnotesize\ttfamily G\+Luint Shader\+Program\+::shader\+Program\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\+Shaders/\hyperlink{_shader_program_8h}{Shader\+Program.\+h}\item 
+/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\+Shaders/\hyperlink{_shader_program_8cpp}{Shader\+Program.\+cpp}\end{DoxyCompactItemize}

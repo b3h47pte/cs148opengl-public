@@ -1,0 +1,138 @@
+\hypertarget{class_assignment1}{}\section{Assignment1 Class Reference}
+\label{class_assignment1}\index{Assignment1@{Assignment1}}
+
+
+{\ttfamily \#include $<$Assignment1.\+h$>$}
+
+Inheritance diagram for Assignment1\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_assignment1}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_assignment1_ade9ef18c233dab37d37f20760fe7674d}{Assignment1} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ input\+Scene, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ input\+Camera)
+\item 
+virtual glm\+::vec2 \hyperlink{class_assignment1_a581b6c897c918eede3f9bbb1cbc50320}{Get\+Window\+Size} () const
+\begin{DoxyCompactList}\small\item\em Specifies the initial window size. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_assignment1_ab9db4f51e177dd72130cd61d86b97535}{Handle\+Input} (S\+D\+L\+\_\+\+Keysym key, Uint32 state, Uint8 repeat, double timestamp, double delta\+Time)
+\begin{DoxyCompactList}\small\item\em Processes an S\+DL keyboard event which has type \href{https://wiki.libsdl.org/SDL_KeyboardEvent}{\tt S\+D\+L\+\_\+\+Keyboard\+Event}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ \hyperlink{class_assignment1_ae1952b4904620a16c4f2c098bf061c68}{Create\+Application} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$ \hyperlink{class_application_a88c6615107a5094bb93fa5f153f79554}{scene}, std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_application_a0e8589fcb13c520ba472473abe5a518d}{camera})
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_assignment1_a8d12cf21f1463caa5a8da45110b50103}{Setup\+Scene} ()
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to populate the scene. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_assignment1_a07743a6d86f7603dd58339c4db1de192}{Setup\+Example1} ()
+\item 
+virtual void \hyperlink{class_assignment1_aeabed7b579d59a6fdacaeab468afba29}{Setup\+Example2} ()
+\item 
+virtual void \hyperlink{class_assignment1_afbb3cb7765b899e69c9847d29f045392}{Setup\+Example3} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_assignment1_ade9ef18c233dab37d37f20760fe7674d}{}\label{class_assignment1_ade9ef18c233dab37d37f20760fe7674d} 
+\index{Assignment1@{Assignment1}!Assignment1@{Assignment1}}
+\index{Assignment1@{Assignment1}!Assignment1@{Assignment1}}
+\subsubsection{\texorpdfstring{Assignment1()}{Assignment1()}}
+{\footnotesize\ttfamily Assignment1\+::\+Assignment1 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$}]{input\+Scene,  }\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$}]{input\+Camera }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_assignment1_ae1952b4904620a16c4f2c098bf061c68}{}\label{class_assignment1_ae1952b4904620a16c4f2c098bf061c68} 
+\index{Assignment1@{Assignment1}!Create\+Application@{Create\+Application}}
+\index{Create\+Application@{Create\+Application}!Assignment1@{Assignment1}}
+\subsubsection{\texorpdfstring{Create\+Application()}{CreateApplication()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ Assignment1\+::\+Create\+Application (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_scene}{Scene} $>$}]{scene,  }\item[{std\+::shared\+\_\+ptr$<$ class \hyperlink{class_camera}{Camera} $>$}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\hypertarget{class_assignment1_a581b6c897c918eede3f9bbb1cbc50320}{}\label{class_assignment1_a581b6c897c918eede3f9bbb1cbc50320} 
+\index{Assignment1@{Assignment1}!Get\+Window\+Size@{Get\+Window\+Size}}
+\index{Get\+Window\+Size@{Get\+Window\+Size}!Assignment1@{Assignment1}}
+\subsubsection{\texorpdfstring{Get\+Window\+Size()}{GetWindowSize()}}
+{\footnotesize\ttfamily glm\+::vec2 Assignment1\+::\+Get\+Window\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Specifies the initial window size. 
+
+\begin{DoxyReturn}{Returns}
+The desired window size. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_application_ab190ae0e987fe95682714dd4b2495e82}{Application}.
+
+\hypertarget{class_assignment1_ab9db4f51e177dd72130cd61d86b97535}{}\label{class_assignment1_ab9db4f51e177dd72130cd61d86b97535} 
+\index{Assignment1@{Assignment1}!Handle\+Input@{Handle\+Input}}
+\index{Handle\+Input@{Handle\+Input}!Assignment1@{Assignment1}}
+\subsubsection{\texorpdfstring{Handle\+Input()}{HandleInput()}}
+{\footnotesize\ttfamily void Assignment1\+::\+Handle\+Input (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Keysym}]{key,  }\item[{Uint32}]{state,  }\item[{Uint8}]{repeat,  }\item[{double}]{timestamp,  }\item[{double}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Processes an S\+DL keyboard event which has type \href{https://wiki.libsdl.org/SDL_KeyboardEvent}{\tt S\+D\+L\+\_\+\+Keyboard\+Event}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & See the S\+DL documentation for more details about \href{https://wiki.libsdl.org/SDL_Keysym}{\tt S\+D\+L\+\_\+\+Keysym}. \\
+\hline
+{\em state} & This is the type field in the \href{https://wiki.libsdl.org/SDL_Event}{\tt S\+D\+L\+\_\+\+Event}datastructure. \\
+\hline
+{\em repeat} & This value is non-\/zero is the key is being repeated. \\
+\hline
+{\em timestamp} & Timestamp is the number of seconds since the program was first started. \\
+\hline
+{\em delta\+Time} & The amount of time (in seconds) since the last tick.\\
+\hline
+\end{DoxyParams}
+Takes in a keyboard event and process it. This does nothing by default. \textquotesingle{}delta\+Time\textquotesingle{} is included to allow you to move something and have the movement look smooth. For example, if you have an object that you want to move forward whenever \textquotesingle{}W\textquotesingle{} is pressed. You know that the object travels at 10 meters per second when \textquotesingle{}W\textquotesingle{} is pressed and 0 meters per second when it is not. How far should you move the object? You would want to move it forward by $10 \cdot deltaTime $ units. 
+
+Reimplemented from \hyperlink{class_application_ae6074c3f102de1cb2fe4c81b545679db}{Application}.
+
+\hypertarget{class_assignment1_a07743a6d86f7603dd58339c4db1de192}{}\label{class_assignment1_a07743a6d86f7603dd58339c4db1de192} 
+\index{Assignment1@{Assignment1}!Setup\+Example1@{Setup\+Example1}}
+\index{Setup\+Example1@{Setup\+Example1}!Assignment1@{Assignment1}}
+\subsubsection{\texorpdfstring{Setup\+Example1()}{SetupExample1()}}
+{\footnotesize\ttfamily void Assignment1\+::\+Setup\+Example1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_assignment1_aeabed7b579d59a6fdacaeab468afba29}{}\label{class_assignment1_aeabed7b579d59a6fdacaeab468afba29} 
+\index{Assignment1@{Assignment1}!Setup\+Example2@{Setup\+Example2}}
+\index{Setup\+Example2@{Setup\+Example2}!Assignment1@{Assignment1}}
+\subsubsection{\texorpdfstring{Setup\+Example2()}{SetupExample2()}}
+{\footnotesize\ttfamily void Assignment1\+::\+Setup\+Example2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_assignment1_afbb3cb7765b899e69c9847d29f045392}{}\label{class_assignment1_afbb3cb7765b899e69c9847d29f045392} 
+\index{Assignment1@{Assignment1}!Setup\+Example3@{Setup\+Example3}}
+\index{Setup\+Example3@{Setup\+Example3}!Assignment1@{Assignment1}}
+\subsubsection{\texorpdfstring{Setup\+Example3()}{SetupExample3()}}
+{\footnotesize\ttfamily void Assignment1\+::\+Setup\+Example3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\hypertarget{class_assignment1_a8d12cf21f1463caa5a8da45110b50103}{}\label{class_assignment1_a8d12cf21f1463caa5a8da45110b50103} 
+\index{Assignment1@{Assignment1}!Setup\+Scene@{Setup\+Scene}}
+\index{Setup\+Scene@{Setup\+Scene}!Assignment1@{Assignment1}}
+\subsubsection{\texorpdfstring{Setup\+Scene()}{SetupScene()}}
+{\footnotesize\ttfamily void Assignment1\+::\+Setup\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Called by \hyperlink{class_application_a17cf1ea4552d26a1c20f7d98d793d41d}{Initialize()} to populate the scene. 
+
+Note by the time this function is called, the \hyperlink{class_application}{Application} sub-\/class is fully constructed and \hyperlink{class_scene}{Scene} object is already created. 
+
+Reimplemented from \hyperlink{class_application_aa8e8017ef8dd86293c96d0645e66d440}{Application}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/data/cs148/cs148opengl-\/instructor/source/assignment1/\hyperlink{_assignment1_8h}{Assignment1.\+h}\item 
+/data/cs148/cs148opengl-\/instructor/source/assignment1/\hyperlink{_assignment1_8cpp}{Assignment1.\+cpp}\end{DoxyCompactItemize}

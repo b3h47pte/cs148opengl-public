@@ -1,0 +1,22 @@
+\hypertarget{_primitive_creator_8cpp}{}\section{/data/cs148/cs148opengl-\/instructor/source/common/\+Utility/\+Mesh/\+Simple/\+Primitive\+Creator.cpp File Reference}
+\label{_primitive_creator_8cpp}\index{/data/cs148/cs148opengl-\/instructor/source/common/\+Utility/\+Mesh/\+Simple/\+Primitive\+Creator.\+cpp@{/data/cs148/cs148opengl-\/instructor/source/common/\+Utility/\+Mesh/\+Simple/\+Primitive\+Creator.\+cpp}}
+{\ttfamily \#include \char`\"{}common/\+Utility/\+Mesh/\+Simple/\+Primitive\+Creator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/\+Rendering/\+Rendering\+Object.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_primitive_creator}{Primitive\+Creator}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespace_primitive_creator_acbc473c3e4d3b99d8e2b9d302e095978}{Primitive\+Creator\+::\+Add\+Triangle\+Indices} (const glm\+::uvec3 \&triangle, \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Rendering\+Object\+::\+Index\+Array} \&indices)
+\begin{DoxyCompactList}\small\item\em Utility function to add the elements in a glm\+::uvec3 to the indices array. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_rendering_object}{Rendering\+Object} $>$ \hyperlink{namespace_primitive_creator_a4fcaafc02f9b75b4e6e9720e7c15c079}{Primitive\+Creator\+::\+Create\+Cube} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader, float side\+Length)
+\begin{DoxyCompactList}\small\item\em Create a cube with a given side length. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_rendering_object}{Rendering\+Object} $>$ \hyperlink{namespace_primitive_creator_a1af4816da9f64904c664718e13b05e4c}{Primitive\+Creator\+::\+Create\+Plane} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader)
+\begin{DoxyCompactList}\small\item\em Creates a plane with size 1x1. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_rendering_object}{Rendering\+Object} $>$ \hyperlink{namespace_primitive_creator_afbeed51ca2c797399acd7b582ce91139}{Primitive\+Creator\+::\+Create\+Ico\+Sphere} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader, float radius, int refinement\+Steps=0)
+\begin{DoxyCompactList}\small\item\em Create a sphere with a given radius. \end{DoxyCompactList}\end{DoxyCompactItemize}

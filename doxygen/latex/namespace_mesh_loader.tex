@@ -1,0 +1,35 @@
+\hypertarget{namespace_mesh_loader}{}\section{Mesh\+Loader Namespace Reference}
+\label{namespace_mesh_loader}\index{Mesh\+Loader@{Mesh\+Loader}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_rendering_object}{Rendering\+Object} $>$ $>$ \hyperlink{namespace_mesh_loader_aee3ffe862d7bf408495c62614118fd2a}{Load\+Mesh} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader, const std\+::string \&filename, std\+::vector$<$ std\+::shared\+\_\+ptr$<$ ai\+Material $>$$>$ $\ast$output\+Materials=nullptr)
+\begin{DoxyCompactList}\small\item\em Loads a mesh file and generates a \hyperlink{class_rendering_object}{Rendering\+Object} for each object within the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespace_mesh_loader_aee3ffe862d7bf408495c62614118fd2a}{}\label{namespace_mesh_loader_aee3ffe862d7bf408495c62614118fd2a} 
+\index{Mesh\+Loader@{Mesh\+Loader}!Load\+Mesh@{Load\+Mesh}}
+\index{Load\+Mesh@{Load\+Mesh}!Mesh\+Loader@{Mesh\+Loader}}
+\subsubsection{\texorpdfstring{Load\+Mesh()}{LoadMesh()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_rendering_object}{Rendering\+Object} $>$ $>$ Mesh\+Loader\+::\+Load\+Mesh (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_shader_program}{Shader\+Program} $>$}]{input\+Shader,  }\item[{const std\+::string \&}]{filename,  }\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ ai\+Material $>$$>$ $\ast$}]{output\+Materials = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Loads a mesh file and generates a \hyperlink{class_rendering_object}{Rendering\+Object} for each object within the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Shader} & The shader to use to render all the objects. This can be a null pointer in which case you can set the shaders manually afterwards. \\
+\hline
+{\em filename} & The file to load the mesh from.\\
+\hline
+\end{DoxyParams}
+This will load all the different meshes stored within a file into multiple rendering objects. These rendering objects can then be stored into one scene object or multiple. In the context of an O\+BJ file, each of the different meshes would a separate group. We will load 5 things (if it does not exist then it is ignored)\+:
+\begin{DoxyItemize}
+\item Vertex Positions
+\item Vertex Normals
+\item Vertex Colors
+\item Vertex U\+Vs
+\item Face Vertex Indices Note that we do not load textures or material here. If you wish to do that you will have to extend the functionality in this function. 
+\end{DoxyItemize}

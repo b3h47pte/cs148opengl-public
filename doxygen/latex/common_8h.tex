@@ -1,0 +1,159 @@
+\hypertarget{common_8h}{}\section{/data/cs148/cs148opengl-\/instructor/source/common/common.h File Reference}
+\label{common_8h}\index{/data/cs148/cs148opengl-\/instructor/source/common/common.\+h@{/data/cs148/cs148opengl-\/instructor/source/common/common.\+h}}
+
+
+A file included across the application framework to include common header files and other useful functions and macros.  
+
+
+{\ttfamily \#include \char`\"{}S\+D\+L2/\+S\+D\+L.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}glm/glm.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}glm/gtc/type\+\_\+ptr.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}glm/gtc/matrix\+\_\+transform.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}glm/gtc/quaternion.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}glm/gtx/quaternion.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}glm/gtx/string\+\_\+cast.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}G\+L/glew.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{common_8h_a9cb4033779c9173d55704ed4692db3e2}{\+\_\+\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+\_\+}
+\item 
+\#define \hyperlink{common_8h_ab76e9d812060d1ba7e166d5b3e75355b}{O\+G\+L\+\_\+\+C\+A\+LL}(x)~x; \hyperlink{common_8h_ab11db0eff470ddd4d5f1e0dfc3786dd3}{\+\_\+\+Display\+Open\+G\+L\+Error}(\#x, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+);
+\begin{DoxyCompactList}\small\item\em Provides an easy to use macro that wraps around Open\+GL calls and checks their error. \end{DoxyCompactList}\item 
+\#define \hyperlink{common_8h_a2d743b5950d82c9ca4071ca3217a8315}{S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER}(x)~\#x
+\begin{DoxyCompactList}\small\item\em Help stringify a macro. \end{DoxyCompactList}\item 
+\#define \hyperlink{common_8h_a6df1d22fb5f09eccc23b9f399670cfd7}{S\+T\+R\+I\+N\+G\+I\+FY}(x)~\hyperlink{common_8h_a2d743b5950d82c9ca4071ca3217a8315}{S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER}(x)
+\begin{DoxyCompactList}\small\item\em Stringify a macro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{common_8h_afce9600873f5e1c38abefadd838fbed3}{\+\_\+\+Open\+G\+L\+Error\+To\+String} (G\+Lenum err)
+\begin{DoxyCompactList}\small\item\em Converts an Open\+GL error to an std\+::string. \end{DoxyCompactList}\item 
+void \hyperlink{common_8h_ab11db0eff470ddd4d5f1e0dfc3786dd3}{\+\_\+\+Display\+Open\+G\+L\+Error} (std\+::string command, std\+::string file, int line)
+\begin{DoxyCompactList}\small\item\em Prints a user friendly message for the most recent Open\+GL error (if any) to stdout. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename... Ts$>$ }\\std\+::unique\+\_\+ptr$<$ T $>$ \hyperlink{common_8h_aeaa9025fc7af5678d1211ca828c19fbf}{make\+\_\+unique} (Ts \&\&... params)
+\begin{DoxyCompactList}\small\item\em Create a std\+::unique\+\_\+ptr much like std\+::make\+\_\+shared. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const float \hyperlink{common_8h_a6a1e5c0227931d99b703e1fd3adebf52}{PI} = 3.\+14159265359f
+\begin{DoxyCompactList}\small\item\em The PI constant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A file included across the application framework to include common header files and other useful functions and macros. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{common_8h_a9cb4033779c9173d55704ed4692db3e2}{}\label{common_8h_a9cb4033779c9173d55704ed4692db3e2} 
+\index{common.\+h@{common.\+h}!\+\_\+\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+\_\+@{\+\_\+\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+\_\+@{\+\_\+\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+\_\+}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+\_\+}{\_\_COMMON\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+C\+O\+M\+M\+O\+N\+\_\+\+\_\+}
+
+\hypertarget{common_8h_ab76e9d812060d1ba7e166d5b3e75355b}{}\label{common_8h_ab76e9d812060d1ba7e166d5b3e75355b} 
+\index{common.\+h@{common.\+h}!O\+G\+L\+\_\+\+C\+A\+LL@{O\+G\+L\+\_\+\+C\+A\+LL}}
+\index{O\+G\+L\+\_\+\+C\+A\+LL@{O\+G\+L\+\_\+\+C\+A\+LL}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{O\+G\+L\+\_\+\+C\+A\+LL}{OGL\_CALL}}
+{\footnotesize\ttfamily \#define O\+G\+L\+\_\+\+C\+A\+LL(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x; \hyperlink{common_8h_ab11db0eff470ddd4d5f1e0dfc3786dd3}{\+\_\+\+Display\+Open\+G\+L\+Error}(\#x, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+);}
+
+
+
+Provides an easy to use macro that wraps around Open\+GL calls and checks their error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The Open\+GL command.\\
+\hline
+\end{DoxyParams}
+This is only defined in the Debug build when N\+D\+E\+B\+UG is N\+OT defined. If you are unfamiliar with C++ preprocess macros, the {\bfseries F\+I\+LE} macro, or the {\bfseries L\+I\+NE} macro, you can read \href{http://www.cplusplus.com/doc/tutorial/preprocessor/}{\tt this} for more information. \hypertarget{common_8h_a6df1d22fb5f09eccc23b9f399670cfd7}{}\label{common_8h_a6df1d22fb5f09eccc23b9f399670cfd7} 
+\index{common.\+h@{common.\+h}!S\+T\+R\+I\+N\+G\+I\+FY@{S\+T\+R\+I\+N\+G\+I\+FY}}
+\index{S\+T\+R\+I\+N\+G\+I\+FY@{S\+T\+R\+I\+N\+G\+I\+FY}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{S\+T\+R\+I\+N\+G\+I\+FY}{STRINGIFY}}
+{\footnotesize\ttfamily \#define S\+T\+R\+I\+N\+G\+I\+FY(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\hyperlink{common_8h_a2d743b5950d82c9ca4071ca3217a8315}{S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER}(x)}
+
+
+
+Stringify a macro. 
+
+This takes in a macro that was defined to be a string and actually converts it into a string that can be used by the application. See \hyperlink{namespace_mesh_loader_aee3ffe862d7bf408495c62614118fd2a}{Mesh\+Loader\+::\+Load\+Mesh} for an example. Why is this nested macro necessary? You can read about it here\+: \href{https://gcc.gnu.org/onlinedocs/cpp/Stringification.html}{\tt link}. \hypertarget{common_8h_a2d743b5950d82c9ca4071ca3217a8315}{}\label{common_8h_a2d743b5950d82c9ca4071ca3217a8315} 
+\index{common.\+h@{common.\+h}!S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER@{S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER}}
+\index{S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER@{S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER}{STRINGIFY\_HELPER}}
+{\footnotesize\ttfamily \#define S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\#x}
+
+
+
+Help stringify a macro. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{common_8h_ab11db0eff470ddd4d5f1e0dfc3786dd3}{}\label{common_8h_ab11db0eff470ddd4d5f1e0dfc3786dd3} 
+\index{common.\+h@{common.\+h}!\+\_\+\+Display\+Open\+G\+L\+Error@{\+\_\+\+Display\+Open\+G\+L\+Error}}
+\index{\+\_\+\+Display\+Open\+G\+L\+Error@{\+\_\+\+Display\+Open\+G\+L\+Error}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+Display\+Open\+G\+L\+Error()}{\_DisplayOpenGLError()}}
+{\footnotesize\ttfamily void \+\_\+\+Display\+Open\+G\+L\+Error (\begin{DoxyParamCaption}\item[{std\+::string}]{command,  }\item[{std\+::string}]{file,  }\item[{int}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Prints a user friendly message for the most recent Open\+GL error (if any) to stdout. 
+
+\+\_\+\+Display\+Open\+G\+L\+Error 
+\begin{DoxyParams}{Parameters}
+{\em command} & The command that was run. \\
+\hline
+{\em file} & The file from which the command was run. \\
+\hline
+{\em line} & The line in the file where the command was fun.\\
+\hline
+\end{DoxyParams}
+This function is used by the O\+G\+L\+\_\+\+C\+A\+LL macro to provide debugging information in stdout when an Open\+GL A\+PI call fails. \hypertarget{common_8h_afce9600873f5e1c38abefadd838fbed3}{}\label{common_8h_afce9600873f5e1c38abefadd838fbed3} 
+\index{common.\+h@{common.\+h}!\+\_\+\+Open\+G\+L\+Error\+To\+String@{\+\_\+\+Open\+G\+L\+Error\+To\+String}}
+\index{\+\_\+\+Open\+G\+L\+Error\+To\+String@{\+\_\+\+Open\+G\+L\+Error\+To\+String}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+Open\+G\+L\+Error\+To\+String()}{\_OpenGLErrorToString()}}
+{\footnotesize\ttfamily std\+::string \+\_\+\+Open\+G\+L\+Error\+To\+String (\begin{DoxyParamCaption}\item[{G\+Lenum}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts an Open\+GL error to an std\+::string. 
+
+\+\_\+\+Open\+G\+L\+Error\+To\+String 
+\begin{DoxyParams}{Parameters}
+{\em err} & The Open\+GL error returned by \href{https://www.opengl.org/sdk/docs/man/html/glGetError.xhtml}{\tt gl\+Get\+Error}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string that explain the Open\+GL error. These are copied directly from the Open\+GL documentation.
+\end{DoxyReturn}
+This function is called by \+\_\+\+Display\+Open\+G\+L\+Error to get a user-\/friendly message in addition to an errror code. \hypertarget{common_8h_aeaa9025fc7af5678d1211ca828c19fbf}{}\label{common_8h_aeaa9025fc7af5678d1211ca828c19fbf} 
+\index{common.\+h@{common.\+h}!make\+\_\+unique@{make\+\_\+unique}}
+\index{make\+\_\+unique@{make\+\_\+unique}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{make\+\_\+unique()}{make\_unique()}}
+{\footnotesize\ttfamily template$<$typename T , typename... Ts$>$ \\
+std\+::unique\+\_\+ptr$<$T$>$ make\+\_\+unique (\begin{DoxyParamCaption}\item[{Ts \&\&...}]{params }\end{DoxyParamCaption})}
+
+
+
+Create a std\+::unique\+\_\+ptr much like std\+::make\+\_\+shared. 
+
+To avoid too many compilation problems I stuck with using C++11 where the committee forgot to include std\+::make\+\_\+unique (it\textquotesingle{}s there in C++14). This is a convenience function. Curious about Modern C++? The book \href{http://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996}{\tt Effective Modern C++} by Scott Meyes is a great book if you are already familiar with C++. 
+
+\subsection{Variable Documentation}
+\hypertarget{common_8h_a6a1e5c0227931d99b703e1fd3adebf52}{}\label{common_8h_a6a1e5c0227931d99b703e1fd3adebf52} 
+\index{common.\+h@{common.\+h}!PI@{PI}}
+\index{PI@{PI}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily PI = 3.\+14159265359f}
+
+
+
+The PI constant. 
+

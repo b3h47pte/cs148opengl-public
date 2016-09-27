@@ -1,0 +1,28 @@
+\hypertarget{_shader_program_8cpp}{}\section{/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\+Shaders/\+Shader\+Program.cpp File Reference}
+\label{_shader_program_8cpp}\index{/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\+Shaders/\+Shader\+Program.\+cpp@{/data/cs148/cs148opengl-\/instructor/source/common/\+Rendering/\+Shaders/\+Shader\+Program.\+cpp}}
+{\ttfamily \#include \char`\"{}common/\+Rendering/\+Shaders/\+Shader\+Program.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/\+Scene/\+Light/\+Light.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/\+Scene/\+Light/\+Light\+Properties.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_shader_program_8cpp_a83fe82500a8c6fce3722638fdf7d3d60}{V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+TS}(program,  name,  var)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_shader_program_8cpp_a83fe82500a8c6fce3722638fdf7d3d60}{}\label{_shader_program_8cpp_a83fe82500a8c6fce3722638fdf7d3d60} 
+\index{Shader\+Program.\+cpp@{Shader\+Program.\+cpp}!V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+TS@{V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+TS}}
+\index{V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+TS@{V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+TS}!Shader\+Program.\+cpp@{Shader\+Program.\+cpp}}
+\subsubsection{\texorpdfstring{V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+TS}{VERIFY\_SHADER\_UNIFORM\_EXISTS}}
+{\footnotesize\ttfamily \#define V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+TS(\begin{DoxyParamCaption}\item[{}]{program,  }\item[{}]{name,  }\item[{}]{var }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+GLint var = \hyperlink{common_8h_ab76e9d812060d1ba7e166d5b3e75355b}{OGL\_CALL}(glGetUniformLocation(program, name)); \(\backslash\)
+    if (var == -1) \{ \(\backslash\)
+        return; \(\backslash\)
+    \} \(\backslash\)
+\end{DoxyCode}
