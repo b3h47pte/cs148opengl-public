@@ -30,6 +30,8 @@ private:
     std::shared_ptr<class SceneObject> sceneObject;
 
     std::shared_ptr<class Light> pointLight;
+
+    std::vector<glm::vec4> vertexPositions;
 };
 
 #endif
