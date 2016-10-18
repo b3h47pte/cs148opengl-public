@@ -96,7 +96,7 @@ glm::vec4 SceneObject::GetWorldForward()
 
 void SceneObject::SetPosition(const glm::vec3& in)
 {
-    position = glm::vec4(in, 0.f);
+    position = glm::vec4(in, 1.f);
     UpdateTransformationMatrix();
 }
 
