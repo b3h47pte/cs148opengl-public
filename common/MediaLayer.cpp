@@ -101,6 +101,11 @@ void MediaLayer::InitializeOpenGL()
     OGL_CALL(glEnable(GL_TEXTURE_CUBE_MAP_SEAMLESS));
 
     OGL_CALL(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
+
+#ifdef __APPLE__
+    SDL_PumpEvents();
+    SDL_SetWindowSize(sdlWindow, app->GetWindowSize().x, app->GetWindowSize().y);
+#endif
 }
 
 bool MediaLayer::CanTick() const
