@@ -3,6 +3,7 @@
 #include "common/Utility/Mesh/Simple/PrimitiveCreator.h"
 #include "common/Utility/Mesh/Loading/MeshLoader.h"
 #include "common/Utility/Texture/TextureLoader.h"
+#include "common/Rendering/Shaders/EpicShader.h"
 
 #include <cmath>
 
@@ -104,31 +105,30 @@ void Assignment4::HandleWindowResize(float x, float y)
 void Assignment4::SetupExample1()
 {
     scene->ClearScene();
-#ifndef DISABLE_OPENGL_SUBROUTINES
     std::unordered_map<GLenum, std::string> shaderSpec = {
-        { GL_VERTEX_SHADER, "brdf/blinnphong/frag/blinnphong.vert" },
-        { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/blinnphong.frag" }
+        { GL_VERTEX_SHADER, "hw4/epic.vert" },
+        { GL_FRAGMENT_SHADER, "hw4/epic.frag"}
     };
-#else
-    std::unordered_map<GLenum, std::string> shaderSpec = {
-        { GL_VERTEX_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.vert" },
-        { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.frag"}
-    };
-#endif
-    std::shared_ptr<BlinnPhongShader> shader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_FRAGMENT_SHADER);
-    shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
-    shader->SetSpecular(glm::vec4(1.f, 1.f, 1.f, 1.f), 40.f);
+    std::shared_ptr<EpicShader> shader = std::make_shared<EpicShader>(shaderSpec);
+    //shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
+    //shader->SetSpecular(glm::vec4(1.f, 1.f, 1.f, 1.f), 40.f);
 
-    std::shared_ptr<BlinnPhongShader> groundShader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_FRAGMENT_SHADER);
-    shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
+    std::shared_ptr<EpicShader> groundShader = std::make_shared<EpicShader>(shaderSpec);
+    //shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
 
     std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
     lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
     lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
 
-    pointLight = std::make_shared<Light>(std::move(lightProperties));
+    pointLight = std::make_shared<Light>(std::move(lightProperties), Light::LightType::POINT);
     pointLight->SetPosition(glm::vec3(10.f, 10.f, 10.f));
     scene->AddLight(pointLight);
+
+    //sunLight = std::make_shared<Light>(std::move(lightProperties), Light::LightType::DIRECTIONAL);
+    //scene->AddLight(sunLight);
+
+    //hemisphereLight = std::make_shared<Light>(std::move(lightProperties), Light::LightType::HEMISPHERE);
+    //scene->AddLight(hemisphereLight);
 
     GenericSetupExample(shader, groundShader);
 
