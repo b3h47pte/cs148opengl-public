@@ -35,21 +35,36 @@ void EpicShader::SetupShaderLighting(const Light* light) const
     if (!light) {
         SetShaderUniform("lightingType", static_cast<int>(Light::LightType::GLOBAL));
     } else {
+        const LightProperties* lightProperty = light->GetPropertiesRaw();
+
         // Select proper lighting subroutine based on the light's type.
         switch(light->GetLightType()) {
         case Light::LightType::POINT:
-            SetShaderUniform("lightingType", static_cast<int>(Light::LightType::POINT));
+            SetShaderUniform("lightingType", static_cast<int>(light->GetLightType()));
             break;
+        case Light::LightType::DIRECTIONAL:
+            SetShaderUniform("lightingType", static_cast<int>(light->GetLightType()));
+            break;
+        case Light::LightType::HEMISPHERE:
+            SetShaderUniform("lightingType", static_cast<int>(light->GetLightType()));
+            break;
+        case Light::LightType::SPOT:
+            {
+                const SpotlightProperties* spotProperties = dynamic_cast<const SpotlightProperties*>(lightProperty);
+                SetShaderUniform("lightingType", static_cast<int>(light->GetLightType()));
+                SetShaderUniform("genericLight.spotInnerConeAngleDegrees", spotProperties->innerConeAngleDegrees);
+                SetShaderUniform("genericLight.spotOuterConeAngleDegrees", spotProperties->outerConeAngleDegrees);
+                break;
+            }
         default:
-            std::cerr << "WARNING: Light type is not supported. Defaulting to global light. Your output may look wrong. -- Ignoring: " << static_cast<int>(light->GetLightType()) << std::endl;
             SetShaderUniform("lightingType", static_cast<int>(Light::LightType::GLOBAL));
             break;
         }
 
         // Get the light's properties and pass it into the shader.
-        const LightProperties* lightProperty = light->GetPropertiesRaw();
         SetShaderUniform("genericLight.diffuseColor", lightProperty->diffuseColor);
         SetShaderUniform("genericLight.specularColor", lightProperty->specularColor);
+        SetShaderUniform("genericLight.directionalLightDir", light->GetForwardDirection());
         light->SetupShaderUniforms(this);
     }
     UpdateAttenuationUniforms(light);

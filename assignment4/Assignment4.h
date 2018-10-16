@@ -31,6 +31,7 @@ private:
     std::shared_ptr<class Light> sunLight;
     std::shared_ptr<class Light> hemisphereLight;
     std::shared_ptr<class Light> pointLight;
+    std::shared_ptr<class Light> spotLight;
     std::vector<std::shared_ptr<class SceneObject>> sphereDance;
 };
 

@@ -15,6 +15,9 @@ uniform InputMaterial {
 struct LightProperties {
     vec4 diffuseColor;
     vec4 specularColor;
+    vec4 directionalLightDir;
+    float spotInnerConeAngleDegrees;
+    float spotOuterConeAngleDegrees;
 };
 uniform LightProperties genericLight;
 
@@ -31,25 +34,33 @@ uniform float quadraticAttenuation;
 
 uniform int lightingType;
 
+const float PI = 3.1415926535;
 
-vec4 pointLightSubroutine(vec4 worldPosition, vec3 worldNormal)
+vec4 pointLightSubroutine(vec4 N, vec4 worldPosition, vec3 worldNormal)
 {
-    // Normal to the surface
-    vec4 N = vec4(normalize(worldNormal), 0.f);
-    
     // Direction from the surface to the point light
-    vec4 L = normalize(pointLight.pointPosition - worldPosition);
+    vec4 L = normalize(pointLight.pointPosition - vertexWorldPosition);
+    float NdL = max(0, dot(N,L));
 
-    return vec4(max(0, dot(N,L)));
+    // Insert code for Section 3.2 here.
+    return vec4(NdL);
 }
 
-vec4 directionalLightSubroutine(vec4 worldPosition, vec3 worldNormal)
+vec4 directionalLightSubroutine(vec4 N, vec4 worldPosition, vec3 worldNormal)
 {
+    // Insert code for Section 3.3 here.
     return vec4(0.0);
 }
 
-vec4 hemisphereLightSubroutine(vec4 worldPosition, vec3 worldNormal)
+vec4 hemisphereLightSubroutine(vec4 N, vec4 worldPosition, vec3 worldNormal)
 {
+    // Insert code for Section 3.4 here.
+    return vec4(0.0);
+}
+
+vec4 spotLightSubroutine(vec4 N, vec4 worldPosition, vec3 worldNormal)
+{
+    // Insert code for Section 3.5 here.
     return vec4(0.0);
 }
 
@@ -58,25 +69,31 @@ vec4 globalLightSubroutine(vec4 worldPosition, vec3 worldNormal)
     return vec4(0.0);
 }
 
-vec4 attenuateLight(vec4 originalColor, vec4 worldPosition)
+vec4 attenuateLight(vec4 originalColor)
 {
-    float lightDistance = length(pointLight.pointPosition - worldPosition);
+    float lightDistance = length(pointLight.pointPosition - vertexWorldPosition);
     float attenuation = 1.0 / (constantAttenuation + lightDistance * linearAttenuation + lightDistance * lightDistance * quadraticAttenuation);
     return originalColor * attenuation;
 }
 
 void main()
 {
+    // Normal to the surface
+    vec4 N = vec4(normalize(vertexWorldNormal), 0.f);
+
     vec4 lightingColor = vec4(0);
     if (lightingType == 0) {
         lightingColor = globalLightSubroutine(vertexWorldPosition, vertexWorldNormal);
     } else if (lightingType == 1) {
-        lightingColor = pointLightSubroutine(vertexWorldPosition, vertexWorldNormal);
+        lightingColor = attenuateLight(pointLightSubroutine(N, vertexWorldPosition, vertexWorldNormal));
     } else if (lightingType == 2) {
-        lightingColor = directionalLightSubroutine(vertexWorldPosition, vertexWorldNormal);
+        lightingColor = directionalLightSubroutine(N, vertexWorldPosition, vertexWorldNormal);
     } else if (lightingType == 3) {
-        lightingColor = hemisphereLightSubroutine(vertexWorldPosition, vertexWorldNormal);
+        lightingColor = hemisphereLightSubroutine(N, vertexWorldPosition, vertexWorldNormal);
+    } else if (lightingType == 5) {
+        lightingColor = attenuateLight(spotLightSubroutine(N, vertexWorldPosition, vertexWorldNormal));
     }
-    finalColor = attenuateLight(lightingColor, vertexWorldPosition) * fragmentColor;
+    finalColor = lightingColor * fragmentColor;
+    finalColor.a = 1.0;
 }
 

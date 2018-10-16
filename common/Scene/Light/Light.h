@@ -25,7 +25,8 @@ public:
         POINT,
         DIRECTIONAL,
         HEMISPHERE,
-        IBL
+        IBL,
+        SPOT
     };
 
     /*! \brief Constructs a light from user-specified properties and a light type.

@@ -110,25 +110,41 @@ void Assignment4::SetupExample1()
         { GL_FRAGMENT_SHADER, "hw4/epic.frag"}
     };
     std::shared_ptr<EpicShader> shader = std::make_shared<EpicShader>(shaderSpec);
-    //shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
-    //shader->SetSpecular(glm::vec4(1.f, 1.f, 1.f, 1.f), 40.f);
+    shader->SetMetallic(0.7);
+    shader->SetRoughness(0.65);
+    shader->SetSpecular(glm::vec4(2.0f));
 
     std::shared_ptr<EpicShader> groundShader = std::make_shared<EpicShader>(shaderSpec);
-    //shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
 
     std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
-    lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+    lightProperties->diffuseColor = glm::vec4(3.f, 1.f, 1.f, 1.f);
     lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
 
     pointLight = std::make_shared<Light>(std::move(lightProperties), Light::LightType::POINT);
-    pointLight->SetPosition(glm::vec3(10.f, 10.f, 10.f));
+    pointLight->SetPosition(glm::vec3(100.f, 20.f, 10.f));
     scene->AddLight(pointLight);
 
-    //sunLight = std::make_shared<Light>(std::move(lightProperties), Light::LightType::DIRECTIONAL);
-    //scene->AddLight(sunLight);
+    std::unique_ptr<LightProperties> sunProperties = make_unique<LightProperties>();
+    sunProperties->diffuseColor = glm::vec4(0.f, 1.f, 0.f, 1.f);
+    sunProperties->specularColor = glm::vec4(0.f, 1.f, 0.f, 1.f);
+    sunLight = std::make_shared<Light>(std::move(sunProperties), Light::LightType::DIRECTIONAL);
+    scene->AddLight(sunLight);
 
-    //hemisphereLight = std::make_shared<Light>(std::move(lightProperties), Light::LightType::HEMISPHERE);
-    //scene->AddLight(hemisphereLight);
+    std::unique_ptr<LightProperties> hemisphereProperties = make_unique<LightProperties>();
+    hemisphereProperties->diffuseColor = glm::vec4(0.89, 0.349f, 0.f, 1.f) * 5.f; // ground color
+    hemisphereProperties->specularColor = glm::vec4(0.f, 0.f, 1.f, 1.f) * 5.f; // sky color
+    hemisphereLight = std::make_shared<Light>(std::move(hemisphereProperties), Light::LightType::HEMISPHERE);
+    scene->AddLight(hemisphereLight);
+
+    std::unique_ptr<SpotlightProperties> spotlightProperties = make_unique<SpotlightProperties>();
+    spotlightProperties->diffuseColor = glm::vec4(1.f, 1.f, 0.f, 1.f) * 3.f;
+    spotlightProperties->specularColor = glm::vec4(1.f, 1.f, 0.f, 1.f);
+    spotlightProperties->innerConeAngleDegrees = 20.f;
+    spotlightProperties->outerConeAngleDegrees = 50.f;
+    spotLight = std::make_shared<Light>(std::move(spotlightProperties), Light::LightType::SPOT);
+    spotLight->SetPosition(glm::vec3(16.f, 80.f, 16.f));
+    spotLight->Rotate(glm::vec3(SceneObject::GetWorldRight()), -M_PI / 2.f);
+    scene->AddLight(spotLight);
 
     GenericSetupExample(shader, groundShader);
 
