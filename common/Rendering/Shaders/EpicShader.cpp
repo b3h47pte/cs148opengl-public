@@ -74,16 +74,18 @@ void EpicShader::UpdateMaterialBlock() const
 {
     StartUseShader();
 
-    memcpy((void*)(materialStorage.data() + materialOffsets[0]), &roughness, sizeof(float));
-    memcpy((void*)(materialStorage.data() + materialOffsets[1]), glm::value_ptr(specular), sizeof(glm::vec4));
-    memcpy((void*)(materialStorage.data() + materialOffsets[2]), &metallic, sizeof(float));
+    if (materialStorage.data()) {
+        memcpy((void*)(materialStorage.data() + materialOffsets[0]), &roughness, sizeof(float));
+        memcpy((void*)(materialStorage.data() + materialOffsets[1]), glm::value_ptr(specular), sizeof(glm::vec4));
+        memcpy((void*)(materialStorage.data() + materialOffsets[2]), &metallic, sizeof(float));
 
-    if (materialBuffer && materialBlockLocation != GL_INVALID_INDEX) {
-        OGL_CALL(glBindBuffer(GL_UNIFORM_BUFFER, materialBuffer));
-        OGL_CALL(glBufferData(GL_UNIFORM_BUFFER, materialBlockSize, materialStorage.data(), GL_STATIC_DRAW));
-        OGL_CALL(glBindBufferBase(GL_UNIFORM_BUFFER, MATERIAL_BINDING_POINT, materialBuffer));
-        OGL_CALL(glUniformBlockBinding(shaderProgram, materialBlockLocation, MATERIAL_BINDING_POINT));
-        OGL_CALL(glBindBuffer(GL_UNIFORM_BUFFER, 0));
+        if (materialBuffer && materialBlockLocation != GL_INVALID_INDEX) {
+            OGL_CALL(glBindBuffer(GL_UNIFORM_BUFFER, materialBuffer));
+            OGL_CALL(glBufferData(GL_UNIFORM_BUFFER, materialBlockSize, materialStorage.data(), GL_STATIC_DRAW));
+            OGL_CALL(glBindBufferBase(GL_UNIFORM_BUFFER, MATERIAL_BINDING_POINT, materialBuffer));
+            OGL_CALL(glUniformBlockBinding(shaderProgram, materialBlockLocation, MATERIAL_BINDING_POINT));
+            OGL_CALL(glBindBuffer(GL_UNIFORM_BUFFER, 0));
+        }
     }
 
     StopUseShader();
