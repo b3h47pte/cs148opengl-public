@@ -67,19 +67,16 @@ vec4 pointLightSubroutine(vec4 worldPosition, vec3 worldNormal)
     float s = pow(max(0, dot(tangentN, tangentH)), material.matShininess);
     vec4 specularColor = s * genericLight.specularColor * material.matSpecular * texture(specularTexture, fragmentUV);
 
-    return texture(diffuseTexture, fragmentUV);
     return diffuseColor + specularColor;
 }
 
 vec4 globalLightSubroutine(vec4 worldPosition, vec3 worldNormal)
 {
-    return vec4(0);
     return material.matAmbient * texture(diffuseTexture, fragmentUV);
 }
 
 vec4 AttenuateLight(vec4 originalColor, vec4 worldPosition)
 {
-    return originalColor;
     float lightDistance = length(pointLight.pointPosition - worldPosition);
     float attenuation = 1.0 / (constantAttenuation + lightDistance * linearAttenuation + lightDistance * lightDistance * quadraticAttenuation);
     return originalColor * attenuation;
